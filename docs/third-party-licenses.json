@@ -1,0 +1,107 @@
+[
+    {
+        "name": "buffer",
+        "version": "5.7.1",
+        "spdx": "MIT",
+        "url": "https://github.com/feross/buffer",
+        "license": "https://github.com/feross/buffer/blob/master/LICENSE"
+    },
+    {
+        "name": "fetch-blob",
+        "version": "3.2.0",
+        "spdx": "MIT",
+        "url": "https://github.com/node-fetch/fetch-blob",
+        "license": "https://github.com/node-fetch/fetch-blob/blob/main/LICENSE"
+    },
+    {
+        "name": "fontawesome-free",
+        "version": "6.1.1",
+        "spdx": "MIT",
+        "url": "https://github.com/FortAwesome/Font-Awesome",
+        "license": "https://github.com/FortAwesome/Font-Awesome/blob/6.x/LICENSE.txt"
+    },
+    {
+        "name": "formdata-polyfill",
+        "version": "4.0.10",
+        "spdx": "MIT",
+        "url": "https://github.com/jimmywarting/FormData",
+        "license": "https://github.com/jimmywarting/FormData/blob/master/LICENSE"
+    },
+    {
+        "name": "google-protobuf",
+        "version": "3.20.1",
+        "spdx": "BSD-3-Clause",
+        "url": "https://github.com/protocolbuffers/protobuf",
+        "license": "https://github.com/protocolbuffers/protobuf/blob/main/LICENSE"
+    },
+    {
+        "name": "grpc-js",
+        "version": "1.1.7",
+        "spdx": "Apache-2.0",
+        "url": "https://github.com/grpc/grpc-node",
+        "license": "https://github.com/grpc/grpc-node/blob/master/LICENSE"
+    },
+    {
+        "name": "jszip",
+        "version": "3.7.1",
+        "spdx": "MIT",
+        "url": "https://github.com/Stuk/jszip",
+        "license": "https://github.com/Stuk/jszip/blob/master/LICENSE.markdown"
+    },
+    {
+        "name": "lodash.debounce",
+        "version": "4.0.8",
+        "spdx": "MIT",
+        "url": "https://github.com/lodash/lodash",
+        "license": "https://github.com/lodash/lodash/blob/master/LICENSE"
+    },
+    {
+        "name": "node-fetch",
+        "version": "2.6.7",
+        "spdx": "MIT",
+        "url": "https://github.com/node-fetch/node-fetch",
+        "license": "https://github.com/node-fetch/node-fetch/blob/master/LICENSE.md"
+    },
+    {
+        "name": "path-browserify",
+        "version": "1.0.1",
+        "spdx": "MIT",
+        "url": "https://github.com/browserify/path-browserify",
+        "license": "https://github.com/browserify/path-browserify/blob/master/LICENSE"
+    },
+    {
+        "name": "react",
+        "version": "18.1.0",
+        "spdx": "MIT",
+        "url": "https://github.com/facebook/react",
+        "license": "https://github.com/facebook/react/blob/main/LICENSE"
+    },
+    {
+        "name": "react-dom",
+        "version": "18.1.0",
+        "spdx": "MIT",
+        "url": "https://github.com/facebook/react",
+        "license": "https://github.com/facebook/react/blob/main/LICENSE"
+    },
+    {
+        "name": "vscode-extension-telemetry",
+        "version": "0.6.2",
+        "spdx": "MIT",
+        "url": "https://github.com/microsoft/vscode-extension-telemetry",
+        "license": "https://github.com/microsoft/vscode-extension-telemetry/blob/main/LICENSE"
+    },
+    {
+        "name": "webview-ui-toolkit",
+        "version": "0.9.3",
+        "spdx": "MIT",
+        "url": "https://github.com/microsoft/vscode-webview-ui-toolkit",
+        "license": "https://github.com/microsoft/vscode-webview-ui-toolkit/blob/main/LICENSE"
+    },
+    {
+        "name": "@eclipse-cdt-cloud/clangd-contexts",
+        "version": "0.9.0-next.c7c35a6.0",
+        "spdx": "EPL-2.0",
+        "url": "https://github.com/eclipse-cdt-cloud",
+        "license": "https://github.com/eclipse-cdt-cloud/clangd-contexts/blob/main/LICENSE"
+    }
+]
