@@ -1,6 +1,12 @@
 # Change Log
 
-# 0.5.5
+## 0.6.0
+
+- Improved performance for loading device list in the new solution view.
+- Highlight rows with validation errors in the experimental manage components view.
+- Support switching bundle for unselected cclasses in the experimental manage components view.
+
+## 0.5.5
 
 - Fixed revert components in experimental manage components view.
 - Fixed vendor, version and variant dropdowns in experimental manage components view.
