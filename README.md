@@ -245,9 +245,9 @@ Once you have explored what you can do with the csolution example project, check
 
 ### Clone a csolution example project
 
-Clone the following csolution example project and open it in Visual Studio Code:
+Clone the Blinky example project available in the following repository:
 
-https://github.com/RobertRostohar/Demo_EW/tree/main/Blinky
+https://github.com/RobertRostohar/Demo_EW/
 
 To clone a project in Visual Studio Code:
 
@@ -255,7 +255,13 @@ To clone a project in Visual Studio Code:
 
 1. In the field that opens at the top of the window, type `Git`, then select the **Git:Clone** command in the drop-down list.
 
-1. Copy and paste the GitHub repository URL provided in the field that displays.
+1. Copy and paste the GitHub repository URL provided in the field that displays and press **Enter**.
+
+    A dialog box opens to select where to clone the repository.
+
+1. Select a location.
+
+    Once the repository is cloned, open the Blinky example project in Visual Studio Code.
 
 ### Install the CMSIS-Packs required for the example
 

@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.6.1
+
+- Clearly separate fix options for validation errors in the manage components view.
+- Improve missing dependency reporting in manage components view.
+- Fixed switching project for solutions with nested cproject files.
+
 ## 0.6.0
 
 - Improved performance for loading device list in the new solution view.
