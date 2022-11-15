@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.7.0
+
+- Filter manage components view by target type.
+
 ## 0.6.1
 
 - Clearly separate fix options for validation errors in the manage components view.
