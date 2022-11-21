@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.8.0
+
+- Add rebuild option to cbuild task. This cleans output directories before building.
+- Add rebuild command.
+- Fix selection for empty component vendor, variant, version and bundle in manage components.
+- Update csolution YAML schemas to 1.3.0.
+
 ## 0.7.0
 
 - Filter manage components view by target type.

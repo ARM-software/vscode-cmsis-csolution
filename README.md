@@ -309,7 +309,7 @@ Look at the csolution contexts.
 
 1. Go the **PROBLEMS** tab and check for errors.
 
-1. Right-click on the `.cprj` file corresponding to the context you selected and select **Build**.
+1. Right-click the `.cprj` file corresponding to the context you selected and select **Build**.
 
 1. Check the **TERMINAL** tab.
 
@@ -386,9 +386,9 @@ Add CMSIS components with the **Manage Software Components** view. When you add 
 
 **Note**: The **Manage Software Components** view is still under development. To get access to it, select the **Experimental Features** checkbox in the **CMSIS csolution** extension settings.
 
-The **Manage Software Components** view shows all the software components selected in the active CMSIS solution. From this view you can see all the component details (called attributes in the [Open-CMSIS-Pack documentation](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/cp_PackTutorial.html#cp_SWComponents)).
+The **Manage Software Components** view shows all the software components selected in the active project of a CMSIS solution. From this view you can see all the component details (called attributes in the [Open-CMSIS-Pack documentation](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/cp_PackTutorial.html#cp_SWComponents)).
 You can also:
-- Modify the software components to include in your solution.<!--and manage the dependencies between components-->
+- Modify the software components to include in the project and manage the dependencies between components for each build target  you have defined in your solution.
 - Build the solution using different combinations of pack and component versions, and different versions of a toolchain.
 
 ### Open the Manage Software Components view
@@ -397,19 +397,23 @@ You can also:
 
 1. Click the **CMSIS** icon ![CMSIS icon](./docs/images/cmsis-icon.png) in the Activity Bar to open the **Arm CMSIS csolution** extension.
 
+1. Check the active project selected in the **CONTEXT** panel.
+
 1. Hover over the **CONTEXT** label and click the **Manage software components** icon ![Manage software components](./docs/images/manage-sw-components-icon.png).
 
     The **Manage Software Components** view opens.
 
-By default, this displays the components that are available for use. If you select the **Show selected only** checkbox, only the components included in the active project display.
+By default, the view displays all the components that are available for use. If you select the **Show selected only** checkbox, only the components included in the active project display.
 
 ![The 'Manage Software Components' view showing all the components that are available for use](./docs/images/manage-sw-components-view.png)
+
+With the **Target** drop-down list, you can select components for the different build targets you have in your solution.
 
 The first column in the **Manage Software Components** view shows how many instances of the component are deployed in the project. If the component has a selected checkbox, one instance is deployed. If the checkbox is not selected, it is not deployed in the project. If a number input displays, multiple instances of this component can be deployed to a project.
 
 The CMSIS-Pack specification states that each software component should have the following attributes:
 
-- Component class (Cclass): A top-level component name. For example: **CMSIS**. For a full list of component classes, see [Software Component Cclasses](https://arm-software.github.io/CMSIS_5/Pack/html/cp_Packs.html#pack_Cclass).
+- Component class (Cclass): A top-level component name. For example: **CMSIS**. For a full list of component classes, see [Software Component Cclasses](https://arm-software.github.io/CMSIS_5/Pack/html/cp_Packs.html#pack_Cclass) in the Open-CMSIS-Pack documentation.
 - Component group (Cgroup): A component group name. For example: **CORE** for the **CMSIS** component class.
 - Component version (Cversion): The version number of the software component.
 
@@ -428,9 +432,19 @@ You can add components from all the packs available (it is not limited to the pa
 
 1. Make sure the **Show selected only** checkbox is not selected to display all the components available.
 
+1. Select a build target in the **Target** drop-down list. You can select components for the different build targets defined in the solution.
+
 1. Use the checkboxes to select or clear components as required. If a number input displays instead of a checkbox, it means that multiple instances of this component can be deployed to a project. For some components, you can also select a vendor, variant, or version.
 
-  The **Revert changes** button allows you to revert all your unsaved changes at once.
+1. From the **Validation** panel, you can manage the dependencies between components and solve validation issues.
+
+    Issues are highlighted in red and have an exclamation mark icon ![Issue icon](./docs/images/issue-icon.png) next to them. If there are validation issues, you can either remove conflicting components from your selection or add missing components from a suggested list.
+
+1. If there are validation issues, hover over the issues in the **Validation** panel to get more details and click the issues or the proposed fixes to find the components in the list.
+
+    ![Fix validation issues](./docs/images/component-validation-issues.gif)
+
+    The **Revert changes** button allows you to revert all your unsaved changes at once.
 
 1. Click **Apply changes**.
 
