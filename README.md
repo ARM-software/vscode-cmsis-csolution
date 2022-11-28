@@ -52,7 +52,7 @@ Here are the main steps:
 
 Some unsigned binaries need to be de-quarantined before you can run them. This is only required for newer versions of macOS.
 
-Run the command:
+Run the command from the terminal:
 
     ```
     xattr -d com.apple.quarantine /path/to/binary
@@ -83,7 +83,7 @@ On Windows or Linux, download Arm Compiler for Embedded from [Arm Developer](htt
 
     Archive files are available for all platforms. Installers are available for macOS and Windows.
 
-1. Check the installation by running the following command:
+1. Check the installation by running the following command from the terminal:
 
         ```
         arm-none-eabi-g++ --help
@@ -111,7 +111,7 @@ The CMSIS-Toolbox uses the CMake build system with a Ninja generator, so you mus
 
 1. If this has not already been handled by the system package manager, add `cmake` and `ninja` to the PATH.
 
-1. Check the installation by running the following commands:
+1. Check the installation by running the following commands from the terminal:
 
         ```
         cmake --version
@@ -172,7 +172,7 @@ The CMSIS-Toolbox uses the CMake build system with a Ninja generator, so you mus
 
     The CMSIS-Toolbox is currently not signed, so you must de-quarantine its binaries as explained in the [General comments](#general-comments) section.
 
-    Run the command:
+    Run the command from the terminal:
 
         ```
         xattr -d com.apple.quarantine <cmsis-toolbox-installation-dir>/bin/
@@ -189,13 +189,13 @@ The CMSIS-Toolbox uses the CMake build system with a Ninja generator, so you mus
 
 ### Initialize or update the catalog of public CMSIS-Pack versions
 
-If `CMSIS_PACK_ROOT` is pointing to an empty directory, run the following command to initialize the directory structure and download the latest pack index file:
+If `CMSIS_PACK_ROOT` is pointing to an empty directory, run the following command from the terminal to initialize the directory structure and download the latest pack index file:
 
     ```
     cpackget init https://www.keil.com/pack/index.pidx
     ```
 
-Otherwise, run the following command to update the stored catalog (index file and the already downloaded package description files):
+Otherwise, run the following command from the terminal to update the stored catalog (index file and the already downloaded package description files):
 
     ```
     cpackget update-index
@@ -272,7 +272,7 @@ Install the CMSIS-Packs.
     The required packs are listed under the `packs` key of the `csolution.yml` file.
     For example, one of the required packs for `Blinky.csolution.yml` is `ARM::V2M_MPS3_SSE_300_BSP@1.2.0`, where `ARM` is the vendor, `V2M_MPS3_SSE_300_BSP` is the name of the pack, and `1.2.0` is the version.
 
-1. Run the following command to add the packs:
+1. Run the following command from the terminal to add the packs:
 
       ```
       cpackget add <vendor>::<name>@<version>
@@ -310,6 +310,8 @@ Look at the csolution contexts.
 1. Go the **PROBLEMS** tab and check for errors.
 
 1. Right-click the `.cprj` file corresponding to the context you selected and select **Build**.
+
+    **Note**: A **Rebuild** option is also available in the right-click menu. This option cleans output directories before building the project. **Build** and **Rebuild** can also be triggered from the Command Palette with the **CMSIS: Build** and **CMSIS: Rebuild** commands.
 
 1. Check the **TERMINAL** tab.
 

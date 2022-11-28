@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.8.1
+
+- Remove apply and revert buttons from Manage Components. Changes are now saved to the csolution immediately.
+
 ## 0.8.0
 
 - Add rebuild option to cbuild task. This cleans output directories before building.
