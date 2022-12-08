@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.9.0
+
+- Clarify use of build type and target type in the create solutions UI.
+- Manage components view no longer requires the experimental features flag.
+- Fix converting MDK projects outside of the workspace (https://github.com/ARM-software/vscode-cmsis-csolution/issues/4).
+- Add refresh command to reload the active solution.
+- Reload the Manage Components view when the cproject file is changed.
+
 ## 0.8.1
 
 - Remove apply and revert buttons from Manage Components. Changes are now saved to the csolution immediately.

@@ -215,7 +215,11 @@ The **clangd** extension requires the clangd language server. If the server is n
 
 Modify the extension settings to point at the tools installed previously.
 
-1. In Visual Studio Code, go to **Code** > **Preferences** > **Settings**.
+**Note**: This is unnecessary if you add the toolbox bin directory to the PATH.
+
+1. In Visual Studio Code, open the Settings:
+    - On Windows or Linux, go to: **File** > **Preferences** > **Settings**
+    - On macOS, go to: **Code** > **Preferences** > **Settings**
 
 1. Find the **CMSIS csolution** extension under the **Extensions** category.
 
@@ -361,7 +365,7 @@ Create a CMSIS solution which contains an empty CMSIS project.
 
 1. In the **Project name** and **Solution name** fields, type a project name and a solution name.
 
-1. Check the **Solution preview**. This displays the solution name and the project name, as well as the target hardware selected for the solution, the compiler, and the build profiles available.
+1. Check the **Solution preview**. This displays the solution name and the project name, as well as the target hardware selected for the solution, the compiler, and the build types available.
 
 1. Check the default options:
 
@@ -385,8 +389,6 @@ Check the [csolution: CMSIS Project Manager](https://github.com/Open-CMSIS-Pack/
 Add CMSIS components with the **Manage Software Components** view. When you add components the `cproject.yaml` file is updated.
 
 ## Manage a csolution project and its software components
-
-**Note**: The **Manage Software Components** view is still under development. To get access to it, select the **Experimental Features** checkbox in the **CMSIS csolution** extension settings.
 
 The **Manage Software Components** view shows all the software components selected in the active project of a CMSIS solution. From this view you can see all the component details (called attributes in the [Open-CMSIS-Pack documentation](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/cp_PackTutorial.html#cp_SWComponents)).
 You can also:
@@ -438,19 +440,17 @@ You can add components from all the packs available (it is not limited to the pa
 
 1. Use the checkboxes to select or clear components as required. If a number input displays instead of a checkbox, it means that multiple instances of this component can be deployed to a project. For some components, you can also select a vendor, variant, or version.
 
+    The `cproject.yaml` file is automatically updated.
+
 1. From the **Validation** panel, you can manage the dependencies between components and solve validation issues.
 
-    Issues are highlighted in red and have an exclamation mark icon ![Issue icon](./docs/images/issue-icon.png) next to them. If there are validation issues, you can either remove conflicting components from your selection or add missing components from a suggested list.
+    Issues are highlighted in red and have an exclamation mark icon ![Issue icon](./docs/images/issue-icon.png) next to them. You can remove conflicting components from your selection or add missing component dependencies from a suggested list.
 
-1. If there are validation issues, hover over the issues in the **Validation** panel to get more details and click the issues or the proposed fixes to find the components in the list.
+1. If there are validation issues, hover over the issues in the **Validation** panel to get more details. You can click the proposed fixes to find the components in the list. In some cases, you may have to choose between different fix sets. Select a fix set in the drop-down list, then apply the changes and click **Apply Fix Set**.
 
     ![Fix validation issues](./docs/images/component-validation-issues.gif)
 
-    The **Revert changes** button allows you to revert all your unsaved changes at once.
-
-1. Click **Apply changes**.
-
-    The `cproject.yaml` file is updated.
+**Note**: In the current version, you can undo changes from the **Source Control** view or by directly editing the `cproject.yaml` file.
 
 ## Troubleshooting
 
