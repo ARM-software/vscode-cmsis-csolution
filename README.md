@@ -12,6 +12,8 @@ Once your development environment is ready, you can clone a csolution example pr
 
 Note that you can convert a Keil MDK project in `.uvprojx` format to a csolution project from the **Arm CMSIS csolution** extension as explained in this Readme.
 
+For more information about supported hardware for CMSIS projects, go to [keil.arm.com](https://www.keil.arm.com/boards/). For an overview on CMSIS-Packs, go to [open-cmsis-pack.org](https://www.open-cmsis-pack.org/index.html).
+
 ## Submit feedback
 
 To submit feedback, please [create an issue](https://github.com/Arm-Software/vscode-cmsis-csolution/issues/new/choose).
@@ -30,8 +32,8 @@ To submit feedback, please [create an issue](https://github.com/Arm-Software/vsc
 1. [Manage a csolution project and its software components](#manage-a-csolution-project-and-its-software-components)
 1. [Troubleshooting](#troubleshooting)
 1. [Known limitations](#known-limitations)
-
-## Set up your development environment
+<a name="set-up-your-development-environment"></a>
+## ➤ Set up your development environment
 
 Here are the main steps:
 
@@ -46,7 +48,8 @@ Here are the main steps:
 
 1. [Modify extension settings](#modify-extension-settings).
 
-### General comments
+<a name="general-comments"></a>
+### ➤ General comments
 
 #### On macOS
 
@@ -54,9 +57,9 @@ Some unsigned binaries need to be de-quarantined before you can run them. This i
 
 Run the command from the terminal:
 
-    ```
-    xattr -d com.apple.quarantine /path/to/binary
-    ```
+```
+xattr -d com.apple.quarantine /path/to/bin
+```
 
 Run with `sudo` if you get permission errors.
 
@@ -64,7 +67,8 @@ Run with `sudo` if you get permission errors.
 
 Use the **System Properties** dialog box to set environment variables and add directories to the PATH.
 
-### Install the tools
+<a name="install-the-tools"></a>
+### ➤ Install the tools
 
 #### Install a compiler toolchain
 
@@ -72,22 +76,23 @@ Install the Arm Compiler for Embedded toolchain or the Arm GNU Toolchain (includ
 
 ##### Install the Arm Compiler for Embedded toolchain
 
-On Windows or Linux, download Arm Compiler for Embedded from [Arm Developer](https://developer.arm.com/downloads/-/arm-compiler-for-embedded) or use the Arm Compiler for Embedded toolchain available with [Keil MDK](https://www2.keil.com/mdk5).
+On Windows or Linux, download Arm Compiler for Embedded version 6.18 from [Arm Developer](https://developer.arm.com/downloads/-/arm-compiler-for-embedded) or use the Arm Compiler for Embedded toolchain available with [Keil MDK](https://www2.keil.com/mdk5).
 
 **Note**: There is no build available for macOS at the moment.
 
 ##### Install the Arm GNU Toolchain (GCC)
 
-1. Download the latest Arm GNU Toolchain for your platform from
-[Arm Developer](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/downloads). Choose the **arm-none-eabi** release for your platform.
+1. Download the Arm GNU Toolchain version 11.2 from
+[Arm Developer](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads). Choose the **arm-none-eabi** release for your platform.
 
     Archive files are available for all platforms. Installers are available for macOS and Windows.
 
-1. Check the installation by running the following command from the terminal:
+1. To check if the ARM GNU Toolchain was installed, navigate to the `<arm-toolchain-installation-dir>/bin/` directory.
+2. Check the installation by running the following command from the terminal:
 
-        ```
-        arm-none-eabi-g++ --help
-        ```
+```
+arm-none-eabi-g++ --help
+```
 
 #### Install CMake and Ninja
 
@@ -99,10 +104,10 @@ The CMSIS-Toolbox uses the CMake build system with a Ninja generator, so you mus
 
       Example with Homebrew on macOS:
 
-          ```
-          brew install cmake
-          brew install ninja
-          ```
+```
+brew install cmake
+brew install ninja
+```
 
     - Installation from latest releases:
 
@@ -113,10 +118,10 @@ The CMSIS-Toolbox uses the CMake build system with a Ninja generator, so you mus
 
 1. Check the installation by running the following commands from the terminal:
 
-        ```
-        cmake --version
-        ninja --version
-        ```
+```
+cmake --version
+ninja --version
+```
 
 #### Install the CMSIS-Toolbox
 
@@ -131,23 +136,23 @@ The CMSIS-Toolbox uses the CMake build system with a Ninja generator, so you mus
 
     For example, modify the section below:
 
-        ```
-        ############### EDIT BELOW ###############
-        # Set base directory of toolchain
-        set(TOOLCHAIN_ROOT "/home/runner/gcc-arm-none-eabi-10-2020-q4-major/bin")
-        set(PREFIX arm-none-eabi-)
-        set(EXT )
-        ```
+```
+############### EDIT BELOW ###############
+# Set base directory of toolchain
+set(TOOLCHAIN_ROOT "/home/runner/gcc-arm-none-eabi-10-2020-q4-major/bin")
+set(PREFIX arm-none-eabi-)
+set(EXT )
+```
 
     As follows:
 
-        ```
-        ############### EDIT BELOW ###############
-        # Set base directory of toolchain
-        set(TOOLCHAIN_ROOT "/Applications/ARM/bin")
-        set(PREFIX arm-none-eabi-)
-        set(EXT )
-        ```
+```
+############### EDIT BELOW ###############
+# Set base directory of toolchain
+set(TOOLCHAIN_ROOT "/Applications/ARM/bin")
+set(PREFIX arm-none-eabi-)
+set(EXT )
+```
 
     **Notes**:
     - The exact toolchain version does not matter. For example, you can modify the `GCC.10.2.1.cmake` file if you have installed GCC 10.3.1.
@@ -174,40 +179,44 @@ The CMSIS-Toolbox uses the CMake build system with a Ninja generator, so you mus
 
     Run the command from the terminal:
 
-        ```
-        xattr -d com.apple.quarantine <cmsis-toolbox-installation-dir>/bin/
-        ```
+```
+xattr -d com.apple.quarantine <cmsis-toolbox-installation-dir>/bin/
+```
+
+    *Example*: `> $xattr -d com.apple.quarantine <cmsis-toolbox-installation-dir>/path/to/bin/cbuild`.
 
     Run with `sudo` if you get permission errors.
 
 1. Check the installation with:
 
-        ```
-        cbuild --version
-        csolution --help
-        ```
+```
+cbuild --version
+csolution --help
+```
 
-### Initialize or update the catalog of public CMSIS-Pack versions
+<a name="initialize-or-update-the-catalog-of-public-cmsis-pack-versions"></a>
+### ➤ Initialize or update the catalog of public CMSIS-Pack versions
 
 If `CMSIS_PACK_ROOT` is pointing to an empty directory, run the following command from the terminal to initialize the directory structure and download the latest pack index file:
 
-    ```
-    cpackget init https://www.keil.com/pack/index.pidx
-    ```
+```
+cpackget init https://www.keil.com/pack/index.pidx
+```
 
 Otherwise, run the following command from the terminal to update the stored catalog (index file and the already downloaded package description files):
 
-    ```
-    cpackget update-index
-    ```
+```
+cpackget update-index
+```
 
-### Install and set up the clangd extension
+<a name="install-and-set-up-the-clangd-extension"></a>
+### ➤ Install and set up the clangd extension
 
 Install the **clangd** extension from Visual Studio Code.
 
 The **clangd** extension requires the clangd language server. If the server is not found on your path, add it with the **clangd: Download language server** command from the Command Palette. Check the clangd extension Readme for more information.
-
-### Modify extension settings
+<a name="modify-extension-settings"></a>
+### ➤ Modify extension settings
 
 #### Modify settings to point at CMSIS-Toolbox
 
@@ -240,14 +249,14 @@ You can turn off the automatic generation of the `.clangd` file and `compile_com
 1. Find the **CMSIS csolution** extension under the **Extensions** category.
 
 1. Clear the **Auto Generate Clangd File** and **Auto Generate Compile Commands** checkboxes.
-
-## Work with a csolution example project
+<a name="work-with-a-csolution-example-project"></a>
+## ➤ Work with a csolution example project
 
 Now that your Visual Studio Code environment is set up, you can start working with a csolution project. You must clone an example project, install the CMSIS-Packs for the example, and then set a context.
 
 Once you have explored what you can do with the csolution example project, check the "Tutorial" section in the Keil Studio Pack for Visual Studio Code Desktop Readme. The Tutorial explains how to connect your board, flash the csolution to your board, and launch a debug session.
 
-### Clone a csolution example project
+### ➤ Clone a csolution example project
 
 Clone the Blinky example project available in the following repository:
 
@@ -267,7 +276,7 @@ To clone a project in Visual Studio Code:
 
     Once the repository is cloned, open the Blinky example project in Visual Studio Code.
 
-### Install the CMSIS-Packs required for the example
+### ➤ Install the CMSIS-Packs required for the example
 
 Install the CMSIS-Packs.
 
@@ -278,17 +287,16 @@ Install the CMSIS-Packs.
 
 1. Run the following command from the terminal to add the packs:
 
-      ```
-      cpackget add <vendor>::<name>@<version>
-      ```
-
+```
+cpackget add <vendor>::<name>@<version>
+```
       Note that you can add multiple packs at once as follows:
 
-      ```
-      cpackget add <vendor>::<name>@<version> <vendor>::<name>@<version> <vendor>::<name>@<version>
-      ```
+```
+cpackget add <vendor>::<name>@<version> <vendor>::<name>@<version> <vendor>::<name>@<version>
+```
 
-### Explore what you can do with the csolution example project
+### ➤ Explore what you can do with the csolution example project
 
 Look at the csolution contexts.
 
@@ -329,8 +337,8 @@ Look at the csolution contexts.
   1. Find the **CMSIS csolution** extension under the **Extensions** category.
 
   1. Clear the **Auto Generate Cprj** checkbox.
-
-## Convert a Keil MDK project to a csolution project
+<a name="convert-a-keil-mdk-project-to-a-csolution-project"></a>
+## ➤ Convert a Keil MDK project to a csolution project
 
 You can convert a Keil MDK project to csolution project from the **Arm CMSIS csolution** extension.
 
@@ -344,8 +352,8 @@ You can convert a Keil MDK project to csolution project from the **Arm CMSIS cso
 
     A "Conversion Successful" message displays once the conversion is done.
     The `*.cproject.yaml` and `*.csolution.yaml` files are available in the folder where the `.uvprojx` is stored.
-
-## Create a csolution project
+<a name="create-a-csolution-project"></a>
+## ➤ Create a csolution project
 
 **Note**: The **New CMSIS solution** view is still under development. To get access to it, select the **Experimental Features** checkbox in the **CMSIS csolution** extension settings.
 
@@ -381,21 +389,21 @@ Create a CMSIS solution which contains an empty CMSIS project.
 
     A `<solution_name>.csolution.yaml` and a `<project_name>.cproject.yaml` files are created under a **<solution_name>** entry.
 
-### Next steps
+### ➤ Next steps
 
 Explore the autocomplete feature available to edit the `csolution.yaml` and `cproject.yaml`.
 Check the [csolution: CMSIS Project Manager](https://github.com/Open-CMSIS-Pack/devtools/blob/main/tools/projmgr/docs/Manual/Overview.md#project-examples) documentation for project examples.
 
 Add CMSIS components with the **Manage Software Components** view. When you add components the `cproject.yaml` file is updated.
-
-## Manage a csolution project and its software components
+<a name="manage-a-csolution-project-and-its-software-components"></a>
+## ➤ Manage a csolution project and its software components
 
 The **Manage Software Components** view shows all the software components selected in the active project of a CMSIS solution. From this view you can see all the component details (called attributes in the [Open-CMSIS-Pack documentation](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/cp_PackTutorial.html#cp_SWComponents)).
 You can also:
 - Modify the software components to include in the project and manage the dependencies between components for each build target  you have defined in your solution.
 - Build the solution using different combinations of pack and component versions, and different versions of a toolchain.
 
-### Open the Manage Software Components view
+### ➤ Open the Manage Software Components view
 
 1. In Visual Studio Code, open the solution you want to work on.
 
@@ -430,7 +438,7 @@ Optionally, a software component might have these additional attributes:
 
 Use the **Search** field, to search on the component groups and sub-groups.
 
-### Modify the software components in your project
+### ➤ Modify the software components in your project
 
 You can add components from all the packs available (it is not limited to the packs that are already selected for a given project).
 
@@ -451,10 +459,10 @@ You can add components from all the packs available (it is not limited to the pa
     ![Fix validation issues](./docs/images/component-validation-issues.gif)
 
 **Note**: In the current version, you can undo changes from the **Source Control** view or by directly editing the `cproject.yaml` file.
+<a name="troubleshooting"></a>
+## ➤ Troubleshooting
 
-## Troubleshooting
-
-### Build fails to find toolchain
+### ➤ Build fails to find toolchain
 
 Errors such as `ld: unknown option: --cpu=Cortex-M4` appear in the build output. In this example, the CMSIS-Toolbox is trying to use the system linker rather than Arm Compiler's armlink.
 
@@ -463,8 +471,8 @@ Errors such as `ld: unknown option: --cpu=Cortex-M4` appear in the build output.
 1. Clean the solution. In particular, delete the `out` and `tmp` directories.
 
 1. Run the build again.
-
-## Known limitations
+<a name="known-limitations"></a>
+## ➤ Known limitations
 
 This extension is currently a preview. Known limitations include:
 

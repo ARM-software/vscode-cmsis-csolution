@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.10.0
+
+- Improve performance of component validation.
+- Handle partial component references in the manage components view.
+- Add resolution flow for components that are not found in solution's packs - offer to add missing pack via validation panel.
+- Filter validation errors of manage components by priority of importance.
+- Prevent .clangd file from generating incorrectly at the root of the workspace.
+
 ## 0.9.0
 
 - Clarify use of build type and target type in the create solutions UI.
