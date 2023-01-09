@@ -2,12 +2,15 @@
 name: Bug Report
 about: Create a report to help us improve.
 title: ''
-labels: ''
+labels: bug
 assignees: ''
 
 ---
 
-<!-- Prior to creating a bug report, please review
+<!-- 
+Report issues with the VS Code extension here. Issues with the build tools or csolution standard should be reported here: https://github.com/Open-CMSIS-Pack/devtools/.
+
+Prior to creating a bug report, please review
 existing issues at https://github.com/ARM-software/vscode-cmsis-csolution/issues
 to avoid creating duplicates.
 -->
