@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.11.0
+
+- Add resolution flow for components that have dependencies that are incompatible with the selected device/toolchain.
+- Change name of undefined build or target types from Default to Undefined.
+- Improve layout of Software Components view.
+- Fix bug in component filtering where some components were being shown as available for incompatible devices.
+- Fix bug in component resolution for partial references.
+- Add component descriptions to components table.
+
 ## 0.10.0
 
 - Improve performance of component validation.

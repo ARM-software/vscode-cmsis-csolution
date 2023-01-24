@@ -42,7 +42,7 @@ Here are the main steps:
     - [CMake and Ninja](#install-cmake-and-ninja).
     - [CMSIS-Toolbox](#install-the-cmsis-toolbox).
 
-1. [Initialize or update the catalog of public CMSIS-Pack versions](initialize-or-update-the-catalog-of-public-cmsis-pack-versions).
+1. [Initialize or update the catalog of public CMSIS-Pack versions](#initialize-or-update-the-catalog-of-public-cmsis-pack-versions).
 
 1. [Install and set up the clangd extension](#install-and-set-up-the-clangd-extension).
 
@@ -227,14 +227,12 @@ Modify the extension settings to point at the tools installed previously.
 **Note**: This is unnecessary if you add the toolbox bin directory to the PATH.
 
 1. In Visual Studio Code, open the Settings:
-    - On Windows or Linux, go to: **File** > **Preferences** > **Settings**
-    - On macOS, go to: **Code** > **Preferences** > **Settings**
+    - On Windows or Linux, go to: **File** > **Preferences** > **Settings**.
+    - On macOS, go to: **Code** > **Settings** > **Settings**.
 
-1. Find the **CMSIS csolution** extension under the **Extensions** category.
-
-1. Set _absolute_ paths for:
-    - The `cbuild` executable (available in the CMSIS-Toolbox **bin** directory) in the **Cbuild Path** field.
-    - The `csolution` executable (available in the CMSIS-Toolbox **bin** directory) in the **Csolution Path** field.
+1. Find the **Cmsis-csolution: Cbuild Path** and **Cmsis-csolution: Csolution Path** settings and set _absolute_ paths for:
+    - The `cbuild` executable (available in the CMSIS-Toolbox **bin** directory) in **Cbuild Path**.
+    - The `csolution` executable (available in the CMSIS-Toolbox **bin** directory) in **Csolution Path**.
 
 1. Restart Visual Studio Code.
 
@@ -244,11 +242,12 @@ There is no extra setup needed once **clangd** has been installed. The **Arm CMS
 
 You can turn off the automatic generation of the `.clangd` file and `compile_commands.json` file.
 
-1. Go to **Code** > **Preferences** > **Settings**.
+1. Open the Settings:
+    - On Windows or Linux, go to: **File** > **Preferences** > **Settings**.
+    - On macOS, go to: **Code** > **Settings** > **Settings**.
 
-1. Find the **CMSIS csolution** extension under the **Extensions** category.
+1. Find the **Cmsis-csolution: Auto Generate Clangd File** and **Cmsis-csolution: Auto Generate Compile Commands** settings and clear their checkboxes.
 
-1. Clear the **Auto Generate Clangd File** and **Auto Generate Compile Commands** checkboxes.
 <a name="work-with-a-csolution-example-project"></a>
 ## ➤ Work with a csolution example project
 
@@ -258,9 +257,9 @@ Once you have explored what you can do with the csolution example project, check
 
 ### ➤ Clone a csolution example project
 
-Clone the Blinky example project available in the following repository:
+Clone the example project available in the following repository:
 
-https://github.com/RobertRostohar/Demo_EW/
+https://github.com/Open-CMSIS-Pack/csolution-examples
 
 To clone a project in Visual Studio Code:
 
@@ -274,16 +273,16 @@ To clone a project in Visual Studio Code:
 
 1. Select a location.
 
-    Once the repository is cloned, open the Blinky example project in Visual Studio Code.
+    Once the repository is cloned, open the example project in Visual Studio Code.
 
 ### ➤ Install the CMSIS-Packs required for the example
 
 Install the CMSIS-Packs.
 
-1. Open the cloned example project from Visual Studio Code, then open the `Blinky.csolution.yml` file from the **Explorer** view.
+1. Open the cloned example project from Visual Studio Code, then open the `Hello.csolution.yml` file from the **Explorer** view.
 
     The required packs are listed under the `packs` key of the `csolution.yml` file.
-    For example, one of the required packs for `Blinky.csolution.yml` is `ARM::V2M_MPS3_SSE_300_BSP@1.2.0`, where `ARM` is the vendor, `V2M_MPS3_SSE_300_BSP` is the name of the pack, and `1.2.0` is the version.
+    For example, one of the required packs for `Hello.csolution.yml` is `ARM::V2M_MPS3_SSE_300_BSP@1.2.0`, where `ARM` is the vendor, `V2M_MPS3_SSE_300_BSP` is the name of the pack, and `1.2.0` is the version.
 
 1. Run the following command from the terminal to add the packs:
 
@@ -304,12 +303,12 @@ Look at the csolution contexts.
 
 1. Look at the available contexts for the csolution in the **CONTEXT** panel. You can change the build target and build configuration.
 
-    - **Active Solution**: The name of the active csolution, `Blinky` (`Blinky.csolution.yml`).
-    - **Target**: The build target `B-U585I-IOT02A` (a physical evaluation board from STMicroelectronics) or `AVH_MPS3_Corstone-300` (a Virtual Hardware Target).
-    - **Build**: The build configuration `Debug` or `Release`. A build configuration adds the flexibility to configure each build target towards a specific testing. Use `Debug` for a full debug build of the software for interactive debug, or `Release` for the final code deployment to the systems.
-    - **Project**: The name of the cproject, `Blinky` (`Blinky.cproject.yml`).
+    - **Active Solution**: The name of the active csolution, `Hello` (`Hello.csolution.yml`).
+    - **Target Type**: The build target `AVH` (Arm Virtual Hardware). For more details on Arm Virtual Hardware, check the [product overview](https://arm-software.github.io/AVH/main/overview/html/index.html). Note that for this example you can only select `AVH` and it corresponds to the Arm Corstone SSE-300 model. Some examples are compatible with physical evaluation boards as well, so you can have more options in the drop-down list in that case.
+    - **Build Type**: The build configuration `Debug` or `Release`. A build configuration adds the flexibility to configure each build target towards a specific testing. Use `Debug` for a full debug build of the software for interactive debug, or `Release` for the final code deployment to the systems.
+    - **Project**: The name of the cproject, `Hello` (`Hello.cproject.yml`).
 
-1. Click the **Explorer** icon ![Explorer icon](./docs/images/explorer-icon.png) and open the `Blinky.csolution.yml` and `Blinky.cproject.yml` files. YAML syntax support helps you with editing.
+1. Click the **Explorer** icon ![Explorer icon](./docs/images/explorer-icon.png) and open the `Hello.csolution.yml` and `Hello.cproject.yml` files. YAML syntax support helps you with editing.
 
 1. The `.cprj` file is regenerated when changes are made to the `csolution.yml` or `cproject.yml` files.
 
@@ -327,16 +326,17 @@ Look at the csolution contexts.
 
 1. Check the **TERMINAL** tab.
 
-1. Open the `Blinky.c` file and check the IntelliSense features available. Check the Visual Studio Code documentation on [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) to find out about the different features.
+1. Open the `Hello.c` file and check the IntelliSense features available. Check the Visual Studio Code documentation on [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) to find out about the different features.
 
 
 **Note**: You can turn off the automatic generation of the `cprj` file.
 
-  1. Go to **Code** > **Preferences** > **Settings**.
+  1. Open the Settings:
+    - On Windows or Linux, go to: **File** > **Preferences** > **Settings**.
+    - On macOS, go to: **Code** > **Settings** > **Settings**.
 
-  1. Find the **CMSIS csolution** extension under the **Extensions** category.
+  1. Find the **Cmsis-csolution: Auto Generate Cprj** setting and clear its checkbox.
 
-  1. Clear the **Auto Generate Cprj** checkbox.
 <a name="convert-a-keil-mdk-project-to-a-csolution-project"></a>
 ## ➤ Convert a Keil MDK project to a csolution project
 
@@ -355,7 +355,7 @@ You can convert a Keil MDK project to csolution project from the **Arm CMSIS cso
 <a name="create-a-csolution-project"></a>
 ## ➤ Create a csolution project
 
-**Note**: The **New CMSIS solution** view is still under development. To get access to it, select the **Experimental Features** checkbox in the **CMSIS csolution** extension settings.
+**Note**: The **New CMSIS solution** view is still under development. To get access to it, select the **Cmsis-csolution: Experimental Features** checkbox in the settings.
 
 Create a CMSIS solution which contains an empty CMSIS project.
 
@@ -394,16 +394,16 @@ Create a CMSIS solution which contains an empty CMSIS project.
 Explore the autocomplete feature available to edit the `csolution.yaml` and `cproject.yaml`.
 Check the [csolution: CMSIS Project Manager](https://github.com/Open-CMSIS-Pack/devtools/blob/main/tools/projmgr/docs/Manual/Overview.md#project-examples) documentation for project examples.
 
-Add CMSIS components with the **Manage Software Components** view. When you add components the `cproject.yaml` file is updated.
+Add CMSIS components with the **Software Components** view. When you add components the `cproject.yaml` file is updated.
 <a name="manage-a-csolution-project-and-its-software-components"></a>
 ## ➤ Manage a csolution project and its software components
 
-The **Manage Software Components** view shows all the software components selected in the active project of a CMSIS solution. From this view you can see all the component details (called attributes in the [Open-CMSIS-Pack documentation](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/cp_PackTutorial.html#cp_SWComponents)).
+The **Software Components** view shows all the software components selected in the active project of a CMSIS solution. From this view you can see all the component details (called attributes in the [Open-CMSIS-Pack documentation](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/cp_PackTutorial.html#cp_SWComponents)).
 You can also:
 - Modify the software components to include in the project and manage the dependencies between components for each build target  you have defined in your solution.
 - Build the solution using different combinations of pack and component versions, and different versions of a toolchain.
 
-### ➤ Open the Manage Software Components view
+### ➤ Open the Software Components view
 
 1. In Visual Studio Code, open the solution you want to work on.
 
@@ -411,17 +411,17 @@ You can also:
 
 1. Check the active project selected in the **CONTEXT** panel.
 
-1. Hover over the **CONTEXT** label and click the **Manage software components** icon ![Manage software components](./docs/images/manage-sw-components-icon.png).
+1. Hover over the **CONTEXT** label and click the **Manage software components** icon ![Manage software components](./docs/images/software-components-icon.png).
 
-    The **Manage Software Components** view opens.
+    The **Software Components** view opens.
 
-By default, the view displays all the components that are available for use. If you select the **Show selected only** checkbox, only the components included in the active project display.
+By default, the view displays the components included in the active project only (**Selected** toggle button). If you click the **All** toggle button, all the components available for use display.
 
-![The 'Manage Software Components' view showing all the components that are available for use](./docs/images/manage-sw-components-view.png)
+![The 'Software Components' view showing all the components that are available for use](./docs/images/software-components-view.png)
 
 With the **Target** drop-down list, you can select components for the different build targets you have in your solution.
 
-The first column in the **Manage Software Components** view shows how many instances of the component are deployed in the project. If the component has a selected checkbox, one instance is deployed. If the checkbox is not selected, it is not deployed in the project. If a number input displays, multiple instances of this component can be deployed to a project.
+The first column in the **Software Components** view shows how many instances of the component are deployed in the project. If the component has a selected checkbox, one instance is deployed. If the checkbox is not selected, it is not deployed in the project. If a number input displays, multiple instances of this component can be deployed to a project.
 
 The CMSIS-Pack specification states that each software component should have the following attributes:
 
@@ -436,13 +436,15 @@ Optionally, a software component might have these additional attributes:
 - Component vendor (Cvendor): The supplier of the software component. For example: **Keil**.
 - Bundle (Cbundle): Allows you to combine multiple software components into a software bundle. Bundles have a different set of components available. All the components in a bundle are compatible with each other but not with the components of another bundle. For example: **ARM Compiler** for the **Compiler** component class.
 
+Documentation links are available for some components. Click the book icon ![Book icon](./docs/images/docs-icon.png) of a component to open the related documentation.
+
 Use the **Search** field, to search on the component groups and sub-groups.
 
 ### ➤ Modify the software components in your project
 
 You can add components from all the packs available (it is not limited to the packs that are already selected for a given project).
 
-1. Make sure the **Show selected only** checkbox is not selected to display all the components available.
+1. Click the **All** toggle button to display all the components available.
 
 1. Select a build target in the **Target** drop-down list. You can select components for the different build targets defined in the solution.
 
@@ -450,13 +452,21 @@ You can add components from all the packs available (it is not limited to the pa
 
     The `cproject.yaml` file is automatically updated.
 
-1. From the **Validation** panel, you can manage the dependencies between components and solve validation issues.
+1. Manage the dependencies between components and solve validation issues from the **Validation** panel.
 
     Issues are highlighted in red and have an exclamation mark icon ![Issue icon](./docs/images/issue-icon.png) next to them. You can remove conflicting components from your selection or add missing component dependencies from a suggested list.
 
-1. If there are validation issues, hover over the issues in the **Validation** panel to get more details. You can click the proposed fixes to find the components in the list. In some cases, you may have to choose between different fix sets. Select a fix set in the drop-down list, then apply the changes and click **Apply Fix Set**.
+1. If there are validation issues, hover over the issues in the **Validation** panel to get more details. You can click the proposed fixes to find the components in the list. In some cases, you may have to choose between different fix sets. Select a fix set in the drop-down list, apply the changes, and then click **Apply**.
 
     ![Fix validation issues](./docs/images/component-validation-issues.gif)
+
+    If a pack is missing in the solution, a message "Component's pack is not included in your solution" displays. Click **Apply** to add the pack to the solution. Note that it does not install the missing pack. You must install the pack separately. When presented with multiple pack options, select one pack and click **Apply**.
+
+    There can be other cases such as:
+    - A component you selected is incompatible with the selected device and toolchain.
+    - A component you selected has dependencies which are incompatible with the selected device and toolchain.
+    - A component you selected has unresolvable dependencies.
+    In such cases, you must remove the component. Click **Apply** from the **Validation** panel.
 
 **Note**: In the current version, you can undo changes from the **Source Control** view or by directly editing the `cproject.yaml` file.
 <a name="troubleshooting"></a>
