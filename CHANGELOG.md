@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.11.1
+
+- Fix doc links in README.
+- Fix docs publishing.
+
 ## 0.11.0
 
 - Add resolution flow for components that have dependencies that are incompatible with the selected device/toolchain.

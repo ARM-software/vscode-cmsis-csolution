@@ -32,8 +32,8 @@ To submit feedback, please [create an issue](https://github.com/Arm-Software/vsc
 1. [Manage a csolution project and its software components](#manage-a-csolution-project-and-its-software-components)
 1. [Troubleshooting](#troubleshooting)
 1. [Known limitations](#known-limitations)
-<a name="set-up-your-development-environment"></a>
-## ➤ Set up your development environment
+
+## Set up your development environment
 
 Here are the main steps:
 
@@ -48,8 +48,7 @@ Here are the main steps:
 
 1. [Modify extension settings](#modify-extension-settings).
 
-<a name="general-comments"></a>
-### ➤ General comments
+### General comments
 
 #### On macOS
 
@@ -67,8 +66,7 @@ Run with `sudo` if you get permission errors.
 
 Use the **System Properties** dialog box to set environment variables and add directories to the PATH.
 
-<a name="install-the-tools"></a>
-### ➤ Install the tools
+### Install the tools
 
 #### Install a compiler toolchain
 
@@ -194,8 +192,7 @@ cbuild --version
 csolution --help
 ```
 
-<a name="initialize-or-update-the-catalog-of-public-cmsis-pack-versions"></a>
-### ➤ Initialize or update the catalog of public CMSIS-Pack versions
+### Initialize or update the catalog of public CMSIS-Pack versions
 
 If `CMSIS_PACK_ROOT` is pointing to an empty directory, run the following command from the terminal to initialize the directory structure and download the latest pack index file:
 
@@ -209,14 +206,13 @@ Otherwise, run the following command from the terminal to update the stored cata
 cpackget update-index
 ```
 
-<a name="install-and-set-up-the-clangd-extension"></a>
-### ➤ Install and set up the clangd extension
+### Install and set up the clangd extension
 
 Install the **clangd** extension from Visual Studio Code.
 
 The **clangd** extension requires the clangd language server. If the server is not found on your path, add it with the **clangd: Download language server** command from the Command Palette. Check the clangd extension Readme for more information.
-<a name="modify-extension-settings"></a>
-### ➤ Modify extension settings
+
+### Modify extension settings
 
 #### Modify settings to point at CMSIS-Toolbox
 
@@ -248,14 +244,13 @@ You can turn off the automatic generation of the `.clangd` file and `compile_com
 
 1. Find the **Cmsis-csolution: Auto Generate Clangd File** and **Cmsis-csolution: Auto Generate Compile Commands** settings and clear their checkboxes.
 
-<a name="work-with-a-csolution-example-project"></a>
-## ➤ Work with a csolution example project
+## Work with a csolution example project
 
 Now that your Visual Studio Code environment is set up, you can start working with a csolution project. You must clone an example project, install the CMSIS-Packs for the example, and then set a context.
 
 Once you have explored what you can do with the csolution example project, check the "Tutorial" section in the Keil Studio Pack for Visual Studio Code Desktop Readme. The Tutorial explains how to connect your board, flash the csolution to your board, and launch a debug session.
 
-### ➤ Clone a csolution example project
+### Clone a csolution example project
 
 Clone the example project available in the following repository:
 
@@ -275,7 +270,7 @@ To clone a project in Visual Studio Code:
 
     Once the repository is cloned, open the example project in Visual Studio Code.
 
-### ➤ Install the CMSIS-Packs required for the example
+### Install the CMSIS-Packs required for the example
 
 Install the CMSIS-Packs.
 
@@ -295,7 +290,7 @@ cpackget add <vendor>::<name>@<version>
 cpackget add <vendor>::<name>@<version> <vendor>::<name>@<version> <vendor>::<name>@<version>
 ```
 
-### ➤ Explore what you can do with the csolution example project
+### Explore what you can do with the csolution example project
 
 Look at the csolution contexts.
 
@@ -337,8 +332,7 @@ Look at the csolution contexts.
 
   1. Find the **Cmsis-csolution: Auto Generate Cprj** setting and clear its checkbox.
 
-<a name="convert-a-keil-mdk-project-to-a-csolution-project"></a>
-## ➤ Convert a Keil MDK project to a csolution project
+## Convert a Keil MDK project to a csolution project
 
 You can convert a Keil MDK project to csolution project from the **Arm CMSIS csolution** extension.
 
@@ -352,8 +346,8 @@ You can convert a Keil MDK project to csolution project from the **Arm CMSIS cso
 
     A "Conversion Successful" message displays once the conversion is done.
     The `*.cproject.yaml` and `*.csolution.yaml` files are available in the folder where the `.uvprojx` is stored.
-<a name="create-a-csolution-project"></a>
-## ➤ Create a csolution project
+
+## Create a csolution project
 
 **Note**: The **New CMSIS solution** view is still under development. To get access to it, select the **Cmsis-csolution: Experimental Features** checkbox in the settings.
 
@@ -389,21 +383,21 @@ Create a CMSIS solution which contains an empty CMSIS project.
 
     A `<solution_name>.csolution.yaml` and a `<project_name>.cproject.yaml` files are created under a **<solution_name>** entry.
 
-### ➤ Next steps
+### Next steps
 
 Explore the autocomplete feature available to edit the `csolution.yaml` and `cproject.yaml`.
 Check the [csolution: CMSIS Project Manager](https://github.com/Open-CMSIS-Pack/devtools/blob/main/tools/projmgr/docs/Manual/Overview.md#project-examples) documentation for project examples.
 
 Add CMSIS components with the **Software Components** view. When you add components the `cproject.yaml` file is updated.
-<a name="manage-a-csolution-project-and-its-software-components"></a>
-## ➤ Manage a csolution project and its software components
+
+## Manage a csolution project and its software components
 
 The **Software Components** view shows all the software components selected in the active project of a CMSIS solution. From this view you can see all the component details (called attributes in the [Open-CMSIS-Pack documentation](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/cp_PackTutorial.html#cp_SWComponents)).
 You can also:
 - Modify the software components to include in the project and manage the dependencies between components for each build target  you have defined in your solution.
 - Build the solution using different combinations of pack and component versions, and different versions of a toolchain.
 
-### ➤ Open the Software Components view
+### Open the Software Components view
 
 1. In Visual Studio Code, open the solution you want to work on.
 
@@ -440,7 +434,7 @@ Documentation links are available for some components. Click the book icon ![Boo
 
 Use the **Search** field, to search on the component groups and sub-groups.
 
-### ➤ Modify the software components in your project
+### Modify the software components in your project
 
 You can add components from all the packs available (it is not limited to the packs that are already selected for a given project).
 
@@ -469,10 +463,10 @@ You can add components from all the packs available (it is not limited to the pa
     In such cases, you must remove the component. Click **Apply** from the **Validation** panel.
 
 **Note**: In the current version, you can undo changes from the **Source Control** view or by directly editing the `cproject.yaml` file.
-<a name="troubleshooting"></a>
-## ➤ Troubleshooting
 
-### ➤ Build fails to find toolchain
+## Troubleshooting
+
+### Build fails to find toolchain
 
 Errors such as `ld: unknown option: --cpu=Cortex-M4` appear in the build output. In this example, the CMSIS-Toolbox is trying to use the system linker rather than Arm Compiler's armlink.
 
@@ -481,8 +475,8 @@ Errors such as `ld: unknown option: --cpu=Cortex-M4` appear in the build output.
 1. Clean the solution. In particular, delete the `out` and `tmp` directories.
 
 1. Run the build again.
-<a name="known-limitations"></a>
-## ➤ Known limitations
+
+## Known limitations
 
 This extension is currently a preview. Known limitations include:
 
