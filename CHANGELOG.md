@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.12.0
+
+- Add ability to select/deselect all components within a class or group in the software components view.
+- Bugfix - correctly set build and target types to 'Undefined' when not set in solution file.
+- Fix context view for solutions with no defined build or target types.
+
 ## 0.11.1
 
 - Fix doc links in README.
