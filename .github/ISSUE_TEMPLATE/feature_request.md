@@ -10,9 +10,14 @@ assignees: ''
 Type: Feature Request
 
 <!--
-Report issues with the VS Code extension here. Issues with the build tools or csolution standard should be reported here: https://github.com/Open-CMSIS-Pack/devtools/.
+Report issues with the Csolution VS Code extension here.
 
-Prior to creating a feature request, please review
+Report issues with…
+- The build tools or csolution standard here: https://github.com/Open-CMSIS-Pack/devtools/issues.
+- The embedded debug extension here: https://github.com/ARM-software/vscode-embedded-debug/issues.
+- The USB device management extension here: https://github.com/ARM-software/vscode-device-manager/issues.
+
+Prior to creating a bug report, please review
 existing issues at https://github.com/ARM-software/vscode-cmsis-csolution/issues
 to avoid creating duplicates.
 -->
