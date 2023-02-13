@@ -96,5 +96,12 @@
         "spdx": "EPL-2.0",
         "url": "https://github.com/eclipse-cdt-cloud",
         "license": "https://github.com/eclipse-cdt-cloud/clangd-contexts/blob/main/LICENSE"
+    },
+    {
+        "name": "vscode-messenger",
+        "version": "0.4.4",
+        "spdx": "MIT",
+        "url": "https://github.com/TypeFox/vscode-messenger",
+        "license": "https://github.com/TypeFox/vscode-messenger/blob/v0.4.4/LICENSE"
     }
 ]

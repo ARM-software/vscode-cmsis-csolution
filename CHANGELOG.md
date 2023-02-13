@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.13.0
+
+- Add command to install a solution's missing packs `cmsis-csolution.installMissingPacks`.
+- Improve performance of loading the list of devices for the Create Solution UI.
+- Bugfix - applying fix sets to components that don't have variant, vendor, or version defined no longer fails.
+
 ## 0.12.0
 
 - Add ability to select/deselect all components within a class or group in the software components view.
