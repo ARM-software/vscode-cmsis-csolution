@@ -187,6 +187,8 @@ xattr -d com.apple.quarantine <cmsis-toolbox-installation-dir>/bin/
 
     Run with `sudo` if you get permission errors.
 
+    Alternatively, if the command fails, execute the binaries located in `<cmsis-toolbox-installation-dir>/path/to/bin` individually and give them permission from system preferences.
+
 1. Check the installation with:
 
 ```

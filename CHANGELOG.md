@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.14.0
+
+- Allow component classes to be collapsed in the Software Components table.
+- Fix updating context webview in the background.
+- Validation fixes requiring adding components are now grouped together in the Software Components view.
+- Validation panel dropdown UI updated to show fix counts.
+- Expand or select rows on click in the Software Components table.
+- Show component group documentation in the Software Components table.
+- Added problem panel & csolution file diagnostics for "pack not installed" errors.
+- Added quickfix for "pack not installed" errors.
+
 ## 0.13.0
 
 - Add command to install a solution's missing packs `cmsis-csolution.installMissingPacks`.
