@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.15.0
+
+- Show documentation for component classes in the Software Components table.
+- Fix clicking the status bar entry.
+- Prevent content overflow of component name in the Software Components table.
+
 ## 0.14.0
 
 - Allow component classes to be collapsed in the Software Components table.

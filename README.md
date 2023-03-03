@@ -300,11 +300,11 @@ Look at the csolution contexts.
 
 1. Click the **CMSIS** icon ![CMSIS icon](./docs/images/cmsis-icon.png) in the Activity Bar to open the **Arm CMSIS csolution** extension.
 
-1. Look at the available contexts for the csolution in the **CONTEXT** panel. You can change the build target and build configuration.
+1. Look at the available contexts for the csolution in the **CONTEXT** panel. You can change the target type (build target) and build configuration.
 
     - **Active Solution**: The name of the active csolution, `Hello` (`Hello.csolution.yml`).
     - **Target Type**: The build target `AVH` (Arm Virtual Hardware). For more details on Arm Virtual Hardware, check the [product overview](https://arm-software.github.io/AVH/main/overview/html/index.html). Note that for this example you can only select `AVH` and it corresponds to the Arm Corstone SSE-300 model. Some examples are compatible with physical evaluation boards as well, so you can have more options in the drop-down list in that case.
-    - **Build Type**: The build configuration `Debug` or `Release`. A build configuration adds the flexibility to configure each build target towards a specific testing. Use `Debug` for a full debug build of the software for interactive debug, or `Release` for the final code deployment to the systems.
+    - **Build Type**: The build configuration `Debug` or `Release`. A build configuration adds the flexibility to configure each target type towards a specific testing. Use `Debug` for a full debug build of the software for interactive debug, or `Release` for the final code deployment to the systems.
     - **Project**: The name of the cproject, `Hello` (`Hello.cproject.yml`).
 
 1. Click the **Explorer** icon ![Explorer icon](./docs/images/explorer-icon.png) and open the `Hello.csolution.yml` and `Hello.cproject.yml` files. YAML syntax support helps you with editing.
@@ -398,7 +398,7 @@ Add CMSIS components with the **Software Components** view. When you add compone
 
 The **Software Components** view shows all the software components selected in the active project of a CMSIS solution. From this view you can see all the component details (called attributes in the [Open-CMSIS-Pack documentation](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/cp_PackTutorial.html#cp_SWComponents)).
 You can also:
-- Modify the software components to include in the project and manage the dependencies between components for each build target  you have defined in your solution.
+- Modify the software components to include in the project and manage the dependencies between components for each target type (build target) you have defined in your solution.
 - Build the solution using different combinations of pack and component versions, and different versions of a toolchain.
 
 ### Open the Software Components view
@@ -417,7 +417,7 @@ By default, the view displays the components included in the active project only
 
 ![The 'Software Components' view showing all the components that are available for use](./docs/images/software-components-view.png)
 
-With the **Target** drop-down list, you can select components for the different build targets you have in your solution.
+With the **Target** drop-down list, you can select components for the different target types (build targets) you have in your solution.
 
 The first column in the **Software Components** view shows how many instances of the component are deployed in the project. If the component has a selected checkbox, one instance is deployed. If the checkbox is not selected, it is not deployed in the project. If a number input displays, multiple instances of this component can be deployed to a project.
 
@@ -444,7 +444,7 @@ You can add components from all the packs available (it is not limited to the pa
 
 1. Click the **All** toggle button to display all the components available.
 
-1. Select a build target in the **Target** drop-down list. You can select components for the different build targets defined in the solution.
+1. Select a target type (build target) in the **Target** drop-down list. You can select components for the different target types defined in the solution.
 
 1. Use the checkboxes to select or clear components as required. If a number input displays instead of a checkbox, it means that multiple instances of this component can be deployed to a project. For some components, you can also select a vendor, variant, or version.
 
