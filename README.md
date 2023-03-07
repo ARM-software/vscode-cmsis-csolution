@@ -138,9 +138,7 @@ ninja --version
 ############### EDIT BELOW ###############
 # Set base directory of toolchain
 set(TOOLCHAIN_ROOT "/home/runner/gcc-arm-none-eabi-10-2020-q4-major/bin")
-set(PREFIX arm-none-eabi-)
 set(TOOLCHAIN_VERSION "11.2.1")
-set(EXT )
 ```
 
     As follows:
@@ -149,9 +147,7 @@ set(EXT )
 ############### EDIT BELOW ###############
 # Set base directory of toolchain
 set(TOOLCHAIN_ROOT "/Applications/ARM/bin")
-set(PREFIX arm-none-eabi-)
 set(TOOLCHAIN_VERSION "11.2.1")
-set(EXT )
 ```
 
     **Notes**:

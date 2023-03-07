@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.16.0
+
+- Fix resolution of components without explicit versions.
+- Update getBinaryFile command for CMSIS Toolbox 1.5.0.
+- Show a component as selected even if it is not selected in all build types.
+
 ## 0.15.0
 
 - Show documentation for component classes in the Software Components table.
