@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.16.1
+
+- Remove project name from getBinaryFile command output to match CMSIS Toolbox 1.5.0.
+
 ## 0.16.0
 
 - Fix resolution of components without explicit versions.
