@@ -103,5 +103,12 @@
         "spdx": "MIT",
         "url": "https://github.com/TypeFox/vscode-messenger",
         "license": "https://github.com/TypeFox/vscode-messenger/blob/v0.4.4/LICENSE"
+    },
+    {
+        "name": "yaml-ast-parser",
+        "version": "0.0.43",
+        "spdx": "Apache-2.0",
+        "url": "https://github.com/mulesoft-labs/yaml-ast-parser",
+        "license": "https://github.com/mulesoft-labs/yaml-ast-parser/blob/master/license.txt"
     }
 ]

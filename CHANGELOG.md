@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.16.2
+
+- Fix getBinaryFile command not honoring the output-dirs configuration in the *.csolution.yml file.
+
 ## 0.16.1
 
 - Remove project name from getBinaryFile command output to match CMSIS Toolbox 1.5.0.

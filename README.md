@@ -4,11 +4,11 @@
 
 This extension provides support for working with CMSIS solutions (csolution projects). It can be installed individually or together with other extensions contained in the **Keil Studio Pack** available for Visual Studio Code Desktop. Check the extension pack Readme first if you want to install the extensions using the pack.
 
-The **Arm CMSIS csolution** extension can work in combination with the **Arm Device Manager** (Identifier: `arm.device-manager`) and **Arm Embedded Debugger** (Identifier: `arm.embedded-debug`) extensions.
+The **Arm CMSIS csolution** extension can work with the **Arm Device Manager** (Identifier: `arm.device-manager`) and **Arm Embedded Debugger** (Identifier: `arm.embedded-debug`) extensions.
 
 This Readme explains how to set up your development environment to be able to work with CMSIS solutions in Visual Studio Code.
 
-Once your development environment is ready, you can clone a csolution example project, install the CMSIS-Packs required for the example, and then start working with the example.
+Once your development environment is ready, you can clone a csolution example project, install the CMSIS-Packs required, and then start working with the example.
 
 Note that you can convert a Keil MDK project in `.uvprojx` format to a csolution project from the **Arm CMSIS csolution** extension as explained in this Readme.
 
@@ -52,7 +52,7 @@ Here are the main steps:
 
 #### On macOS
 
-Some unsigned binaries need to be de-quarantined before you can run them. This is only required for newer versions of macOS.
+Some unsigned binaries must be de-quarantined before you can run them. It is only required for newer versions of macOS.
 
 Run the command from the terminal:
 
@@ -112,7 +112,7 @@ brew install ninja
       - Download the CMake installer from here: https://cmake.org/download/
       - Download the Ninja executable from here: https://github.com/ninja-build/ninja/releases
 
-1. If this has not already been handled by the system package manager, add `cmake` and `ninja` to the PATH.
+1. If the system package manager has not already added `cmake` and `ninja` to the PATH, add them.
 
 1. Check the installation by running the following commands from the terminal:
 
@@ -132,7 +132,7 @@ ninja --version
 
 1. Modify the `*.cmake` file for the compiler toolchain you have installed. If you have several toolchains installed, modify the corresponding `*.cmake` files. All the `*.cmake` files are stored in `<cmsis-toolbox-installation-dir>/etc/`.
 
-    For example, modify the section below:
+    For example, modify the following section:
 
 ```
 ############### EDIT BELOW ###############
@@ -159,7 +159,7 @@ set(TOOLCHAIN_VERSION "11.2.1")
 
     - `CMSIS_COMPILER_ROOT`: Set to the path of the CMSIS-Toolbox `etc` directory. For example, `/<cmsis-toolbox-installation-dir>/etc`.
     - `PATH`: Add the CMSIS-Toolbox `bin` directory to the system path. For example, `/<cmsis-toolbox-installation-dir>/bin`.
-    - `CMSIS_PACK_ROOT`: Set to the path of the CMSIS-Pack root directory that stores software packs. This can be any directory, but do not leave it undefined. If you had installed the CMSIS-Toolbox previously, or if you are a Keil MDK user, the default location for packs is `$HOME/.cache/arm/packs` on Mac or Linux and `%HOME%\AppData\Local\Arm\Packs` on Windows.
+    - `CMSIS_PACK_ROOT`: Set to the path of the CMSIS-Pack root directory that stores software packs. It can be any directory, but do not leave it undefined. If you had installed the CMSIS-Toolbox previously, or if you are a Keil MDK user, the default location for packs is `$HOME/.cache/arm/packs` on Mac or Linux and `%HOME%\AppData\Local\Arm\Packs` on Windows.
 
 1. Configure an HTTP proxy (optional):
 
@@ -171,7 +171,7 @@ set(TOOLCHAIN_VERSION "11.2.1")
 
 1. On macOS:
 
-    The CMSIS-Toolbox is currently not signed, so you must de-quarantine its binaries as explained in the [General comments](#general-comments) section.
+    The CMSIS-Toolbox is not signed, so you must de-quarantine its binaries as explained in the [General comments](#general-comments) section.
 
     Run the command from the terminal:
 
@@ -220,9 +220,9 @@ The **clangd** extension requires the clangd language server. If the server is n
 
 Modify the extension settings to point at the tools installed previously.
 
-**Note**: This is unnecessary if you add the toolbox bin directory to the PATH.
+**Note**: It is unnecessary if you add the toolbox bin directory to the PATH.
 
-1. In Visual Studio Code, open the Settings:
+1. In Visual Studio Code, open the settings:
     - On Windows or Linux, go to: **File** > **Preferences** > **Settings**.
     - On macOS, go to: **Code** > **Settings** > **Settings**.
 
@@ -248,7 +248,7 @@ You can turn off the automatic generation of the `.clangd` file and `compile_com
 
 Now that your Visual Studio Code environment is set up, you can start working with a csolution project. You must clone an example project, install the CMSIS-Packs for the example, and then set a context.
 
-Once you have explored what you can do with the csolution example project, check the "Tutorial" section in the Keil Studio Pack for Visual Studio Code Desktop Readme. The Tutorial explains how to connect your board, flash the csolution to your board, and launch a debug session.
+Once you have explored what you can do with the example project, check the "Tutorial" section in the Keil Studio Pack for Visual Studio Code Desktop Readme. The Tutorial explains how to connect your board, run the csolution on your board, and launch a debug session.
 
 ### Clone a csolution example project
 
@@ -279,7 +279,7 @@ Install the CMSIS-Packs.
     The required packs are listed under the `packs` key of the `csolution.yml` file.
     For example, one of the required packs for `Hello.csolution.yml` is `ARM::V2M_MPS3_SSE_300_BSP@1.2.0`, where `ARM` is the vendor, `V2M_MPS3_SSE_300_BSP` is the name of the pack, and `1.2.0` is the version.
 
-1. Run the following command from the terminal to add the packs:
+1. To add the packs, run the following command from the terminal:
 
 ```
 cpackget add <vendor>::<name>@<version>
@@ -332,6 +332,37 @@ Look at the csolution contexts.
 
   1. Find the **Cmsis-csolution: Auto Generate Cprj** setting and clear its checkbox.
 
+## Configure a build task
+
+In Visual Studio Code, you can automate certain tasks by configuring a `tasks.json` file. See [Integrate with External Tools via Tasks](https://code.visualstudio.com/docs/editor/tasks) for more details.
+
+In the context of the **Arm CMSIS csolution** extension, you can configure a build task using the `tasks.json` file to build your projects. When you run the build task, the extension executes `cbuild` with the options you defined.
+
+1. Go to **Terminal** > **Configure Tasks...**.
+
+1. In the drop-down list that opens at the top of the window, select the **cmsis-csolution.build:Build** task.
+
+    A `tasks.json` file opens with some default configuration.
+
+        ``{
+            "tasks": [
+                {
+                    "type": "cmsis-csolution.build",
+                    "project": "${command:cmsis-csolution.getCprjPath}",
+                    "problemMatcher": [],
+                    "label": "cmsis-csolution.build: Build",
+                }
+            ]
+        }``
+
+  1. Modify the configuration.
+
+      With IntelliSense, you can see the full set of task properties and values available in the `tasks.json` file. You can bring up suggestions by using **Trigger Suggest** from the Command Palette. You can also display the task properties specific to `cbuild` by typing ``cbuild --help`` in the terminal.
+
+  1. Save the `tasks.json` file.
+
+Alternatively, you can define a default build task by selecting **Terminal** > **Configure Default Build Task...**. Default build tasks are executed directly when triggering **Terminal** > **Run Build Task...**.
+
 ## Convert a Keil MDK project to a csolution project
 
 You can convert a Keil MDK project to csolution project from the **Arm CMSIS csolution** extension.
@@ -363,17 +394,17 @@ Create a CMSIS solution which contains an empty CMSIS project.
 
 1. Click the **Target** drop-down list and select a device or a board from the lists available.
 
-    The **Target type** field is automatically populated with `Device` or `Board` depending on what you selected in the **Target** drop-down list. You can edit the value if you need.
+    The **Target type** field is automatically populated with `Device` or `Board` depending on what you selected in the **Target** drop-down list. If you need, you can edit the value.
 
 1. In the **Project name** and **Solution name** fields, type a project name and a solution name.
 
-1. Check the **Solution preview**. This displays the solution name and the project name, as well as the target hardware selected for the solution, the compiler, and the build types available.
+1. Check the **Solution preview**. It displays the solution name and the project name, as well as the target hardware selected for the solution, the compiler, and the build types available.
 
 1. Check the default options:
 
     - **Initialize Git repo**: The extension initializes the solution as a Git repository. Clear the checkbox if you do not want to turn your solution into a Git repository.
 
-    - **Make project active**: The extension sets the newly created project that is part of the new solution as the active project. **Build**, **Flash** and **Debug** actions only apply to the active project. Clear the checkbox if you do not want to make the new project active.
+    - **Make project active**: The extension sets the newly created project that is part of the new solution as the active project. **Build**, **Run**, and **Debug** actions only apply to the active project. If you do not want to make the new project active, clear the checkbox.
 
 1. Click **Create**. Keil Studio creates the solution in your workspace.
 
@@ -388,11 +419,11 @@ Create a CMSIS solution which contains an empty CMSIS project.
 Explore the autocomplete feature available to edit the `csolution.yaml` and `cproject.yaml`.
 Check the [csolution: CMSIS Project Manager](https://github.com/Open-CMSIS-Pack/devtools/blob/main/tools/projmgr/docs/Manual/Overview.md#project-examples) documentation for project examples.
 
-Add CMSIS components with the **Software Components** view. When you add components the `cproject.yaml` file is updated.
+Add CMSIS components with the **Software Components** view. When you add components, the `cproject.yaml` file is updated.
 
 ## Manage a csolution project and its software components
 
-The **Software Components** view shows all the software components selected in the active project of a CMSIS solution. From this view you can see all the component details (called attributes in the [Open-CMSIS-Pack documentation](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/cp_PackTutorial.html#cp_SWComponents)).
+The **Software Components** view shows all the software components selected in the active project of a CMSIS solution. From this view, you can see all the component details (called attributes in the [Open-CMSIS-Pack documentation](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/cp_PackTutorial.html#cp_SWComponents)).
 You can also:
 - Modify the software components to include in the project and manage the dependencies between components for each target type (build target) you have defined in your solution.
 - Build the solution using different combinations of pack and component versions, and different versions of a toolchain.
@@ -417,7 +448,7 @@ With the **Target** drop-down list, you can select components for the different 
 
 The first column in the **Software Components** view shows how many instances of the component are deployed in the project. If the component has a selected checkbox, one instance is deployed. If the checkbox is not selected, it is not deployed in the project. If a number input displays, multiple instances of this component can be deployed to a project.
 
-The CMSIS-Pack specification states that each software component should have the following attributes:
+The CMSIS-Pack specification states that each software component must have the following attributes:
 
 - Component class (Cclass): A top-level component name. For example: **CMSIS**. For a full list of component classes, see [Software Component Cclasses](https://arm-software.github.io/CMSIS_5/Pack/html/cp_Packs.html#pack_Cclass) in the Open-CMSIS-Pack documentation.
 - Component group (Cgroup): A component group name. For example: **CORE** for the **CMSIS** component class.
@@ -430,9 +461,9 @@ Optionally, a software component might have these additional attributes:
 - Component vendor (Cvendor): The supplier of the software component. For example: **Keil**.
 - Bundle (Cbundle): Allows you to combine multiple software components into a software bundle. Bundles have a different set of components available. All the components in a bundle are compatible with each other but not with the components of another bundle. For example: **ARM Compiler** for the **Compiler** component class.
 
-Documentation links are available for some components. Click the book icon ![Book icon](./docs/images/docs-icon.png) of a component to open the related documentation.
+Documentation links are available for some components. To open the related documentation, click the book icon ![Book icon](./docs/images/docs-icon.png) of a component.
 
-Use the **Search** field, to search on the component groups and sub-groups.
+To search on the component groups and sub-groups, use the **Search** field.
 
 ### Modify the software components in your project
 
@@ -450,7 +481,7 @@ You can add components from all the packs available (it is not limited to the pa
 
     Issues are highlighted in red and have an exclamation mark icon ![Issue icon](./docs/images/issue-icon.png) next to them. You can remove conflicting components from your selection or add missing component dependencies from a suggested list.
 
-1. If there are validation issues, hover over the issues in the **Validation** panel to get more details. You can click the proposed fixes to find the components in the list. In some cases, you may have to choose between different fix sets. Select a fix set in the drop-down list, apply the changes, and then click **Apply**.
+1. If there are validation issues, hover over the issues in the **Validation** panel to get more details. You can click the proposed fixes to find the components in the list. Sometimes, you must choose between different fix sets. Select a fix set in the drop-down list, apply the changes, and then click **Apply**.
 
     ![Fix validation issues](./docs/images/component-validation-issues.gif)
 
@@ -470,7 +501,7 @@ You can add components from all the packs available (it is not limited to the pa
 
 Errors such as `ld: unknown option: --cpu=Cortex-M4` appear in the build output. In this example, the CMSIS-Toolbox is trying to use the system linker rather than Arm Compiler's armlink.
 
-1. Ensure the `CMSIS_COMPILER_ROOT` environment variable is set correctly. You may need to restart Visual Studio Code so it picks up the new environment.
+1. Ensure the `CMSIS_COMPILER_ROOT` environment variable is set correctly. Restart Visual Studio Code so it picks up the new environment.
 
 1. Clean the solution. In particular, delete the `out` and `tmp` directories.
 
@@ -478,6 +509,6 @@ Errors such as `ld: unknown option: --cpu=Cortex-M4` appear in the build output.
 
 ## Known limitations
 
-This extension is currently a preview. Known limitations include:
+This extension is a preview. Known limitations include:
 
 - No support for cdefaults.yml and clayer.yml files, for example target and build types from the cdefaults file do not appear in the **CONTEXT** view.
