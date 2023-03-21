@@ -277,18 +277,12 @@ Install the CMSIS-Packs.
 1. Open the cloned example project from Visual Studio Code, then open the `Hello.csolution.yml` file from the **Explorer** view.
 
     The required packs are listed under the `packs` key of the `csolution.yml` file.
-    For example, one of the required packs for `Hello.csolution.yml` is `ARM::V2M_MPS3_SSE_300_BSP@1.2.0`, where `ARM` is the vendor, `V2M_MPS3_SSE_300_BSP` is the name of the pack, and `1.2.0` is the version.
+    For example, one of the required packs for `Hello.csolution.yml` is `ARM::V2M_MPS3_SSE_300_BSP@1.2.0`.
+    If one or several packs are missing, errors display in the **PROBLEMS** view.
 
-1. To add the packs, run the following command from the terminal:
+1.  To install a missing pack, right-click the error in the **PROBLEMS** view and select the **Install missing pack** option. If there are several packs missing, use **Install all missing packs**.
 
-```
-cpackget add <vendor>::<name>@<version>
-```
-      Note that you can add multiple packs at once as follows:
-
-```
-cpackget add <vendor>::<name>@<version> <vendor>::<name>@<version> <vendor>::<name>@<version>
-```
+    You can also install missing packs with the **CMSIS: Install required packs for active solution** command from the Command Palette.
 
 ### Explore what you can do with the csolution example project
 
@@ -423,9 +417,14 @@ Add CMSIS components with the **Software Components** view. When you add compone
 
 ## Manage a csolution project and its software components
 
-The **Software Components** view shows all the software components selected in the active project of a CMSIS solution. From this view, you can see all the component details (called attributes in the [Open-CMSIS-Pack documentation](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/cp_PackTutorial.html#cp_SWComponents)).
+The **Software Components** view shows all the software components selected in the active project of a CMSIS solution.
+
+From this view you can see all the component details (called attributes in the [Open-CMSIS-Pack documentation](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/cp_PackTutorial.html).
+
 You can also:
+
 - Modify the software components to include in the project and manage the dependencies between components for each target type (build target) you have defined in your solution.
+
 - Build the solution using different combinations of pack and component versions, and different versions of a toolchain.
 
 ### Open the Software Components view
@@ -446,24 +445,22 @@ By default, the view displays the components included in the active project only
 
 With the **Target** drop-down list, you can select components for the different target types (build targets) you have in your solution.
 
-The first column in the **Software Components** view shows how many instances of the component are deployed in the project. If the component has a selected checkbox, one instance is deployed. If the checkbox is not selected, it is not deployed in the project. If a number input displays, multiple instances of this component can be deployed to a project.
+The CMSIS-Pack specification states that each software component should have the following attributes
 
-The CMSIS-Pack specification states that each software component must have the following attributes:
-
-- Component class (Cclass): A top-level component name. For example: **CMSIS**. For a full list of component classes, see [Software Component Cclasses](https://arm-software.github.io/CMSIS_5/Pack/html/cp_Packs.html#pack_Cclass) in the Open-CMSIS-Pack documentation.
+- Component class (Cclass): A top-level component name. For example: **CMSIS**.
 - Component group (Cgroup): A component group name. For example: **CORE** for the **CMSIS** component class.
 - Component version (Cversion): The version number of the software component.
 
 Optionally, a software component might have these additional attributes:
 
-- Component sub-group (Csub): A component sub-group that is used when multiple compatible implementations of a component are available. For example: **Keil RTX5** implements **CMSIS &gt; RTOS2**.
-- Component variant (Cvariant): A variant of the software component is typically used when the same implementation has multiple top-level configurations, like **Source** for **RTOS2 > Keil RTX5**.
-- Component vendor (Cvendor): The supplier of the software component. For example: **Keil**.
+- Component sub-group (Csub): A component sub-group that is used when multiple compatible implementations of a component are available. For example: **Keil RTX5** under **CMSIS > RTOS2**.
+- Component variant (Cvariant): A variant of the software component is typically used when the same implementation has multiple top-level configurations, like **Source** for **Keil RTX5**.
+- Component vendor (Cvendor): The supplier of the software component. For example: **ARM**.
 - Bundle (Cbundle): Allows you to combine multiple software components into a software bundle. Bundles have a different set of components available. All the components in a bundle are compatible with each other but not with the components of another bundle. For example: **ARM Compiler** for the **Compiler** component class.
 
-Documentation links are available for some components. To open the related documentation, click the book icon ![Book icon](./docs/images/docs-icon.png) of a component.
+Documentation links are available for some components at the class, group, or sub-group level. Click the book icon ![Book icon](./docs/images/docs-icon.png) of a component to open the related documentation.
 
-To search on the component groups and sub-groups, use the **Search** field.
+Use the **Search** field to search the list of components.
 
 ### Modify the software components in your project
 
@@ -473,7 +470,7 @@ You can add components from all the packs available (it is not limited to the pa
 
 1. Select a target type (build target) in the **Target** drop-down list. You can select components for the different target types defined in the solution.
 
-1. Use the checkboxes to select or clear components as required. If a number input displays instead of a checkbox, it means that multiple instances of this component can be deployed to a project. For some components, you can also select a vendor, variant, or version.
+1. Use the checkboxes to select or clear components as required. For some components, you can also select a vendor, variant, or version.
 
     The `cproject.yaml` file is automatically updated.
 
@@ -481,11 +478,9 @@ You can add components from all the packs available (it is not limited to the pa
 
     Issues are highlighted in red and have an exclamation mark icon ![Issue icon](./docs/images/issue-icon.png) next to them. You can remove conflicting components from your selection or add missing component dependencies from a suggested list.
 
-1. If there are validation issues, hover over the issues in the **Validation** panel to get more details. You can click the proposed fixes to find the components in the list. Sometimes, you must choose between different fix sets. Select a fix set in the drop-down list, apply the changes, and then click **Apply**.
+1. If there are validation issues, hover over the issues in the **Validation** panel to get more details. You can click the proposed fixes to find the components in the list. In some cases, you may have to choose between different fix sets. Select a fix set in the drop-down list, make the required component choices, and then click **Apply**.
 
-    ![Fix validation issues](./docs/images/component-validation-issues.gif)
-
-    If a pack is missing in the solution, a message "Component's pack is not included in your solution" displays. Click **Apply** to add the pack to the solution. Note that it does not install the missing pack. You must install the pack separately. When presented with multiple pack options, select one pack and click **Apply**.
+    If a pack is missing in the solution, a message "Component's pack is not included in your solution" displays in the **Validation** panel. An error also displays in the **PROBLEMS** view. See [Install the CMSIS-Packs required for the example](#install-the-cmsis-packs-required-for-the-example) section to know how to install CMSIS-Packs.
 
     There can be other cases such as:
     - A component you selected is incompatible with the selected device and toolchain.
