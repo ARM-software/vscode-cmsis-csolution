@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.17.0
+
+- Fixed spurious validation errors that appeared for some components in the Software Components view.
+
 ## 0.16.2
 
 - Fix getBinaryFile command not honoring the output-dirs configuration in the *.csolution.yml file.
