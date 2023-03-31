@@ -506,4 +506,6 @@ Errors such as `ld: unknown option: --cpu=Cortex-M4` appear in the build output.
 
 This extension is a preview. Known limitations include:
 
-- No support for cdefaults.yml and clayer.yml files, for example target and build types from the cdefaults file do not appear in the **CONTEXT** view.
+- The Software Components view does not take clayer files into account. This means some validations may be incorrect.
+- No support for cdefaults.yml. The Software Components view and validation will not use the compiler set in the cdefaults file.
+- Packs specified in cproject or clayer files are not supported by the pack installation flow or Software Components view.

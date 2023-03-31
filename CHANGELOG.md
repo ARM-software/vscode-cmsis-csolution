@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.18.0
+
+- Only activate the extension if the workspace contains a csolution.
+- Remove unpublished PDSC manifests that were previously shipped with the extension.
+
 ## 0.17.0
 
 - Fixed spurious validation errors that appeared for some components in the Software Components view.
