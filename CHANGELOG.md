@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.19.0
+
+- Add new default "All Targets" filter to the Software Components UI, showing components that are
+compatible with all of the solution's target types.
+
 ## 0.18.0
 
 - Only activate the extension if the workspace contains a csolution.
