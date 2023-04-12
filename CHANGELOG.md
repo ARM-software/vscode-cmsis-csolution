@@ -1,7 +1,13 @@
 # Change Log
 
+## 0.20.0
+
+- Add the origin CMSIS Pack to the component name tooltip in the Software Components view.
+- Optimize for-contexts when writing components.
+
 ## 0.19.0
 
+- Do not close Software Components UI when the csolution file is invalid.
 - Add new default "All Targets" filter to the Software Components UI, showing components that are
 compatible with all of the solution's target types.
 

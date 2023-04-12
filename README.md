@@ -423,7 +423,7 @@ From this view you can see all the component details (called attributes in the [
 
 You can also:
 
-- Modify the software components to include in the project and manage the dependencies between components for each target type (build target) you have defined in your solution.
+- Modify the software components to include in the project and manage the dependencies between components for each target type defined in your solution, or for all the target types at once.
 
 - Build the solution using different combinations of pack and component versions, and different versions of a toolchain.
 
@@ -443,7 +443,7 @@ By default, the view displays the components included in the active project only
 
 ![The 'Software Components' view showing all the components that are available for use](./docs/images/software-components-view.png)
 
-With the **Target** drop-down list, you can select components for the different target types (build targets) you have in your solution.
+With the **Target** drop-down list, you can select components for the different target types you have in your solution or for all the target types at once.
 
 The CMSIS-Pack specification states that each software component should have the following attributes
 
@@ -468,7 +468,7 @@ You can add components from all the packs available (it is not limited to the pa
 
 1. Click the **All** toggle button to display all the components available.
 
-1. Select a target type (build target) in the **Target** drop-down list. You can select components for the different target types defined in the solution.
+1. Select a specific target type in the **Target** drop-down list or, if you want to modify all the target types at once, select **All Targets**.
 
 1. Use the checkboxes to select or clear components as required. For some components, you can also select a vendor, variant, or version.
 
