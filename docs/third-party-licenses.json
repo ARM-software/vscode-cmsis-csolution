@@ -110,5 +110,12 @@
         "spdx": "Apache-2.0",
         "url": "https://github.com/mulesoft-labs/yaml-ast-parser",
         "license": "https://github.com/mulesoft-labs/yaml-ast-parser/blob/master/license.txt"
+    },
+    {
+        "name": "yaml",
+        "version": "2.2.1",
+        "spdx": "ISC",
+        "url": "https://github.com/eemeli/yaml",
+        "license": "https://github.com/eemeli/yaml/blob/main/LICENSE"
     }
 ]

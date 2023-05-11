@@ -21,11 +21,9 @@ To submit feedback, please [create an issue](https://github.com/Arm-Software/vsc
 ## Table of contents
 
 1. [Set up your development environment](#set-up-your-development-environment)
-    - [General comments](#general-comments)
-    - [Install the tools](#install-the-tools)
-    - [Initialize or update the catalog of public CMSIS-Pack versions](#initialize-or-update-the-catalog-of-public-cmsis-pack-versions)
+    - [Install the tools using Microsoft vcpkg](#install-the-tools-using-microsoft-vcpkg)
+    - [Configure an HTTP proxy (optional)](#configure-an-http-proxy-(optional))
     - [Install and set up the clangd extension](#install-and-set-up-the-clangd-extension)
-    - [Modify extension settings](#modify-extension-settings)
 1. [Work with a csolution example project](#work-with-a-csolution-example-project)
 1. [Convert a Keil MDK project to a csolution project](#convert-a-keil-mdk-project-to-a-csolution-project)
 1. [Create a csolution project](#create-a-csolution-project)
@@ -37,200 +35,113 @@ To submit feedback, please [create an issue](https://github.com/Arm-Software/vsc
 
 Here are the main steps:
 
-1. Install the following tools:
-    - [Compiler toolchain](#install-a-compiler-toolchain).
-    - [CMake and Ninja](#install-cmake-and-ninja).
-    - [CMSIS-Toolbox](#install-the-cmsis-toolbox).
+1. [Install the following tools using Microsoft vcpkg](#install-the-tools-using-microsoft-vcpkg):
+    - Arm GNU Toolchain (includes the GNU Compiler - GCC). The **arm-none-eabi-gcc** release will be installed.
+    - CMSIS-Toolbox (ctools).
+    - CMake and Ninja. The CMSIS-Toolbox uses the CMake build system with a Ninja generator.
 
-1. [Initialize or update the catalog of public CMSIS-Pack versions](#initialize-or-update-the-catalog-of-public-cmsis-pack-versions).
+1. [Configure an HTTP proxy (optional)](#configure-an-http-proxy-(optional)).
 
 1. [Install and set up the clangd extension](#install-and-set-up-the-clangd-extension).
 
-1. [Modify extension settings](#modify-extension-settings).
+### Install the tools using Microsoft vcpkg
 
-### General comments
+Arm recommends using [Microsoft vcpkg](https://github.com/microsoft/vcpkg/blob/master/README.md) to help you set up your environment. In just a few steps, you can acquire and activate the necessary tools to work with csolution projects.
 
-#### On macOS
+Arm provides you with an example project that is shipped with a manifest file (`vcpkg-configuration.json`). This manifest file records the vcpkg artifacts that you need to work with your projects. An artifact is a set of packages required for a working development environment. Examples of relevant packages include compilers, linkers, debuggers, build systems, and platform SDKs. More details on artifacts are available in the [Microsoft vcpkg-tool repository](https://github.com/microsoft/vcpkg-tool#vcpkg-artifacts).
 
-Some unsigned binaries must be de-quarantined before you can run them. It is only required for newer versions of macOS.
+#### Prerequisite
 
-Run the command from the terminal:
+As a prerequisite, you must install the [**Microsoft Embedded Tools**](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-embedded-tools) extension. This extension installs the tools from the `vcpkg-configuration.json` file provided with Arm's example project.
 
-```
-xattr -d com.apple.quarantine /path/to/bin
-```
+#### Clone the example project
 
-Run with `sudo` if you get permission errors.
+Clone the example project available in the following repository:
 
-#### On Windows
+https://github.com/Arm-Examples/keil-studio-get-started
 
-Use the **System Properties** dialog box to set environment variables and add directories to the PATH.
+To clone a project in Visual Studio Code:
 
-### Install the tools
+1. Go to **View** > **Command Palette...**.
 
-#### Install a compiler toolchain
+1. In the field that opens at the top of the window, type `Git`, then select the **Git:Clone** command in the drop-down list.
 
-Install the Arm Compiler for Embedded toolchain or the Arm GNU Toolchain (includes the GNU Compiler - GCC), or both.
+1. Copy and paste the GitHub repository URL provided in the field that displays and press **Enter**.
 
-##### Install the Arm Compiler for Embedded toolchain
+    A dialog box opens to select where to clone the repository.
 
-On Windows or Linux, download Arm Compiler for Embedded version 6.18 from [Arm Developer](https://developer.arm.com/downloads/-/arm-compiler-for-embedded) or use the Arm Compiler for Embedded toolchain available with [Keil MDK](https://www2.keil.com/mdk5).
+1. Select a location.
 
-**Note**: There is no build available for macOS at the moment.
+    Once the repository is cloned, open the example project in Visual Studio Code.
 
-##### Install the Arm GNU Toolchain (GCC)
+#### Check the vcpkg-configuration.json file and handle errors
 
-1. Download the Arm GNU Toolchain version 11.2 from
-[Arm Developer](https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads). Choose the **arm-none-eabi** release for your platform.
-
-    Archive files are available for all platforms. Installers are available for macOS and Windows.
-
-1. To check if the ARM GNU Toolchain was installed, navigate to the `<arm-toolchain-installation-dir>/bin/` directory.
-2. Check the installation by running the following command from the terminal:
+The `vcpkg-configuration.json` manifest file instructs Microsoft vcpkg to install the artifacts required to build the csolution example project. If you open the manifest file, you will see for example:
 
 ```
-arm-none-eabi-g++ --help
+  "requires": {
+    "microsoft:tools/kitware/cmake": "^3.25.2",
+    "microsoft:tools/ninja-build/ninja": "^1.10.2",
+    "microsoft:compilers/arm-none-eabi-gcc": "^10.3.1-2021.10",
+    "open-cmsis-pack:tools/open-cmsis-pack/ctools": "^1.5.0"
+  }
 ```
 
-#### Install CMake and Ninja
+The artifacts installed are cmake, ninja, arm-none-eabi-gcc and ctools.
 
-The CMSIS-Toolbox uses the CMake build system with a Ninja generator, so you must install these tools before installing CMSIS-Toolbox.
+If Microsoft vcpkg shows an error in the Visual Studio Code status bar, check the **OUTPUT** tab:
 
-1. Install the CMake and Ninja build tools with your system package manager or download the latest releases from the CMake and Ninja download pages.
+1. Go to **View** > **Output**.
 
-    - Installation with a system package manager:
+    The **OUTPUT** tab opens.
 
-      Example with Homebrew on macOS:
+1. Select **vcpkg** in the drop-down list in the top right corner and check what has been logged.
 
-```
-brew install cmake
-brew install ninja
-```
+1. If you see an error such as `ERROR: Unable to resolve dependency...`, update the registry by running **vcpkg: Run vcpkg command** from the Command Palette.
 
-    - Installation from latest releases:
+    1. Go to **View** > **Command Palette...**.
 
-      - Download the CMake installer from here: https://cmake.org/download/
-      - Download the Ninja executable from here: https://github.com/ninja-build/ninja/releases
+    1. In the field that opens at the top of the window, type `z-ce update <registry>` (where `<registry>` is the name of an artifact listed under `"registries"` in the `vcpkg-configuration.json` file) and press **Enter**.
 
-1. If the system package manager has not already added `cmake` and `ninja` to the PATH, add them.
+#### Generate missing .cprj files
 
-1. Check the installation by running the following commands from the terminal:
+By default the **Arm CMSIS csolution** extension automatically converts `*.csolution.yml` files into a `*.cprj` file for each "context" of the solution. See [Explore what you can do with the csolution example project](#explore-what-you-can-do-with-the-csolution-example-project) for more information on contexts.
 
-```
-cmake --version
-ninja --version
-```
+If there are no `.cprj` files next to the `hello.cproject.yml` file in the **hello** folder, you must generate them.
 
-#### Install the CMSIS-Toolbox
+1. Click the **Explorer** icon ![Explorer icon](./docs/images/explorer-icon.png) in the Activity Bar and check if there are `.cprj` files in the **hello** folder.
 
-1. Download the latest release of CMSIS-Toolbox for your platform from the
-[Releases](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/releases) page on GitHub.
+1. If it is not the case, right-click the `get_started.csolution.yml` file and select **Convert**.
 
-    **Note**: There is no Apple silicon build available yet, but the **darwin64** version works with [Rosetta](https://developer.apple.com/documentation/apple-silicon/about-the-rosetta-translation-environment).
+1. If there are missing CMSIS-Packs, the generation of `.cprj` files will fail. In that case, run the  **CMSIS: Install required packs for active solution** command from the Command Palette to install missing packs.
 
-1. Extract the content of the archive file.
+#### Build the project
 
-1. Modify the `*.cmake` file for the compiler toolchain you have installed. If you have several toolchains installed, modify the corresponding `*.cmake` files. All the `*.cmake` files are stored in `<cmsis-toolbox-installation-dir>/etc/`.
+To build the project:
 
-    For example, modify the following section:
+1. Go to the **hello** folder, right-click one of the `.cprj` files and select **Build**.
 
-```
-############### EDIT BELOW ###############
-# Set base directory of toolchain
-set(TOOLCHAIN_ROOT "/home/runner/gcc-arm-none-eabi-10-2020-q4-major/bin")
-set(TOOLCHAIN_VERSION "11.2.1")
-```
+1. Check the **TERMINAL** tab to find where the elf file (`.axf`) was generated.
 
-    As follows:
+#### Next steps
 
-```
-############### EDIT BELOW ###############
-# Set base directory of toolchain
-set(TOOLCHAIN_ROOT "/Applications/ARM/bin")
-set(TOOLCHAIN_VERSION "11.2.1")
-```
+Any terminal that you open in Visual Studio Code after activating Microsoft vcpkg for a given folder has all the tools added to the path by default (GCC, CMSIS-Toolbox, CMake and Ninja). This allows you to run the different [CMSIS-Toolbox tools](https://github.com/Open-CMSIS-Pack/cmsis-toolbox) such as: `cpackget`, `cbuildgen`, `cbuild`, or `csolution`.
 
-    **Notes**:
-    - The exact toolchain version does not matter. For example, you can modify the `GCC.10.2.1.cmake` file if you have installed GCC 10.3.1.
-    - `TOOLCHAIN_ROOT` should be set to the _absolute_ path to the compiler bin directory where the toolchain binaries are stored.
-    - `EXT` gives the file extension of the executable binaries. Leave it empty for macOS and Linux. Use `.exe` for Windows.
+If you want to work with a different csolution project, you can create a `vcpkg-configuration.json` similar to the one used for the keil-studio-get-started example and adapt it according to your needs. The **Microsoft Embedded Tool** extension will install the tools listed in the manifest file.
 
-1. Set the following environment variables:
+### Configure an HTTP proxy (optional)
 
-    - `CMSIS_COMPILER_ROOT`: Set to the path of the CMSIS-Toolbox `etc` directory. For example, `/<cmsis-toolbox-installation-dir>/etc`.
-    - `PATH`: Add the CMSIS-Toolbox `bin` directory to the system path. For example, `/<cmsis-toolbox-installation-dir>/bin`.
-    - `CMSIS_PACK_ROOT`: Set to the path of the CMSIS-Pack root directory that stores software packs. It can be any directory, but do not leave it undefined. If you had installed the CMSIS-Toolbox previously, or if you are a Keil MDK user, the default location for packs is `$HOME/.cache/arm/packs` on Mac or Linux and `%HOME%\AppData\Local\Arm\Packs` on Windows.
+This step is only required if you are working behind an HTTP proxy. The tools can be configured using the following standard environment variables to use an HTTP proxy:
 
-1. Configure an HTTP proxy (optional):
-
-    This step is only required if you are working behind an HTTP proxy. The tools can be configured using the following standard environment variables to use an HTTP proxy:
-
-    - `HTTP_PROXY`: Set to the proxy used for HTTP requests.
-    - `HTTPS_PROXY`: Set to the proxy used for HTTPS requests.
-    - `NO_PROXY`: Set to include at least `localhost,127.0.0.1` to disable the proxy for internal traffic (which is required for the extension to work correctly).
-
-1. On macOS:
-
-    The CMSIS-Toolbox is not signed, so you must de-quarantine its binaries as explained in the [General comments](#general-comments) section.
-
-    Run the command from the terminal:
-
-```
-xattr -d com.apple.quarantine <cmsis-toolbox-installation-dir>/bin/
-```
-
-    *Example*: `> $xattr -d com.apple.quarantine <cmsis-toolbox-installation-dir>/path/to/bin/cbuild`.
-
-    Run with `sudo` if you get permission errors.
-
-    Alternatively, if the command fails, execute the binaries located in `<cmsis-toolbox-installation-dir>/path/to/bin` individually and give them permission from system preferences.
-
-1. Check the installation with:
-
-```
-cbuild --version
-csolution --help
-```
-
-### Initialize or update the catalog of public CMSIS-Pack versions
-
-If `CMSIS_PACK_ROOT` is pointing to an empty directory, run the following command from the terminal to initialize the directory structure and download the latest pack index file:
-
-```
-cpackget init https://www.keil.com/pack/index.pidx
-```
-
-Otherwise, run the following command from the terminal to update the stored catalog (index file and the already downloaded package description files):
-
-```
-cpackget update-index
-```
+- `HTTP_PROXY`: Set to the proxy used for HTTP requests.
+- `HTTPS_PROXY`: Set to the proxy used for HTTPS requests.
+- `NO_PROXY`: Set to include at least `localhost,127.0.0.1` to disable the proxy for internal traffic (which is required for the extension to work correctly).
 
 ### Install and set up the clangd extension
 
 Install the **clangd** extension from Visual Studio Code.
 
 The **clangd** extension requires the clangd language server. If the server is not found on your path, add it with the **clangd: Download language server** command from the Command Palette. Check the clangd extension Readme for more information.
-
-### Modify extension settings
-
-#### Modify settings to point at CMSIS-Toolbox
-
-**Note**: If you have not already installed the **Arm CMSIS csolution** extension with the **Keil Studio Pack**, install the extension individually.
-
-Modify the extension settings to point at the tools installed previously.
-
-**Note**: It is unnecessary if you add the toolbox bin directory to the PATH.
-
-1. In Visual Studio Code, open the settings:
-    - On Windows or Linux, go to: **File** > **Preferences** > **Settings**.
-    - On macOS, go to: **Code** > **Settings** > **Settings**.
-
-1. Find the **Cmsis-csolution: Cbuild Path** and **Cmsis-csolution: Csolution Path** settings and set _absolute_ paths for:
-    - The `cbuild` executable (available in the CMSIS-Toolbox **bin** directory) in **Cbuild Path**.
-    - The `csolution` executable (available in the CMSIS-Toolbox **bin** directory) in **Csolution Path**.
-
-1. Restart Visual Studio Code.
 
 #### C/C++ language support with clangd
 
@@ -274,7 +185,7 @@ To clone a project in Visual Studio Code:
 
 Install the CMSIS-Packs.
 
-1. Open the cloned example project from Visual Studio Code, then open the `Hello.csolution.yml` file from the **Explorer** view.
+1. Open the cloned example project from Visual Studio Code, then open the `Hello.csolution.yml` file from the **Explorer** view ![Explorer icon](./docs/images/explorer-icon.png).
 
     The required packs are listed under the `packs` key of the `csolution.yml` file.
     For example, one of the required packs for `Hello.csolution.yml` is `ARM::V2M_MPS3_SSE_300_BSP@1.2.0`.

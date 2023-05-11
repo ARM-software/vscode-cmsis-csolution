@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.22.0
+
+- Preserve comments and ordering when adding or removing components from cproject files.
+
+## 0.21.0
+
+- Show a notification when the active solution has missing packs.
+- Add "Update PDSC manifests" command to load the latest CMSIS Pack data. Run this automatically on extension start.
+- Fix highlighting missing packs when no version is specified.
+- Fix loading packs from a pack cache initialised with cpackget.
+
 ## 0.20.0
 
 - Add the origin CMSIS Pack to the component name tooltip in the Software Components view.
