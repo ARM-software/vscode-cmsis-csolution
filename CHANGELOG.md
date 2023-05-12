@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.23.0
+
+- Add new csolution outline view to CMSIS panel that shows the structure, resources, and configuration of the solution. This is only shown when the "Experimental Features" setting is enabled.
+- Extension API types are now available on NPM: [@arm-software/vscode-cmsis-csolution](https://www.npmjs.com/package/@arm-software/vscode-cmsis-csolution)
+
 ## 0.22.0
 
 - Preserve comments and ordering when adding or removing components from cproject files.
