@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.23.1
+
+- Fix passing `projectFilePath` to the `manageComponents` extension API.
+
 ## 0.23.0
 
 - Add new csolution outline view to CMSIS panel that shows the structure, resources, and configuration of the solution. This is only shown when the "Experimental Features" setting is enabled.
