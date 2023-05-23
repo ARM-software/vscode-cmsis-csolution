@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.23.2
+
+- Update the extension API to correctly handle paths case-insensitively on Windows.
+
 ## 0.23.1
 
 - Fix passing `projectFilePath` to the `manageComponents` extension API.
