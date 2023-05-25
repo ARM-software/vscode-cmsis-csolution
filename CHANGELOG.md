@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.24.0
+
+- Add support for multi-folder workspaces.
+- Remove cmsis-csolution.outputPath configuration. Use the output controls in the csolution file instead.
+- Remove cmsis-csolution.solutionPattern configuration. Only files ending in .csolution.yml or .csolution.yaml are considered to be solutions.
+
 ## 0.23.2
 
 - Update the extension API to correctly handle paths case-insensitively on Windows.
