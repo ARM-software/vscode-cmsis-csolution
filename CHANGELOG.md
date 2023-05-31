@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.25.0
+
+- Add support for working with local packs using a local repository stored in $CMSIS_PACK_ROOT/.Local/local_repository.pidx.
+- Add new items to the outline view. This is no longer behind the experimental features setting.
+- Remove cmsis-csolution.remoteWorkspaceRoot configuration.
+
 ## 0.24.0
 
 - Add support for multi-folder workspaces.
