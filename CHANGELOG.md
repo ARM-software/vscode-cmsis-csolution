@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.25.1
+
+- Bugfix: fix build task hanging when the build process exits with an error.
+
 ## 0.25.0
 
 - Add support for working with local packs using a local repository stored in $CMSIS_PACK_ROOT/.Local/local_repository.pidx.
