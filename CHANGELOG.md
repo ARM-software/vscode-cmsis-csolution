@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.26.0
+
+- Add context menu item to convert uvprojx files to csolution.
+- Add support for adding packs to project files.
+
 ## 0.25.1
 
 - Bugfix: fix build task hanging when the build process exits with an error.
