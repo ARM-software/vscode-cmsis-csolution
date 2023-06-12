@@ -283,6 +283,8 @@ You can convert a Keil MDK project to csolution project from the **Arm CMSIS cso
     A "Conversion Successful" message displays once the conversion is done.
     The `*.cproject.yaml` and `*.csolution.yaml` files are available in the folder where the `.uvprojx` is stored.
 
+Alternatively, right click on a uvprojx or uvmpw file in the file navigator and select "Convert MDK project to csolution".
+
 ## Create a csolution project
 
 **Note**: The **New CMSIS solution** view is still under development. To get access to it, select the **Cmsis-csolution: Experimental Features** checkbox in the settings.

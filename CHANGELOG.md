@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.27.0
+
+- Improved μVision to csolution converter, including support for scatter file generation.
+- Add support for converting uvmpw projects to csolution.
+
 ## 0.26.0
 
 - Add context menu item to convert uvprojx files to csolution.
