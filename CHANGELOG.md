@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.28.0
+
+- Build command now builds csolution files directly without needing cprj conversion step first.
+- Compilation database for intellisense is now generated from csolution files rather than cprj.
+- Add extension API for converting a μVision project to csolution.
+- Update Csolution schema to 2.0.0-dev2.
+
 ## 0.27.0
 
 - Improved μVision to csolution converter, including support for scatter file generation.
