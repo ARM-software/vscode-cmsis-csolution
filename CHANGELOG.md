@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.29.0
+
+- Rename convert command to "Convert μVision project to csolution".
+- Improvements to the μVision to csolution converter:
+    - Migrate to schema 2.0
+    - Do not generate backward slash in file paths. This fixes issues on non-Windows systems.
+    - Generate vcpkg-configuration.json in project folder where csolution file is located
+    - Return an error in case the μVision project uses AC5.
+- Add support for loading components from layer files.
+
 ## 0.28.0
 
 - Build command now builds csolution files directly without needing cprj conversion step first.

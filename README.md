@@ -10,7 +10,7 @@ This Readme explains how to set up your development environment to be able to wo
 
 Once your development environment is ready, you can clone a csolution example project, install the CMSIS-Packs required, and then start working with the example.
 
-Note that you can convert a Keil MDK project in `.uvprojx` format to a csolution project from the **Arm CMSIS csolution** extension as explained in this Readme.
+Note that you can convert a Keil μVision project in `.uvprojx` format to a csolution project from the **Arm CMSIS csolution** extension as explained in this Readme.
 
 For more information about supported hardware for CMSIS projects, go to [keil.arm.com](https://www.keil.arm.com/boards/). For an overview on CMSIS-Packs, go to [open-cmsis-pack.org](https://www.open-cmsis-pack.org/index.html).
 
@@ -25,7 +25,7 @@ To submit feedback, please [create an issue](https://github.com/Arm-Software/vsc
     - [Configure an HTTP proxy (optional)](#configure-an-http-proxy-(optional))
     - [Install and set up the clangd extension](#install-and-set-up-the-clangd-extension)
 1. [Work with a csolution example project](#work-with-a-csolution-example-project)
-1. [Convert a Keil MDK project to a csolution project](#convert-a-keil-mdk-project-to-a-csolution-project)
+1. [Convert a Keil μVision project to a csolution project](#convert-a-keil-μVision-project-to-a-csolution-project)
 1. [Create a csolution project](#create-a-csolution-project)
 1. [Manage a csolution project and its software components](#manage-a-csolution-project-and-its-software-components)
 1. [Troubleshooting](#troubleshooting)
@@ -252,10 +252,13 @@ In the context of the **Arm CMSIS csolution** extension, you can configure a bui
         ``{
             "tasks": [
                 {
+                    "label": "CMSIS Build",
                     "type": "cmsis-csolution.build",
-                    "project": "${command:cmsis-csolution.getCprjPath}",
-                    "problemMatcher": [],
-                    "label": "cmsis-csolution.build: Build",
+                    "solution": "${command:cmsis-csolution.getSolutionPath}",
+                    "project": "${command:cmsis-csolution.getProjectPath}",
+                    "buildType": "${command:cmsis-csolution.getBuildType}",
+                    "targetType": "${command:cmsis-csolution.getTargetType}",
+                    "problemMatcher": []
                 }
             ]
         }``
@@ -268,22 +271,22 @@ In the context of the **Arm CMSIS csolution** extension, you can configure a bui
 
 Alternatively, you can define a default build task by selecting **Terminal** > **Configure Default Build Task...**. Default build tasks are executed directly when triggering **Terminal** > **Run Build Task...**.
 
-## Convert a Keil MDK project to a csolution project
+## Convert a Keil μVision project to a csolution project
 
-You can convert a Keil MDK project to csolution project from the **Arm CMSIS csolution** extension.
+You can convert a Keil μVision project to csolution project from the **Arm CMSIS csolution** extension.
 
-1. In Visual Studio Code, run the **CMSIS: Convert MDK project to csolution** command from the Command Palette.
+1. In Visual Studio Code, run the **CMSIS: Convert μVision project to csolution** command from the Command Palette.
 
 1. Using the file picker that displays, select the `.uvprojx` that you want to convert and click **Select**.
 
     The conversion starts immediately.
 
-1. Check the **OUTPUT** tab (**View** > **Output**). Conversion messages are logged under the **MDK to csolution Converter** category.
+1. Check the **OUTPUT** tab (**View** > **Output**). Conversion messages are logged under the **μVision to csolution Converter** category.
 
     A "Conversion Successful" message displays once the conversion is done.
     The `*.cproject.yaml` and `*.csolution.yaml` files are available in the folder where the `.uvprojx` is stored.
 
-Alternatively, right click on a uvprojx or uvmpw file in the file navigator and select "Convert MDK project to csolution".
+Alternatively, right click on a uvprojx or uvmpw file in the file navigator and select "Convert μVision project to csolution".
 
 ## Create a csolution project
 
