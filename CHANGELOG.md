@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.30.0
+
+- Add toolchain, update-rte and jobs properties to the build task.
+- Improve vcpkg-configuration.json generated from μVision conversion.
+- Fixed "rebuild" option in extension build API.
+
 ## 0.29.0
 
 - Rename convert command to "Convert μVision project to csolution".
