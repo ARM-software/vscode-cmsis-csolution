@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.31.0
+
+- Fix support for devcontainers.
+- Fix display of selected components in the Software Components UI when there is only one build context.
+- Only show packs containing compatible components in the Software Components validation panel.
+- Offer to convert μVision projects to csolution.
+
 ## 0.30.0
 
 - Add toolchain, update-rte and jobs properties to the build task.
