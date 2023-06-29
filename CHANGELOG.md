@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.0
+
+- Update RTE directory by default when building csolutions.
+
 ## 0.31.0
 
 - Fix support for devcontainers.
