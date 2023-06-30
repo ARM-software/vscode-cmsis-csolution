@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.1
+
+- Fix resolving components when the processor node is used in layer files.
+
 ## 1.0.0
 
 - Update RTE directory by default when building csolutions.
