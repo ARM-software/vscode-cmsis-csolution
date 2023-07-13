@@ -1,6 +1,6 @@
 ## TPIP Report for vscode-cmsis-csolution
 
-Report prepared at : 2023-04-21 15:49:39
+Report prepared at : 2023-07-07 15:39:21
 
 | *Package* | *Version* | *Repo* | *License* | *Assessment* |
 |---|---|---|---|---|
@@ -16,8 +16,10 @@ Report prepared at : 2023-04-21 15:49:39
 |path-browserify|1.0.1|https://github.com/browserify/path-browserify|[HERE](https://github.com/browserify/path-browserify/blob/master/LICENSE)|MIT|
 |react|18.1.0|https://github.com/facebook/react|[HERE](https://github.com/facebook/react/blob/main/LICENSE)|MIT|
 |react-dom|18.1.0|https://github.com/facebook/react|[HERE](https://github.com/facebook/react/blob/main/LICENSE)|MIT|
+|vscode-cpptools|6.1.0|https://github.com/microsoft/vscode-cpptools|[HERE](https://github.com/microsoft/vscode-cpptools/blob/main/LICENSE.md)|MIT|
 |vscode-extension-telemetry|0.6.2|https://github.com/microsoft/vscode-extension-telemetry|[HERE](https://github.com/microsoft/vscode-extension-telemetry/blob/main/LICENSE)|MIT|
 |vscode-messenger|0.4.4|https://github.com/TypeFox/vscode-messenger|[HERE](https://github.com/TypeFox/vscode-messenger/blob/v0.4.4/LICENSE)|MIT|
 |webview-ui-toolkit|0.9.3|https://github.com/microsoft/vscode-webview-ui-toolkit|[HERE](https://github.com/microsoft/vscode-webview-ui-toolkit/blob/main/LICENSE)|MIT|
 |yaml|2.2.1|https://github.com/eemeli/yaml|[HERE](https://github.com/eemeli/yaml/blob/main/LICENSE)|ISC|
 |yaml-ast-parser|0.0.43|https://github.com/mulesoft-labs/yaml-ast-parser|[HERE](https://github.com/mulesoft-labs/yaml-ast-parser/blob/master/license.txt)|Apache-2.0|
+|yargs-parser|21.1.1|https://github.com/yargs/yargs-parser|[HERE](https://github.com/yargs/yargs-parser/blob/main/LICENSE.txt)|ISC|

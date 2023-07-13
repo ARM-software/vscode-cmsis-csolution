@@ -98,6 +98,13 @@
         "license": "https://github.com/eclipse-cdt-cloud/clangd-contexts/blob/main/LICENSE"
     },
     {
+        "name": "vscode-cpptools",
+        "version": "6.1.0",
+        "spdx": "MIT",
+        "url": "https://github.com/microsoft/vscode-cpptools",
+        "license": "https://github.com/microsoft/vscode-cpptools/blob/main/LICENSE.md"
+    },
+    {
         "name": "vscode-messenger",
         "version": "0.4.4",
         "spdx": "MIT",
@@ -117,5 +124,12 @@
         "spdx": "ISC",
         "url": "https://github.com/eemeli/yaml",
         "license": "https://github.com/eemeli/yaml/blob/main/LICENSE"
+    },
+    {
+        "name": "yargs-parser",
+        "version": "21.1.1",
+        "spdx": "ISC",
+        "url": "https://github.com/yargs/yargs-parser",
+        "license": "https://github.com/yargs/yargs-parser/blob/main/LICENSE.txt"
     }
 ]

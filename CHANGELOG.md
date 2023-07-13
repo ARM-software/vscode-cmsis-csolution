@@ -1,5 +1,16 @@
 # Change Log
 
+## 1.2.0
+
+- Support intellisense via Microsoft C/C++ extension.
+- Add clean extension API.
+
+## 1.1.0
+
+- μVision converter now supports microlib.
+- Activate the vcpkg environment after converting µVision to csolution.
+- Add components from layers to the Software Components UI.
+
 ## 1.0.1
 
 - Fix resolving components when the processor node is used in layer files.
