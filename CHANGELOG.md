@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.2.2
+
+- Improve performance of component listing and validation in the Software Components UI.
+- Software Components UI now resolves a board if it only has one revision.
+
 ## 1.2.0
 
 - Support intellisense via Microsoft C/C++ extension.
