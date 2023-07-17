@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.2.3
+
+- Support clang compiler.
+
 ## 1.2.2
 
 - Improve performance of component listing and validation in the Software Components UI.
