@@ -1,5 +1,12 @@
 # Change Log
 
+
+## 1.3.0
+
+- Fix C/C++ intellisense integration on Windows.
+- Only generate tasks.json and launch.json files if µVision conversion succeeds.
+- Support cdefault files.
+
 ## 1.2.3
 
 - Support clang compiler.
