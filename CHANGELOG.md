@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.3.1
+
+- Clarify documentation for settings.
+- Update Csolution YAML schemas to version 2.0.0.
+- Fix "add pack" button in the Software Components Validation panel.
 
 ## 1.3.0
 
