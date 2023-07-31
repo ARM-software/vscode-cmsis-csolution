@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.3.2
+
+- Fix parsing for misc settings with a "for-compiler" value.
+
 ## 1.3.1
 
 - Clarify documentation for settings.
