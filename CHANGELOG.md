@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.3.3
+
+- Fix the solution view for packs when the vendor is not specified.
+
 ## 1.3.2
 
 - Fix parsing for misc settings with a "for-compiler" value.
