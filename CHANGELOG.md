@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.4.0
+
+- Remove coreTools.path and coreTools.address settings.
+- Refresh intellisense config on compile_commands.json changes.
+
 ## 1.3.3
 
 - Fix the solution view for packs when the vendor is not specified.
