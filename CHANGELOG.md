@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.4.1
+
+- Add the "misc" option to "Groups" in the solution view
+- Add the "misc" option to "Target types" in the solution view
+- Add the "misc" option to "Projects" in the solution view
+
 ## 1.4.0
 
 - Remove coreTools.path and coreTools.address settings.
