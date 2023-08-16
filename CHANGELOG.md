@@ -1,8 +1,13 @@
 # Change Log
 
+## 1.4.2
+
+- Fix compilation for API types package.
+- Add the "misc" option to "Layers in the solution view
+- Add the "misc" options to the solution in the outline view.
+
 ## 1.4.1
 
-- Add the "misc" option to "Groups" in the solution view
 - Add the "misc" option to "Target types" in the solution view
 - Add the "misc" option to "Projects" in the solution view
 
