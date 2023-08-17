@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.4.3
+
+- Software components table offers to clear the search filter when there are no results.
+
 ## 1.4.2
 
 - Fix compilation for API types package.
