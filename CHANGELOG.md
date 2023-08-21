@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.5.0
+
+- Check intellisense is enabled before registering the configuration.
+- Add getHardwareAndToolchainInfo extension API for retrieving the selected device and toolchain for every context in a solution.
+- Respect pack scope when resolving boards and devices.
+
 ## 1.4.3
 
 - Software components table offers to clear the search filter when there are no results.
