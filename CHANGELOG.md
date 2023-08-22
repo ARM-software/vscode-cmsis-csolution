@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.5.1
+
+- Fix an issue where the CMSIS pack root preference is not respected
+
 ## 1.5.0
 
 - Check intellisense is enabled before registering the configuration.
