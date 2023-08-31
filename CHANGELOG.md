@@ -1,5 +1,12 @@
 # Change Log
 
+## Unreleased
+
+## 1.5.3
+
+- Add the error output to the popup that shows when a component fails to update
+- Fix display of "misc" in the Csolution view to show a single entry for each compiler, and a single 'All' entry when the compiler is not specified.
+
 ## 1.5.1
 
 - Fix an issue where the CMSIS pack root preference is not respected
