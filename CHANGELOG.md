@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 1.6.0
+
+- Add support for converting µVision projects with C++ files.
+- µVision converter now adds pack references in the cproject file, not the csolution file.
+- Update Csolution schemas to 2.1.0.
+
 ## 1.5.3
 
 - Add the error output to the popup that shows when a component fails to update
