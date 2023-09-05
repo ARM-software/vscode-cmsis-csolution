@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.6.1
+
+- Preserve scroll position and collapsed nodes when the Csolution view updates.
+
 ## 1.6.0
 
 - Add support for converting µVision projects with C++ files.
