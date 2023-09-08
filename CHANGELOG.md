@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.7.0
+
+- Show component files in the solution outline view.
+
 ## 1.6.1
 
 - Preserve scroll position and collapsed nodes when the Csolution view updates.
