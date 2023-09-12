@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 1.8.0
+
+- Clicking project and layer files in the solution view now expands the children instead of opening the file
+- Add a checkbox that installs required packs when a solution is created
+- Add getExamplesForBoard extension API for retrieving the list of examples from CMSIS Packs for specified device or board.
+
 ## 1.7.0
 
 - Show component files in the solution outline view.
