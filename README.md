@@ -28,4 +28,4 @@ The **Arm CMSIS csolution** extension can work with the **Arm Device Manager** (
 
 ## Submit feedback
 
-To submit feedback, please [open a bug report or a feature request](https://github.com/Arm-Software/vscode-cmsis-csolution/issues/new/choose).
+To submit feedback, please [see our support page](https://www.keil.arm.com/support/#report-csolution-issue:~:text=CMSIS%20Component%20and%20csolution%20Management).

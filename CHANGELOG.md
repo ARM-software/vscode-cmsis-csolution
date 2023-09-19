@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.9.0
+
+- Show API files in outline view.
+- Identify config, template, and API files in the solution outline view.
+
 ## 1.8.0
 
 - Clicking project and layer files in the solution view now expands the children instead of opening the file
