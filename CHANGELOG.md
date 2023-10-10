@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+## 1.10.0
+
+- Add compiler radio button selection options to the create solution panel.
+- The solution view now correctly updates when the context is changed.
+- Add a new `cmsis-csolution.getProcessorName` command. This returns the processor name for the current context, and can be used
+to simplify tasks.json and launch.json files.
+- Add directory selector to the Create Solution flow.
+- Update document links to point to https://pack-content.cmsis.io/.
+
 ## 1.9.0
 
 - Show API files in outline view.
