@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.11.0
+
+- Remove the Create Solutions Preview
+
 ## 1.10.0
 
 - Add compiler radio button selection options to the create solution panel.
