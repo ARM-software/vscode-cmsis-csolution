@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.11.2
+
+- Fix cmsis-csolution.getBinaryFile command.
+
 ## 1.11.1
 
 - Prioritise device over board when resolving hardware for a context. This resolves some issues with managing software components in solutions targeting NXP hardware.
