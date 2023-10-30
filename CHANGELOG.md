@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.11.1
+
+- Prioritise device over board when resolving hardware for a context. This resolves some issues with managing software components in solutions targeting NXP hardware.
+- Simplify the create solution form.
+
 ## 1.11.0
 
 - Remove the Create Solutions Preview
