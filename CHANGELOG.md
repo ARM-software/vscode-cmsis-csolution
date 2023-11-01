@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.11.3
+
+- Fix hardware resolution when using unpublished packs.
+
 ## 1.11.2
 
 - Fix cmsis-csolution.getBinaryFile command.
