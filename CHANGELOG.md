@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 1.11.4
+
+- Fix getProjectPath and getCprjPath commands.
+- Add CMSIS:CORE component to generated solutions.
+- Add LLVM compiler option to create solution form.
+
 ## 1.11.3
 
 - Fix hardware resolution when using unpublished packs.
