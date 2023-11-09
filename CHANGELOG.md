@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.11.5
+
+- Simplify component validation fix sets, which have common mandatory dependencies and a single one-of dependency.
+
 ## 1.11.4
 
 - Fix getProjectPath and getCprjPath commands.
