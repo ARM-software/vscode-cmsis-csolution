@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.11.7
+
+- Fix loading csolution files with cdefault enabled.
+- Improved display of debug interfaces in the hardware detail panel.
+
 ## 1.11.5
 
 - Simplify component validation fix sets, which have common mandatory dependencies and a single one-of dependency.
