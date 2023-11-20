@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.11.8
+
+- Fix components table reloading when a component is selected or deselected.
+
 ## 1.11.7
 
 - Fix loading csolution files with cdefault enabled.
