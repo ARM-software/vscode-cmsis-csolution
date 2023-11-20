@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.12.0
+- Fixed alignment the buttons at the bottom of the create solution webview 
+
+- Add a new configuration setting to set the path of the CMSIS Toolbox. Deprecates the cmsis-csolution.cbuildPath and cmsis-csolution.csolutionPath settings.
+
 ## 1.11.8
 
 - Fix components table reloading when a component is selected or deselected.
