@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+## 1.12.2
+
+- Improve solution outline view performance.
 ## 1.12.1
 
 - Move software components action to the Solution view.
