@@ -2,16 +2,20 @@
 
 ## Unreleased
 
+## 1.12.3
+
+- Added placeholder to hardware detail panel.
+
 ## 1.12.2
 
 - Improve solution outline view performance.
+
 ## 1.12.1
 
 - Move software components action to the Solution view.
 
 ## 1.12.0
 - Fixed alignment the buttons at the bottom of the create solution webview
-
 - Add a new configuration setting to set the path of the CMSIS Toolbox. Deprecates the cmsis-csolution.cbuildPath and cmsis-csolution.csolutionPath settings.
 
 ## 1.11.8
