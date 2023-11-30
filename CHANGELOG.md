@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## 1.13.0
+
+- Improvements to the μVision to csolution converter:
+    - Remove the linker option --list and --import-cmse-lib-out, replaced by $cmse-lib(<secure project>)$
+    - In the case user commands are specified in uvprojx converter displays warning to user to manually execute commands
+    - Consider the XML option `<CreateLib>` in uvprojx
+    - Add link to document for how to manually migrate AC5 to AC6 project
+
 ## 1.12.3
 
 - Added placeholder to hardware detail panel.
