@@ -2,10 +2,15 @@
 
 ## Unreleased
 
+## 1.14.0
+
+- Simplify solution outline view: remove build types, target types, packs, and components not in the current context.
+
 ## 1.13.1
 
 - Add Device Firmware Packs for all mounted devices on a board to newly created solutions.
 - Add a main.c boiler plate file to newly created solutions.
+
 ## 1.13.0
 
 - Improvements to the μVision to csolution converter:
