@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.14.1
+
+- Show an error message in the create solution form when the processors cannot be determined for the target hardware.
+
 ## 1.14.0
 
 - Simplify solution outline view: remove build types, target types, packs, and components not in the current context.
