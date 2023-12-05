@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.14.2
+
+- Add cmsis-csolution.exclude setting for excluding files and folders in searches for csolution files.
+
 ## 1.14.1
 
 - Show an error message in the create solution form when the processors cannot be determined for the target hardware.
