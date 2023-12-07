@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 1.15.0
+
+- Improved styling of dropdowns in the create solution form.
+- Remove the ability to change component versions from the components table.
+- Create solution csolution and cproject files updated to use .yml file extension
+
 ## 1.14.2
 
 - Add cmsis-csolution.exclude setting for excluding files and folders in searches for csolution files.
