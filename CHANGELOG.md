@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 1.16.0
+
+- Reduce activity on VS Code startup to improve load performance.
+- Remove duplicate and template files from the solution outline view.
+- Remove component versions from cproject file.
+
 ## 1.15.0
 
 - Improved styling of dropdowns in the create solution form.

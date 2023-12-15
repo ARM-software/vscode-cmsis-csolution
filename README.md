@@ -4,7 +4,7 @@
 
 The complete [documentation](https://developer.arm.com/documentation/108029/latest/Extension-pack-and-extensions) for **Arm CMSIS csolution** and the other Keil Studio extensions is available on Arm Developer.
 
-The **Arm CMSIS csolution** extension provides support for working with CMSIS solutions (csolution projects). It can be installed individually or together with other extensions contained in the pack available for Visual Studio Code Desktop. 
+The **Arm CMSIS csolution** extension provides support for working with CMSIS solutions (csolution projects). It can be installed individually or as part of the **Keil Studio Pack** extension in Visual Studio Code Desktop. 
 
 We recommend installing the **Keil Studio Pack** for Visual Studio Code Desktop to quickly set up your environment and start working with an example.
 
