@@ -2,8 +2,9 @@
 
 ## Unreleased
 
-## 1.16.1
+## 1.17.0
 
+- Add welcome screen to solution outline view if there are no solutions in the workspace.
 - Fixed project file paths for generated csolutions on windows. 
 
 ## 1.16.0
