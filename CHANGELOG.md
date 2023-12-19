@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.16.1
+
+- Fixed project file paths for generated csolutions on windows. 
+
 ## 1.16.0
 
 - Reduce activity on VS Code startup to improve load performance.
