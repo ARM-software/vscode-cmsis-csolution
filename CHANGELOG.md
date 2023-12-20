@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.18.0
+
+- Add search filter to work for vendors when selecting a target in create solution.
+- Add create new solution to the new file menu option.
+
 ## 1.17.0
 
 - Add welcome screen to solution outline view if there are no solutions in the workspace.
