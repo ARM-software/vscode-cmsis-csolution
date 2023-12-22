@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+## 1.19.0
+
+- Improve reliability for intellisense support in header files.
+- Add new options to the build task definition: `useContextSet`, `contexts`, `downloadPacks` and `schemaCheck`. `downloadPacks` defaults to true to automatically download missing packs during build.
+- Add search filtering on device families and sub families when selecting a target in create solution.
+- Write build command line to terminal when building a solution.
+- Outline view: add build and rebuild options for the solution.
+- Outline view: stop displaying projects, layers, groups and files that don't belong to selected context.
+- Outline view: ensure project node only contains layers referenced by the project.
+- Outline view: stop displaying component files that aren't relevant for selected device.
+
 ## 1.18.0
 
 - Add search filter to work for vendors when selecting a target in create solution.
@@ -10,7 +21,7 @@
 ## 1.17.0
 
 - Add welcome screen to solution outline view if there are no solutions in the workspace.
-- Fixed project file paths for generated csolutions on windows. 
+- Fixed project file paths for generated csolutions on windows.
 
 ## 1.16.0
 
