@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.20.0
+
+- Outline view: add action to clean the solution.
+- The default build task now builds every project in the active solution.
+
 ## 1.19.0
 
 - Improve reliability for intellisense support in header files.
