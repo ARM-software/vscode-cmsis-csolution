@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.21.0
+
+- Create solution: sticky action buttons on small screens.
+
 ## 1.20.0
 
 - Outline view: add action to clean the solution.
