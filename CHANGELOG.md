@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 1.22.0
+
+- Create solution: only show toolchain options once a template is selected.
+- Create solution: device name and vendor has moved from the generated cproject files to the target type.
+- Create solution: show a loading spinner while loading hardware details.
+
 ## 1.21.0
 
 - Create solution: sticky action buttons on small screens.
