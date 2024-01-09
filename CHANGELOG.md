@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 1.23.0
+
+- Create solution: remove feature flag.
+- Add cmsis-csolution.getDeviceName command. This returns the CMSIS device name used by the current csolution context.
+- The cdefault node present in the csolution file without a compiler sets the compiler to GCC.
+
 ## 1.22.0
 
 - Create solution: only show toolchain options once a template is selected.
