@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.23.1
+
+- Create solution: remove reference to device from generated project names.
+- Create solution: remove checkbox controlling installation of missing packs. This is handled by default after creation.
+
 ## 1.23.0
 
 - Create solution: remove feature flag.
