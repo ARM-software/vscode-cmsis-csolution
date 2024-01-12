@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.23.2
+
+- Create solution: add target type field to set the name of the generated target type.
+
 ## 1.23.1
 
 - Create solution: remove reference to device from generated project names.
