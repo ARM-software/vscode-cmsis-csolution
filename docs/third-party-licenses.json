@@ -35,6 +35,20 @@
         "license": "https://github.com/protocolbuffers/protobuf/blob/main/LICENSE"
     },
     {
+        "name": "graphql-request",
+        "version": "6.1.0",
+        "spdx": "MIT",
+        "url": "https://github.com/jasonkuhrt/graphql-request",
+        "license": "https://github.com/jasonkuhrt/graphql-request/blob/main/LICENSE"
+    },
+    {
+        "name": "graphql-tag",
+        "version": "2.12.6",
+        "spdx": "MIT",
+        "url": "https://github.com/apollographql/graphql-tag",
+        "license": "https://github.com/apollographql/graphql-tag/blob/main/LICENSE"
+    },
+    {
         "name": "grpc-js",
         "version": "1.1.7",
         "spdx": "Apache-2.0",
@@ -131,5 +145,12 @@
         "spdx": "ISC",
         "url": "https://github.com/yargs/yargs-parser",
         "license": "https://github.com/yargs/yargs-parser/blob/main/LICENSE.txt"
+    },
+    {
+        "name": "semver",
+        "version": "7.5.4",
+        "spdx": "ISC",
+        "url": "https://github.com/npm/node-semver",
+        "license": "https://github.com/npm/node-semver/blob/36cd334708ec1f85a71445622fb1864bceee0f4e/LICENSE"
     }
 ]

@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+## 1.24.0
+
+- Update YAML schemas to Toolbox 2.2.1.
+- Fix line breaks in CMSIS Build Manager output channel.
+- Create solution: can now select board-specific examples to use as a starting template for your application.
+- Create solution: update the generated vcpkg-configuration.json to include the correct toolchain for the new solution.
+- Disable icons for Build, Manage Software Components, Open Csolution File, Clean and Rebuild when there is no solution active.
+- Updates the Manage Software Components icon.
+- Create solution: update the generated vcpkg-configuration.json to include the correct toolchain for the new solution.
+- Component manager: add pack filtering capability.
+- Create solution: add separate dropdown fields for boards and devices.
+
 ## 1.23.2
 
 - Create solution: add target type field to set the name of the generated target type.
