@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## 1.24.1
+
+- Create solution: improve generated .gitignore files.
+- Create solution: generate default solution names.
+- Create solution: add LLVM compiler to generated vcpkg file when it is selected.
+- Create solution: constrain device hardware list by the mounted devices on the selected board.
+- Only show output channels when they have content.
+
 ## 1.24.0
 
 - Update YAML schemas to Toolbox 2.2.1.
@@ -10,7 +18,6 @@
 - Create solution: update the generated vcpkg-configuration.json to include the correct toolchain for the new solution.
 - Disable icons for Build, Manage Software Components, Open Csolution File, Clean and Rebuild when there is no solution active.
 - Updates the Manage Software Components icon.
-- Create solution: update the generated vcpkg-configuration.json to include the correct toolchain for the new solution.
 - Component manager: add pack filtering capability.
 - Create solution: add separate dropdown fields for boards and devices.
 

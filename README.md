@@ -2,13 +2,13 @@
 
 ## Overview
 
-The complete [documentation](https://developer.arm.com/documentation/108029/latest/Extension-pack-and-extensions) for **Arm CMSIS csolution** and the other Keil Studio extensions is available on Arm Developer.
+The complete [documentation](https://developer.arm.com/documentation/108029/latest/Extension-pack-and-extensions) for Arm® CMSIS csolution and the other Keil® Studio extensions is available on Arm Developer.
 
-The **Arm CMSIS csolution** extension provides support for working with CMSIS solutions (csolution projects). It can be installed individually or as part of the **Keil Studio Pack** extension in Visual Studio Code Desktop. 
+The Arm CMSIS csolution extension provides support for working with CMSIS solutions (csolution projects). It can be installed individually or as part of the Arm Keil Studio Pack extension in Visual Studio Code Desktop.
 
-We recommend installing the **Keil Studio Pack** for Visual Studio Code Desktop to quickly set up your environment and start working with an example.
+We recommend installing the Keil Studio Pack for Visual Studio Code Desktop to quickly set up your environment and start working with an example.
 
-The **Arm CMSIS csolution** extension can work with the **Arm Device Manager** (Identifier: `arm.device-manager`) and **Arm Embedded Debugger** (Identifier: `arm.embedded-debug`) extensions.
+The CMSIS csolution extension can work with the Arm Device Manager (Identifier: `arm.device-manager`) and Arm Embedded Debugger (Identifier: `arm.embedded-debug`) extensions.
 
 ## Intended use cases for the extensions
 
