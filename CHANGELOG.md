@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 1.24.2
+
+- Add explorer context menu item for opening a solution.
+- Solution view: move create solution action to context menu and add open solution action.
+- Create solution: change the heading for the compiler selection.
+- Component manager: software components are filtered to solution by default
+
 ## 1.24.1
 
 - Create solution: improve generated .gitignore files.
