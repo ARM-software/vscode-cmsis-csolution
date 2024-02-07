@@ -2,6 +2,23 @@
 
 ## Unreleased
 
+## 1.24.3
+
+- Improvements to the μVision to csolution converter:
+    - Consider CMSIS V6 by setting latest pack version prior to CMSIS v6 to fixed pack version "5.9.0" in CMSIS solution project
+    - Better handling of processor properties fpu, mve, trustzone, endianess and branch-protection
+    - Updating data in generated vcpkg-configuration.json file and avoid duplicating vcpkg entries
+    - Support multicore
+    - CMSIS csolution project is now generated if at least one target is faultless
+    - Improve warning and error messages
+    - Fixed: compile error when armmasm.exe is specified in uvprojx
+- Add target and build type labels to the solution outline view.
+- Create solution: add option to clear the selected board.
+- Show an option to convert a µVision project in the context menu in the solution outline rather than display a toast notification to do this.
+- Use resolved packs defined in the cbuild-pack file if it is present.
+- "Open CMSIS Solution" will now open the extension side panel.
+- Install missing packs pop up: button to open file has been swapped to a button that opens the problems panel.
+
 ## 1.24.2
 
 - Add explorer context menu item for opening a solution.
