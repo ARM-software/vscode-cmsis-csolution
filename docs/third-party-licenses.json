@@ -115,8 +115,8 @@
         "name": "vscode-cpptools",
         "version": "6.1.0",
         "spdx": "MIT",
-        "url": "https://github.com/microsoft/vscode-cpptools",
-        "license": "https://github.com/microsoft/vscode-cpptools/blob/main/LICENSE.md"
+        "url": "https://github.com/Microsoft/vscode-cpptools-api",
+        "license": "https://github.com/microsoft/vscode-cpptools-api/blob/main/LICENSE"
     },
     {
         "name": "vscode-messenger",

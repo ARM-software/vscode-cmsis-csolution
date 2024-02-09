@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.24.4
+
+- Fixed loading components from layer files.
+- Show informative message in Software Components webview when there is no solution.
+
 ## 1.24.3
 
 - Improvements to the μVision to csolution converter:
