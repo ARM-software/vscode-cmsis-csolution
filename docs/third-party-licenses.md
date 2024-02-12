@@ -13,6 +13,7 @@ Report prepared at : 2024-02-06 15:22:19
 |graphql-request|6.1.0|https://github.com/jasonkuhrt/graphql-request|[MIT](https://github.com/jasonkuhrt/graphql-request/blob/main/LICENSE)|
 |graphql-tag|2.12.6|https://github.com/apollographql/graphql-tag|[MIT](https://github.com/apollographql/graphql-tag/blob/main/LICENSE)|
 |grpc-js|1.1.7|https://github.com/grpc/grpc-node|[Apache-2.0](https://github.com/grpc/grpc-node/blob/master/LICENSE)|
+|jsonc-parser|3.2.0|https://github.com/microsoft/node-jsonc-parser|[MIT](https://github.com/microsoft/node-jsonc-parser/blob/main/LICENSE.md)|
 |lodash.debounce|4.0.8|https://github.com/lodash/lodash|[MIT](https://github.com/lodash/lodash/blob/master/LICENSE)|
 |node-fetch|2.6.7|https://github.com/node-fetch/node-fetch|[MIT](https://github.com/node-fetch/node-fetch/blob/master/LICENSE.md)|
 |path-browserify|1.0.1|https://github.com/browserify/path-browserify|[MIT](https://github.com/browserify/path-browserify/blob/master/LICENSE)|

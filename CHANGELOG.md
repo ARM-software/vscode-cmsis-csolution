@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 1.25.0
+
+- Fix parsing of component identifiers containing parentheses.
+- Create solution form: fixed loading preview data when selecting the same hardware twice.
+- Added run and debug configuration settings for solutions and projects
+
 ## 1.24.4
 
 - Fixed loading components from layer files.
