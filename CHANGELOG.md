@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 1.26.0
+
+- Automatically update PDSC manifests every week.
+- Component manager: display pack install status.
+- Component manager: Add project dropdown.
+- Added icons to Create Solution and Software Components tabs.
+
 ## 1.25.0
 
 - Fix parsing of component identifiers containing parentheses.
