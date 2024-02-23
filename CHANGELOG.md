@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 1.26.1
+
+- Create solution: if there is a workspace folder open, the solution location defaults to the parent directory of that folder.
+- Add getBinaryFiles command.
+- Shows a badge on the CMSIS icon before the view is opened for the first time.
+
 ## 1.26.0
 
 - Automatically update PDSC manifests every week.
