@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.26.2
+
+- Plus buttons next to groups in the outline view can be used to quickly add files to the group.
+- Write converter output to a uv2csolution.log file when converting a µVision project to csolution.
+
 ## 1.26.1
 
 - Create solution: if there is a workspace folder open, the solution location defaults to the parent directory of that folder.
