@@ -1,14 +1,14 @@
 [
     {
         "name": "buffer",
-        "version": "5.7.1",
+        "version": "6.0.3",
         "spdx": "MIT",
         "url": "https://github.com/feross/buffer",
         "license": "https://github.com/feross/buffer/blob/master/LICENSE"
     },
     {
         "name": "fetch-blob",
-        "version": "3.2.0",
+        "version": "4.0.0",
         "spdx": "MIT",
         "url": "https://github.com/node-fetch/fetch-blob",
         "license": "https://github.com/node-fetch/fetch-blob/blob/main/LICENSE"
@@ -57,7 +57,7 @@
     },
     {
         "name": "jsonc-parser",
-        "version": "3.2.0",
+        "version": "3.2.1",
         "spdx": "MIT",
         "url": "https://github.com/microsoft/node-jsonc-parser",
         "license": "https://github.com/microsoft/node-jsonc-parser/blob/main/LICENSE.md"
@@ -71,7 +71,7 @@
     },
     {
         "name": "node-fetch",
-        "version": "2.6.7",
+        "version": "3.3.2",
         "spdx": "MIT",
         "url": "https://github.com/node-fetch/node-fetch",
         "license": "https://github.com/node-fetch/node-fetch/blob/master/LICENSE.md"
@@ -85,17 +85,24 @@
     },
     {
         "name": "react",
-        "version": "18.1.0",
+        "version": "18.2.0",
         "spdx": "MIT",
         "url": "https://github.com/facebook/react",
         "license": "https://github.com/facebook/react/blob/main/LICENSE"
     },
     {
         "name": "react-dom",
-        "version": "18.1.0",
+        "version": "18.2.0",
         "spdx": "MIT",
         "url": "https://github.com/facebook/react",
         "license": "https://github.com/facebook/react/blob/main/LICENSE"
+    },
+    {
+        "name": "react-window",
+        "version": "1.8.10",
+        "spdx": "MIT",
+        "url": "https://github.com/bvaughn/react-window",
+        "license": "https://github.com/bvaughn/react-window/blob/master/LICENSE.md"
     },
     {
         "name": "vscode-extension-telemetry",
@@ -106,7 +113,7 @@
     },
     {
         "name": "webview-ui-toolkit",
-        "version": "0.9.3",
+        "version": "1.4.0",
         "spdx": "MIT",
         "url": "https://github.com/microsoft/vscode-webview-ui-toolkit",
         "license": "https://github.com/microsoft/vscode-webview-ui-toolkit/blob/main/LICENSE"
@@ -127,7 +134,7 @@
     },
     {
         "name": "vscode-messenger",
-        "version": "0.4.4",
+        "version": "0.4.5",
         "spdx": "MIT",
         "url": "https://github.com/TypeFox/vscode-messenger",
         "license": "https://github.com/TypeFox/vscode-messenger/blob/v0.4.4/LICENSE"
@@ -141,7 +148,7 @@
     },
     {
         "name": "yaml",
-        "version": "2.2.1",
+        "version": "2.3.4",
         "spdx": "ISC",
         "url": "https://github.com/eemeli/yaml",
         "license": "https://github.com/eemeli/yaml/blob/main/LICENSE"

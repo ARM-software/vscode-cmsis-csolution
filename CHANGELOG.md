@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 1.27.0
+
+- Add new context selection UI, accessible from the cog icon in the solution view. This supports selecting a different build type for each project, and excluding projects from the build.
+- Remove getBuildType, setBuildType, getTargetType, setTargetType, getProjectPath, setProject, and getCprjPath commands.
+- Add getTargetPack command. This can be used in tasks.json and launch.json files to get the DFP CMSIS pack for the currently selected target.
+- Automatically convert µVision examples downloaded with the new solution form to csolution.
+- Component manager: helper text has been added to targets filter dropdown.
+- Enable opening of the Software Components UI from the project level in the solution outline.
+- Auto-select hardware in "create solution" UI if a development board is connected.
+
 ## 1.26.2
 
 - Plus buttons next to groups in the outline view can be used to quickly add files to the group.
