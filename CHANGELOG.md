@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.27.1
+
+- Context selection: clicking run and debug edit links opens configuration files.
+
 ## 1.27.0
 
 - Add new context selection UI, accessible from the cog icon in the solution view. This supports selecting a different build type for each project, and excluding projects from the build.
