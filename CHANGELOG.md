@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 1.28.0
+
+- Update RTE files automatically when generating compile_commands.json. This fixes problems with intellisense when opening a csolution project for the first time.
+- Remove deprecated cbuildPath and csolutionPath configuration properties. Use cmsisToolboxPath instead.
+- Remove convertToCprj command. CPRJ files are still automatically generated when the csolution input files are changed. Also remove related autoGenerateCprj configuration property.
+- Create Solutions: populate the solution name with a valid name when an example is chosen.
+
 ## 1.27.1
 
 - Context selection: clicking run and debug edit links opens configuration files.
