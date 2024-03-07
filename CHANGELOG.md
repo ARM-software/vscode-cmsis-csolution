@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.29.0
+
+- Add editor links from solution files to referenced layer files, and from project files to layer files.
+- Removed offerMicroVisionConversion setting. The extension no longer offers to convert µVision projects, so this setting is redundant.
+
 ## 1.28.0
 
 - Update RTE files automatically when generating compile_commands.json. This fixes problems with intellisense when opening a csolution project for the first time.
