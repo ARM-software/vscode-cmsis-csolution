@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 1.30.0
+
+- Add a new custom editor for configuration files based on [CMSIS Configuration Wizard Annotations](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/configWizard.html). Open this with the "Open Preview" button at the top of the editor for a header file.
+- Update the getHardwareAndToolchainInfo extension API to return additional information of board id, board pack id and device id.
+- Do not set --schema flag when building solutions. This was causing problems due to this issue: https://github.com/Open-CMSIS-Pack/devtools/issues/1345.
+- Fix updating the list of solutions in the workspace when the parent directory of a solution is deleted.
+
 ## 1.29.0
 
 - Add editor links from solution files to referenced layer files, and from project files to layer files.

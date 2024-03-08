@@ -15,7 +15,7 @@
     },
     {
         "name": "fontawesome-free",
-        "version": "6.1.1",
+        "version": "6.5.1",
         "spdx": "MIT",
         "url": "https://github.com/FortAwesome/Font-Awesome",
         "license": "https://github.com/FortAwesome/Font-Awesome/blob/6.x/LICENSE.txt"
@@ -82,6 +82,13 @@
         "spdx": "MIT",
         "url": "https://github.com/browserify/path-browserify",
         "license": "https://github.com/browserify/path-browserify/blob/master/LICENSE"
+    },
+    {
+        "name": "primereact",
+        "version": "10.5.0",
+        "spdx": "MIT",
+        "url": "https://github.com/primefaces/primereact",
+        "license": "https://github.com/primefaces/primereact/blob/master/LICENSE.md"
     },
     {
         "name": "react",
