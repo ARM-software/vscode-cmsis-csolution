@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.31.0
+
+- Add option to create files from [user code templates](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/cp_PackTutorial.html#cp_CodeTemplates) provided by CMSIS software components. Click the plus icon next to a group in the solution view to get started.
+- Active context: Editing "Run and Debug" options opens Arm Debugger editor for supported tasks and debug configurations.
+
 ## 1.30.0
 
 - Add a new custom editor for configuration files based on [CMSIS Configuration Wizard Annotations](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/configWizard.html). Open this with the "Open Preview" button at the top of the editor for a header file.
