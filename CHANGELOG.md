@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.32.0
+
+- Improve clangd integration when using armclang. The compiler is queried for compiler specific defines to pass to the intellisense engine.
+- Fix extension API build method so that it respects the given context argument.
+
 ## 1.31.0
 
 - Add option to create files from [user code templates](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/cp_PackTutorial.html#cp_CodeTemplates) provided by CMSIS software components. Click the plus icon next to a group in the solution view to get started.
