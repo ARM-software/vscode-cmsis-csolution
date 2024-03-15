@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.32.1
+
+- Fix "clangd.applyFix already exists" errors when using the clangd extension.
+
 ## 1.32.0
 
 - Improve clangd integration when using armclang. The compiler is queried for compiler specific defines to pass to the intellisense engine.
