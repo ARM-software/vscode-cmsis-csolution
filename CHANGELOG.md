@@ -2,10 +2,15 @@
 
 ## Unreleased
 
+## 1.33.0
+
+- Context selection: add configuration UI for cprojects' run tasks and launch configurations.
+
 ## 1.32.2
 
 - Create solution: There is now more of an indication that the board field is optional.
 - Component manager: Fix disappearing description when a component is selected.
+- Added build, component class, components, files, layer, layers and software components icons to the solution outline view.
 
 ## 1.32.1
 
@@ -15,7 +20,6 @@
 
 - Improve clangd integration when using armclang. The compiler is queried for compiler specific defines to pass to the intellisense engine.
 - Fix extension API build method so that it respects the given context argument.
-- Added build, component class, components, files, layer, layers and software components icons to the solution outline view.
 
 ## 1.31.0
 
