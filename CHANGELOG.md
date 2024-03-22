@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 1.33.1
+
+- Context selection: Refresh the view contents when source files are updated.
+- Status bar: update icon to be the same as for context selection.
+- Context selection: Display referenced projects, even if their source files are malformed.
+
 ## 1.33.0
 
 - Context selection: add configuration UI for cprojects' run tasks and launch configurations.
@@ -9,6 +15,7 @@
 ## 1.32.2
 
 - Create solution: There is now more of an indication that the board field is optional.
+- Create solution: Automatically install packs when creating a new solution using the Create New Cmsis Solution.
 - Component manager: Fix disappearing description when a component is selected.
 - Added build, component class, components, files, layer, layers and software components icons to the solution outline view.
 
