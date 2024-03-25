@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.33.2
+
 ## 1.33.1
 
 - Context selection: Refresh the view contents when source files are updated.
