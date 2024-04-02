@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.33.3
+
+- Fix bug where `.clangd` files were not generating in some cases.
+
 ## 1.33.2
 
 ## 1.33.1
