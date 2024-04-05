@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+## 1.34.0
+
+- Update YAML schemas to Toolbox 2.3.0.
+- Fix template files copied from the pack cache readonly.
+- Disable telemetry by default for SSK and HSK licenses
+- Sort boards in the create solution form.
+- Show a help notification when the CMSIS Toolbox cannot be found.
+- Fix vendor filtering of devices in the create solution form.
+
 ## 1.33.3
 
 - Fix bug where `.clangd` files were not generating in some cases.
