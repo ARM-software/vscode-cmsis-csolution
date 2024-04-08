@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.34.1
+
+- Fix duplication of quick fix code actions.
+
 ## 1.34.0
 
 - Update YAML schemas to Toolbox 2.3.0.
