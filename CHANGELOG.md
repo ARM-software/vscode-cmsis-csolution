@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+## 1.34.2
+
+- Prefer csolution example projects from packs over µVision project examples.
+- Open the correct directory after converting a µVision example project.
+- Rename Clean command to Clean Output Directories.
+- Extension API: added new createSolutionFromUri api to create a new csolution project from a uri project and solution directory.
+- Component manager: when there is an error state caused by missing packs, show a button that installs the missing packs.
+- Status bar: shows the currently selected contexts.
+
 ## 1.34.1
 
 - Fix duplication of quick fix code actions.
