@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.34.3
+
 ## 1.34.2
 
 - Prefer csolution example projects from packs over µVision project examples.
