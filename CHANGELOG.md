@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.34.5
+
+- Config Wizard: Option `<y>` added to change a symbol name
+
 ## 1.34.4
 
 ## 1.34.3
