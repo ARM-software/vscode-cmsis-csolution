@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 1.34.6
+
+- Bugfix: changing the selected target in the context selection UI when there are no selected projects now updates the view correctly.
+
 ## 1.34.5
 
 - Config Wizard: Option `<y>` added to change a symbol name
