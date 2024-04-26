@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+## 1.34.7
+- Component manager: Display solution name in packs filter dropdown
+
 ## 1.34.6
 
 - Bugfix: changing the selected target in the context selection UI when there are no selected projects now updates the view correctly.
