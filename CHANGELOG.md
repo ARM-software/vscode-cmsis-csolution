@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## 1.34.9
+
+- Dependency updates.
+
+## 1.34.8
+
+- Minor improvements.
+
 ## 1.34.7
 - Component manager: Display solution name in packs filter dropdown
 
