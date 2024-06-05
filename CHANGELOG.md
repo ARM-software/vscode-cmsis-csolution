@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+## 1.35.0
+
+- Improvements to the μVision to csolution converter:
+    - Evaluation of new optimization value "-Omax".
+    - Performing error handling before generating scatter file.
+    - Fixing "Enable all warnings" for AC6 incorrectly specifies -Weverything.
+    - Replacement of colon ':' characters in group names with undersore.
+    - Adding support for new optimization level "debug".
+    - Improvement of error and warning messages by removing XML tags and rephrasing them to make them more readable.
+    - Adding 'instances' node in csolution to support multiple instances of a component.
+
 ## 1.34.9
 
 - Dependency updates.
