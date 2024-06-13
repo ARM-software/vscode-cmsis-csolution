@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 1.36.0
+
+- Show `open solution` command on the folders containing csolution files.
+- Compilation command file loaded from inside the out folder instead of tmp folder.
+- Allow to override uv2csolution path using environment variables.
+- `Open solution` renamed to `Activate solution`
+
 ## 1.35.0
 
 - Improvements to the μVision to csolution converter:
