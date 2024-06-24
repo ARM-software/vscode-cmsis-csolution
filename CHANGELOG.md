@@ -2,12 +2,18 @@
 
 ## Unreleased
 
+## 1.37.0
+
+- `Activate solution` prevented from opening CMSIS view.
+
 ## 1.36.0
 
 - Show `open solution` command on the folders containing csolution files.
 - Compilation command file loaded from inside the out folder instead of tmp folder.
 - Allow to override uv2csolution path using environment variables.
 - `Open solution` renamed to `Activate solution`
+- Create Solution Dialog: Replaced "Examples" dropdown with an TreeView including a search box
+- Fixed an isue where .clangd was not created
 
 ## 1.35.0
 
