@@ -2,6 +2,22 @@
 
 ## Unreleased
 
+## v1.38.0
+
+- API extension:
+    - query boards and devices
+    - create csolution
+- Sync with CMSIS-toolbox 2.5.0
+    - use 2.5.0 schemas
+    - call `cbuild setup`
+- Improvements to the μVision to csolution converter (uv2csolution 1.5.0):
+    - Converted project files require CMSIS-Toolbox 2.4.0 or higher.
+    - Fixed: conversion of μVision 5.40 projects using global generator CubeMX failing with "Errors: EOF".
+    - Fixed: components with unchecked "Include in target build" listed under components node.
+    - Fixes for new CMakeLists.txt generator "cbuild2cmake" in CMSIS-Toolbox 2.4.0 and higher:
+      - Using "define-asm" node to set assembler specific defines.
+      - Removal of duplicated modules contributed by both *.gpdsc and *.uvprojx file resulting in linker error about duplicated symbols.
+
 ## 1.37.0
 
 - `Activate solution` prevented from opening CMSIS view.
@@ -13,7 +29,7 @@
 - Allow to override uv2csolution path using environment variables.
 - `Open solution` renamed to `Activate solution`
 - Create Solution Dialog: Replaced "Examples" dropdown with an TreeView including a search box
-- Fixed an isue where .clangd was not created
+- Fixed an issue where .clangd was not created
 
 ## 1.35.0
 
