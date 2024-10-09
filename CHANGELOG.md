@@ -1,22 +1,20 @@
 # Change Log
 
-## Unreleased
-
 ## v1.38.0
 
 - API extension:
-    - query boards and devices
-    - create csolution
+  - query boards and devices
+  - create csolution
 - Sync with CMSIS-toolbox 2.5.0
-    - use 2.5.0 schemas
-    - call `cbuild setup`
+  - use 2.5.0 schemas
+  - call `cbuild setup`
 - Improvements to the μVision to csolution converter (uv2csolution 1.5.0):
-    - Converted project files require CMSIS-Toolbox 2.4.0 or higher.
-    - Fixed: conversion of μVision 5.40 projects using global generator CubeMX failing with "Errors: EOF".
-    - Fixed: components with unchecked "Include in target build" listed under components node.
-    - Fixes for new CMakeLists.txt generator "cbuild2cmake" in CMSIS-Toolbox 2.4.0 and higher:
-      - Using "define-asm" node to set assembler specific defines.
-      - Removal of duplicated modules contributed by both *.gpdsc and *.uvprojx file resulting in linker error about duplicated symbols.
+  - Converted project files require CMSIS-Toolbox 2.4.0 or higher.
+  - Fixed: conversion of μVision 5.40 projects using global generator CubeMX failing with "Errors: EOF".
+  - Fixed: components with unchecked "Include in target build" listed under components node.
+  - Fixes for new CMakeLists.txt generator `cbuild2cmake` in CMSIS-Toolbox 2.4.0 and higher:
+    - Using "define-asm" node to set assembler specific defines.
+    - Removal of duplicated modules contributed by both `*.gpdsc` and `*.uvprojx` file resulting in linker error about duplicated symbols.
 
 ## 1.37.0
 
@@ -41,6 +39,7 @@
     - Adding support for new optimization level "debug".
     - Improvement of error and warning messages by removing XML tags and rephrasing them to make them more readable.
     - Adding 'instances' node in csolution to support multiple instances of a component.
+- Improve intellisense within header files.
 
 ## 1.34.9
 
