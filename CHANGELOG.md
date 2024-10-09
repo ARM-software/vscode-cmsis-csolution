@@ -1,5 +1,30 @@
 # Change Log
 
+## [Unreleased]
+
+## 1.40.0
+
+- New features:
+
+  - This version of the extension integrates [CMSIS-Toolbox 2.6](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/README.md#revision-history) with [CMake backend](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-operation.md).
+  - The CMSIS Solution view has been improved based on [Build Information Files](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/YML-CBuild-Format.md).
+    - Interfaces with [STM32CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html) and [MCUXpresso Config Tools](https://www.nxp.com/design/design-center/software/development-software/mcuxpresso-software-and-tools-/mcuxpresso-config-tools-pins-clocks-and-peripherals:MCUXpresso-Config-Tools) added.
+    - Easy access to [linker scripts](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-overview.md#linker-script-management), optional with Configuration Wizard annotations.
+    - [Toolchain agnostic](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-overview.md#toolchain-agnostic-project) with support for Arm Compiler 6, GCC, IAR, and LLVM.
+    - Supports for [software layers](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-overview.md#software-layers) and device-agnostic [reference applications](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/ReferenceApplications.md).
+  - Dependency on [Arm Environment Manager](https://marketplace.visualstudio.com/items?itemName=Arm.environment-manager) removed, allowing flexible integration with other VS Code extensions.
+  - [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) now supports code completion, compile errors, and go-to-definition across a whole project.
+  - Option that enables the `--pack` option to download missing software packs using [cpackget](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-tools.md#cpackget-invocation) added.
+
+- Known issues:
+
+  - The [Arm Environment Manager](https://marketplace.visualstudio.com/items?itemName=Arm.environment-manager) takes a long time to load the first time you use it because all the default tool versions are downloaded and installed. You can check the installation progress in **View** > **Output** (Ctrl+Shift+U or Cmd+Shift+U). Select **Arm Tools** in the drop-down list.
+  - The **Create new solution** view only accesses web-based examples from public packs or published repositories. Examples from local packs do not display yet.
+  - You must manually download [Device Family Packs](https://www.keil.arm.com/devices/) and [Board Support Packs](https://www.keil.arm.com/boards/) using [cpackget](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-tools.md#cpackget-invocation) to start projects.
+  - Software components from layers or generators do not display in the **Software Components** view.
+  - To access recently published pack versions, you must run: `cpackget update-index --sparse`.
+  - If you are using CMSIS-Toolbox for the first time, you must manually initialize the CMSIS-Pack root directory: `cpackget init https://www.keil.com/pack/index.pidx`.
+
 ## v1.38.0
 
 - API extension:
