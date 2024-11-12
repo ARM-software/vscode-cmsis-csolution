@@ -173,5 +173,12 @@
         "spdx": "ISC",
         "url": "https://github.com/npm/node-semver",
         "license": "https://github.com/npm/node-semver/blob/36cd334708ec1f85a71445622fb1864bceee0f4e/LICENSE"
+    },
+    {
+        "name": "async-mutex",
+        "version": "0.5.0",
+        "spdx": "MIT",
+        "url": "https://https://github.com/DirtyHairy/async-mutex",
+        "license": "https://github.com/DirtyHairy/async-mutex/blob/master/LICENSE"
     }
 ]

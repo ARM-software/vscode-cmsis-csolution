@@ -2,6 +2,26 @@
 
 ## [Unreleased]
 
+## 1.44.0
+
+## 1.42.0
+
+- New features:
+
+  - The CMSIS status bar has been enhanced with a busy indicator and shows error and warning messages from CMSIS-Toolbox.
+  - When the **Use Web Services** setting is enabled, the **Create new solution** view uses the internet database in addition to installed packs to display devices, boards, and examples.
+  - For components, the **CMSIS** view now supports access to documentation from packs.
+
+- Solved issues:
+
+  - Software components from layers or generators display in the **Software Components** view.
+  - In the **Manage Solution** view, the issues occurring when changing the context set configuration have now been solved.
+  - [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) now supports code completion, compile errors, and go-to-definition for all active contexts.
+
+- Known issues:
+
+  - When using this extension for the first time in combination with the [Arm Environment Manager](https://marketplace.visualstudio.com/items?itemName=Arm.environment-manager), development tools are pre-installed. While this is happening, "Loading..." displays, which is misleading. You can check how the download process is progressing in **View** > **Output** > **Arm Tools** category.
+
 ## 1.40.0
 
 - New features:

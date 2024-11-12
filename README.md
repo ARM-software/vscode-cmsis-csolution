@@ -9,10 +9,10 @@ Arm CMSIS Solution provides the following views:
 - [CMSIS view](#cmsis-view): Access your source code and actions such as build, run, and debug from the **Solution outline**.
 - [Create New Solution view](#create-new-solution-view): Create new solutions for devices or boards from template projects or example applications.
 - [Configure Solution view](#configure-solution-view): Add layers to your reference applications or select a compiler toolchain for your solutions.
-- [Manage Solution view](#manage-solution-view): Manage your solutions with multiple targets, projects, and build types to define the scope of your application programs.
+- [Manage Solution view](#manage-solution-view): Manage your solutions with multiple targets, projects, and build types to define the scope of your applications.
 - [Software Components view](#software-components-view): Access reusable building blocks that are provided in software packs.
 
-[Settings](https://code.visualstudio.com/docs/getstarted/settings#_extension-settings): Configure features like [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd). With the **Online Mode** setting, Arm CMSIS Solution uses web services to retrieve information about devices, boards, and examples, and downloads missing **software packs**.
+[Settings](https://code.visualstudio.com/docs/getstarted/settings#_extension-settings): Configure features like [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd). With the **Use Web Services** setting, Arm CMSIS Solution uses web services to retrieve information about devices, boards, and examples, and downloads missing **software packs**.
 
 Arm CMSIS Solution works as a standalone tool and can also interact with other Visual Studio Code extensions:
 
@@ -29,7 +29,7 @@ Arm CMSIS Solution interfaces with the following [debug](#run-and-debug) extensi
 
 ![CMSIS view](https://github.com/ARM-software/vscode-cmsis-csolution/raw/main/docs/images/CMSIS_View.png)
 
-The **CMSIS** view gives you access to the source code of your application. The **CMSIS** view shows the [multiple projects](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-overview.md#project-setup-for-related-projects) that belong to the **context-set**, also called the build context. The various elements available for a project are:
+The **CMSIS** view gives you access to the source code of your application. The **CMSIS** view shows the [multiple projects](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-overview.md#project-setup-for-related-projects) that belong to the context set. The various elements available for a project are:
 
 - [File groups](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/YML-Input-Format.md#groups): Groups used to organize user source code.
 - [Constructed-files](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-overview.md#rte_componentsh): Files generated for the CMSIS Run-Time Environment (RTE).
@@ -70,7 +70,7 @@ Select reusable software components for your application from this view.
 
 ![ManageSolution](https://github.com/ARM-software/vscode-cmsis-csolution/raw/main/docs/images/ManageSolution.png)
 
-Select a [context-set](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-overview.md#working-with-context-set), or build context, from this view. A build context combines related projects which are generated independently for an application program. You might need to use different build types for projects, for example in cases where not all parts of an application require extra debug overhead.
+Select a [context set](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-overview.md#working-with-context-set) from this view. For a given target type, a context set combines related projects which you can build for an application. You might need to use different build types for projects, for example in cases where not all parts of an application require extra debug overhead.
 
 ## Run and Debug
 
