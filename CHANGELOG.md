@@ -2,9 +2,19 @@
 
 ## [Unreleased]
 
-## 1.44.0
+- New features:
 
-## 1.42.0
+  - [CMSIS Solution Extension API version 2.0](https://www.npmjs.com/package/@arm-software/vscode-cmsis-csolution) available via npm
+  - CMSIS outline view improvements include book icon for opening documentation for API header files, component count, add group button on project level and improved default collapse settings
+  - 
+
+- Solved issues:
+
+  - failed to load CMSIS projects using file extension `yaml` instead of `yml`.
+  - 
+
+
+## 1.44.0
 
 - New features:
 
