@@ -1,13 +1,15 @@
 # Arm CMSIS Solution
 
-The Arm® CMSIS Solution extension is a graphical user interface for csolution projects that use the [CMSIS-Toolbox](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/README.md). It supports microcontroller devices that incorporate Arm Cortex®-M processors and Arm Ethos®-U Neural Processing Units (NPUs), and works with various C/C++ compilers and debuggers. This extension is [free to use](https://marketplace.visualstudio.com/items/Arm.cmsis-csolution/license) and you can install it individually or as part of the [Arm Keil Studio Pack](https://marketplace.visualstudio.com/items?itemName=Arm.keil-studio-pack).
+The Arm® CMSIS Solution extension is a graphical user interface for csolution projects that use the [CMSIS-Toolbox](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/README.md). It supports microcontroller devices that incorporate Arm Cortex®-M processors and Arm Ethos®-U Neural Processing Units (NPUs), and works with various C/C++ compilers and debuggers. 
 
-The complete [documentation](https://developer.arm.com/documentation/108029/latest/Extension-pack-and-extensions) for Arm CMSIS Solution and the other Keil® Studio extensions is available on Arm Developer.
+This extension is [free to use](https://marketplace.visualstudio.com/items/Arm.cmsis-csolution/license) and you can install it individually or as part of the [Arm Keil® Studio Pack](https://marketplace.visualstudio.com/items?itemName=Arm.keil-studio-pack).
+
+The complete [documentation](https://developer.arm.com/documentation/108029/latest/Arm-CMSIS-Solution-extension) for Arm CMSIS Solution and the other Keil Studio extensions is available on the [Arm Developer website](https://developer.arm.com).
 
 Arm CMSIS Solution provides the following views:
 
 - [CMSIS view](#cmsis-view): Access your source code and actions such as build, run, and debug from the **Solution outline**.
-- [Create New Solution view](#create-new-solution-view): Create new solutions for devices or boards from template projects or example applications.
+- [Create Solution view](#create-solution-view): Create new solutions for devices or boards from template projects or example applications.
 - [Configure Solution view](#configure-solution-view): Add layers to your reference applications or select a compiler toolchain for your solutions.
 - [Manage Solution view](#manage-solution-view): Manage your solutions with multiple targets, projects, and build types to define the scope of your applications.
 - [Software Components view](#software-components-view): Access reusable building blocks that are provided in software packs.
@@ -16,7 +18,7 @@ Arm CMSIS Solution provides the following views:
 
 Arm CMSIS Solution works as a standalone tool and can also interact with other Visual Studio Code extensions:
 
-- [Arm Environment Manager](https://marketplace.visualstudio.com/items?itemName=Arm.environment-manager): Installs tools (compiler, debugger, simulation models, and utilities) for software development.
+- [Arm Tools Environment Manager](https://marketplace.visualstudio.com/items?itemName=Arm.environment-manager): Installs tools (compiler, debugger, simulation models, and utilities) for software development.
 - [Red Hat YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml): Provides syntax support when editing csolution project files such as `*.csolution.yml` and `*.cproject.yml`.
 - [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd): Adds smart features to the Visual Studio Code editor, including code completion, compile errors, and go-to-definition.
 
@@ -39,9 +41,9 @@ The **CMSIS** view gives you access to the source code of your application. The 
 
 Action buttons allow you to build, run, and debug your application or open the views that are described in detail below. For components, you can access the documentation or run generators such as STM32CubeMX or the MCUXpresso Config Tools.
 
-## Create New Solution view
+## Create Solution view
 
-![Create New Solution](https://github.com/ARM-software/vscode-cmsis-csolution/raw/main/docs/images/CreateNewSolution.png)
+![Create Solution](https://github.com/ARM-software/vscode-cmsis-csolution/raw/main/docs/images/CreateNewSolution.png)
 
 Create a new csolution project and choose the target type name, solution name, and location of the csolution project from this view.
 

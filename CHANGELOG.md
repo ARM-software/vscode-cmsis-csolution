@@ -2,9 +2,28 @@
 
 ## [Unreleased]
 
-## 1.44.0
+## 1.46.0
 
-## 1.42.0
+- New features:
+
+  - This version of the extension is targeted for use with [**CMSIS-Toolbox 2.7**](https://open-cmsis-pack.github.io/cmsis-toolbox/#revision-history).
+  - The [**CMSIS Solution Extension API version 2.0**](https://www.npmjs.com/package/@arm-software/vscode-cmsis-csolution) is available on npm and gives access to all available boards and devices, their associated examples, and the ability to copy and build a selected example for use by other Visual Studio Code extensions.
+  - Improvements to the CMSIS **Solution outline** view include: book icons to open documentation for API header files, count badges on components, **Add New Group** buttons at the project level, and improved default collapse settings.
+
+- Solved issues:
+
+  - CMSIS solution projects using a `yaml` file extension are loaded correctly again.
+  - To access recently published pack versions, you must run `cpackget update-index --sparse`: Now the pack index is automatically updated by `cpackget` once a day.
+  - If you are using CMSIS-Toolbox for the first time, you must manually initialize the CMSIS-Pack root directory with `cpackget init https://www.keil.com/pack/index.pidx`: Now the CMSIS-Pack root directory is initialized automatically if it does not exist yet.
+  - After manually installing a CMSIS software pack, this version of the extension re-reads the package description files of the installed CMSIS software packs every time `cpackget` has added or removed a pack.
+
+- Known issues:
+
+  - The layers and templates displayed in the **Create Solution** view are only taken from installed CMSIS software packs.
+  - Software components from layers of inactive target types incorrectly display in the **Software Components** view in addition to the ones from the active target type.
+  - The pack installer updates the pack index even when installing a local CMSIS software pack file.
+
+## 1.44.0
 
 - New features:
 
