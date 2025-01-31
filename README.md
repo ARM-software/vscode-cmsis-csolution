@@ -1,6 +1,6 @@
 # Arm CMSIS Solution
 
-The Arm® CMSIS Solution extension is a graphical user interface for csolution projects that use the [CMSIS-Toolbox](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/README.md). It supports microcontroller devices that incorporate Arm Cortex®-M processors and Arm Ethos®-U Neural Processing Units (NPUs), and works with various C/C++ compilers and debuggers. 
+The Arm® CMSIS Solution extension is a graphical user interface for csolution projects that use the [CMSIS-Toolbox](https://open-cmsis-pack.github.io/cmsis-toolbox/). The extension supports microcontroller devices that incorporate Arm Cortex®-M processors and Arm Ethos®-U Neural Processing Units (NPUs), and works with various C/C++ compilers and debuggers. 
 
 This extension is [free to use](https://marketplace.visualstudio.com/items/Arm.cmsis-csolution/license) and you can install it individually or as part of the [Arm Keil® Studio Pack](https://marketplace.visualstudio.com/items?itemName=Arm.keil-studio-pack).
 
@@ -31,13 +31,13 @@ Arm CMSIS Solution interfaces with the following [debug](#run-and-debug) extensi
 
 ![CMSIS view](https://github.com/ARM-software/vscode-cmsis-csolution/raw/main/docs/images/CMSIS_View.png)
 
-The **CMSIS** view gives you access to the source code of your application. The **CMSIS** view shows the [multiple projects](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-overview.md#project-setup-for-related-projects) that belong to the context set. The various elements available for a project are:
+The **CMSIS** view gives you access to the source code of your application. The **CMSIS** view shows the [multiple projects](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#project-setup-for-related-projects) that belong to the context set. The various elements available for a project are:
 
-- [File groups](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/YML-Input-Format.md#groups): Groups used to organize user source code.
-- [Constructed-files](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-overview.md#rte_componentsh): Files generated for the CMSIS Run-Time Environment (RTE).
-- [Linker](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-overview.md#linker-script-management): Script files used in the project context.
-- [Components](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/CreateApplications.md#software-component): Reusable software modules that you select.
-- [Layers](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-overview.md#software-layers): Sets of source files, software components, and configuration files that you can reuse in different projects.
+- [File groups](https://open-cmsis-pack.github.io/cmsis-toolbox/YML-Input-Format/#groups): Groups used to organize user source code.
+- [Constructed-files](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#rte_componentsh): Files generated for the CMSIS Run-Time Environment (RTE).
+- [Linker](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#linker-script-management): Script files used in the project context.
+- [Components](https://open-cmsis-pack.github.io/cmsis-toolbox/CreateApplications/#software-components): Reusable software modules that you select.
+- [Layers](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#software-layers): Sets of source files, software components, and configuration files that you can reuse in different projects.
 
 Action buttons allow you to build, run, and debug your application or open the views that are described in detail below. For components, you can access the documentation or run generators such as STM32CubeMX or the MCUXpresso Config Tools.
 
@@ -50,7 +50,7 @@ Create a new csolution project and choose the target type name, solution name, a
 To start a new csolution project, select a [board](https://www.keil.arm.com/boards/) or [device](https://www.keil.arm.com/devices/). You can choose from the following project types:
 
 - Templates: Templates are stub projects providing a minimal setup for the selected use case.
-- [Reference applications](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/ReferenceApplications.md): Reference applications are hardware-agnostic and require additional software layers with API drivers for the target board selected.
+- [Reference applications](https://open-cmsis-pack.github.io/cmsis-toolbox/ReferenceApplications/): Reference applications are hardware-agnostic and require additional software layers with API drivers for the target board selected.
 - CMSIS solution examples: These examples are created for a specific hardware or evaluation board and interface with board and device peripherals.
 - µVision examples: Example projects created for the µVision IDE. Arm CMSIS Solution automatically converts µVision projects to the csolution project format.
 
@@ -72,7 +72,7 @@ Select reusable software components for your application from this view.
 
 ![ManageSolution](https://github.com/ARM-software/vscode-cmsis-csolution/raw/main/docs/images/ManageSolution.png)
 
-Select a [context set](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-overview.md#working-with-context-set) from this view. For a given target type, a context set combines related projects which you can build for an application. You might need to use different build types for projects, for example in cases where not all parts of an application require extra debug overhead.
+Select a [context set](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#working-with-context-set) from this view. For a given target type, a context set combines related projects which you can build for an application. You might need to use different build types for projects, for example in cases where not all parts of an application require extra debug overhead.
 
 ## Run and Debug
 

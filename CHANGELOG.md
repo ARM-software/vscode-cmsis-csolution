@@ -2,6 +2,26 @@
 
 ## [Unreleased]
 
+## 1.48.0
+
+- New features:
+
+  - The **CMSIS View** shows the board and device for the active target.
+  - The **CMSIS View** provides access to documentation for the board, device, and components.
+  - The **Views and More Actions...** menu available from the **CMSIS View** has now a **Help** entry. Click **Help** to open the CMSIS Solution documentation.
+  - The context help in the editor has been enhanced for *csolution project files*. Documentation links are provided when you move your mouse over the different elements.
+
+- Solved issues:
+
+  - The **Create Solution** view now presents the correct templates from packs.
+  - [A full list of resolved issues is available on GitHub.](https://github.com/orgs/ARM-software/projects/10/views/8)
+
+- Known issues:
+
+  - The layers and templates displayed in the **Create Solution** view are only taken from installed CMSIS software packs.
+  - Software components from layers of inactive target types incorrectly display in the **Software Components** view in addition to the ones from the active target type.
+  - When installing a local software pack with `cpackget`, (a) an [incorrect empty \<timestamp\> is created](https://github.com/Open-CMSIS-Pack/cpackget/issues/421), and (b) the [pack index is downloaded](https://github.com/Open-CMSIS-Pack/cpackget/issues/404).
+   
 ## 1.46.0
 
 - New features:

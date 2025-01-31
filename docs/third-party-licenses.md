@@ -1,6 +1,6 @@
 ## TPIP Report for vscode-cmsis-csolution
 
-Report prepared at : 2024-12-17 13:8:47
+Report prepared at : 2024-12-18 12:36:26
 
 | *Package* | *Version* | *Repository* | *License* |
 |---|---|---|---|
@@ -21,7 +21,7 @@ Report prepared at : 2024-12-17 13:8:47
 |lodash.debounce|4.0.8|https://github.com/lodash/lodash|[MIT](https://github.com/lodash/lodash/blob/master/LICENSE)|
 |node-fetch|3.3.2|https://github.com/node-fetch/node-fetch|[MIT](https://github.com/node-fetch/node-fetch/blob/master/LICENSE.md)|
 |path-browserify|1.0.1|https://github.com/browserify/path-browserify|[MIT](https://github.com/browserify/path-browserify/blob/master/LICENSE)|
-|primereact|10.8.4|https://github.com/primefaces/primereact|[MIT](https://github.com/primefaces/primereact/blob/master/LICENSE.md)|
+|primereact|10.8.5|https://github.com/primefaces/primereact|[MIT](https://github.com/primefaces/primereact/blob/master/LICENSE.md)|
 |react|18.3.1|https://github.com/facebook/react|[MIT](https://github.com/facebook/react/blob/main/LICENSE)|
 |react-dom|18.3.1|https://github.com/facebook/react|[MIT](https://github.com/facebook/react/blob/main/LICENSE)|
 |react-window|1.8.10|https://github.com/bvaughn/react-window|[MIT](https://github.com/bvaughn/react-window/blob/master/LICENSE.md)|
