@@ -120,7 +120,7 @@
     },
     {
         "name": "primereact",
-        "version": "10.8.5",
+        "version": "10.9.2",
         "spdx": "MIT",
         "url": "https://github.com/primefaces/primereact",
         "license": "https://github.com/primefaces/primereact/blob/master/LICENSE.md"
@@ -183,7 +183,7 @@
     },
     {
         "name": "yaml",
-        "version": "2.6.1",
+        "version": "2.7.0",
         "spdx": "ISC",
         "url": "https://github.com/eemeli/yaml",
         "license": "https://github.com/eemeli/yaml/blob/main/LICENSE"

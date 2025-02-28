@@ -2,6 +2,27 @@
 
 ## [Unreleased]
 
+## 1.50.0
+
+- New features:
+
+  - The **Configuration Wizard** supports [Debug Configuration Files (*.dbgconf)](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/pdsc_family_pg.html#element_debugvars) which, starting with **CMSIS-Toolbox 2.8.0**, are treated like [component configuration files](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#plm-of-configuration-files) from a Cclass="Device" component.
+  - Pop-up notification added when launching a generator failed. The **CMSIS Solution** output channel displays by default.
+  - Pop-up notification added if a csolution file is detected in the workspace when launching a µVision to CMSIS Solution conversion. You can choose to overwrite the existing csolution file.
+  - The extension includes the CMSIS Solution schema files from the latest published CMSIS-Toolbox version (2.8.0).
+  - The extension includes the latest published µVision to CMSIS Solution converter (1.6.0).
+ 
+- Solved issues:
+
+  - When adding a local PDSC file using `cpackget` the <timestamp> tag in local_repository.pidx must not be empty.
+  - The deprecated [**CMSIS Solution Extension API version 1.0**](https://www.npmjs.com/package/@arm-software/vscode-cmsis-csolution) was removed. You must now use Version 2.0.
+  - [A full list of resolved issues is available on GitHub](https://github.com/orgs/ARM-software/projects/10/views/10).
+ 
+- Known issues:
+
+  - When installing a local software pack with `cpackget` the [pack index is updated unnecessarily](https://github.com/Open-CMSIS-Pack/cpackget/issues/404).
+   
+
 ## 1.48.0
 
 - New features:
