@@ -27,9 +27,11 @@ Arm CMSIS Solution interfaces with the following [debug](#run-and-debug) extensi
 - [Arm Debugger](#arm-debugger): Supports connections to physical targets such as ULINK, CMSIS-DAP, and ST-LINK, and virtual targets (FVP simulation models).
 - [Cortex-Debug](#cortex-debug): Interfaces with physical targets using J-Link, OpenOCD, pyOCD, or ST-LINK. OpenOCD and pyOCD support debug with CMSIS-DAP.
 
-## CMSIS view
+## Feature overview
 
-![CMSIS view](https://github.com/ARM-software/vscode-cmsis-csolution/raw/main/docs/images/CMSIS_View.png)
+![CMSIS Solution Quick Tutorial](./docs/videos/MDK6_Productivity.gif)
+
+## CMSIS view
 
 The **CMSIS** view gives you access to the source code of your application. The **CMSIS** view shows the [multiple projects](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#project-setup-for-related-projects) that belong to the context set. The various elements available for a project are:
 
