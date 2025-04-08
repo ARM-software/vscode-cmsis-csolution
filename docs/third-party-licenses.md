@@ -1,6 +1,6 @@
 ## TPIP Report for vscode-cmsis-csolution
 
-Report prepared at : 2025-02-25 15:40:11
+Report prepared at : 2025-04-01 12:40:19
 
 | *Package* | *Version* | *Repository* | *License* |
 |---|---|---|---|
@@ -21,13 +21,13 @@ Report prepared at : 2025-02-25 15:40:11
 |lodash.debounce|4.0.8|https://github.com/lodash/lodash|[MIT](https://github.com/lodash/lodash/blob/master/LICENSE)|
 |node-fetch|3.3.2|https://github.com/node-fetch/node-fetch|[MIT](https://github.com/node-fetch/node-fetch/blob/master/LICENSE.md)|
 |path-browserify|1.0.1|https://github.com/browserify/path-browserify|[MIT](https://github.com/browserify/path-browserify/blob/master/LICENSE)|
-|primereact|10.9.2|https://github.com/primefaces/primereact|[MIT](https://github.com/primefaces/primereact/blob/master/LICENSE.md)|
+|primereact|10.9.4|https://github.com/primefaces/primereact|[MIT](https://github.com/primefaces/primereact/blob/master/LICENSE.md)|
 |react|18.3.1|https://github.com/facebook/react|[MIT](https://github.com/facebook/react/blob/main/LICENSE)|
 |react-dom|18.3.1|https://github.com/facebook/react|[MIT](https://github.com/facebook/react/blob/main/LICENSE)|
 |react-window|1.8.11|https://github.com/bvaughn/react-window|[MIT](https://github.com/bvaughn/react-window/blob/master/LICENSE.md)|
-|semver|7.6.3|https://github.com/npm/node-semver|[ISC](https://github.com/npm/node-semver/blob/main/LICENSE)|
+|semver|7.7.1|https://github.com/npm/node-semver|[ISC](https://github.com/npm/node-semver/blob/main/LICENSE)|
 |vscode-cpptools|6.1.0|https://github.com/Microsoft/vscode-cpptools-api|[MIT](https://github.com/microsoft/vscode-cpptools-api/blob/main/LICENSE)|
-|vscode-messenger|0.4.5|https://github.com/TypeFox/vscode-messenger|[MIT](https://github.com/TypeFox/vscode-messenger/blob/v0.4.5/LICENSE)|
+|vscode-messenger|0.5.1|https://github.com/TypeFox/vscode-messenger|[MIT](https://github.com/TypeFox/vscode-messenger/blob/v0.4.5/LICENSE)|
 |vscode-messenger-common|0.5.1|https://github.com/TypeFox/vscode-messenger|[MIT](https://github.com/TypeFox/vscode-messenger/blob/main/LICENSE)|
 |vscode-messenger-webview|0.4.5|https://github.com/TypeFox/vscode-messenger|[MIT](https://github.com/TypeFox/vscode-messenger/blob/v0.4.5/LICENSE)|
 |yaml|2.7.0|https://github.com/eemeli/yaml|[ISC](https://github.com/eemeli/yaml/blob/main/LICENSE)|

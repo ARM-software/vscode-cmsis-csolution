@@ -120,7 +120,7 @@
     },
     {
         "name": "primereact",
-        "version": "10.9.2",
+        "version": "10.9.4",
         "spdx": "MIT",
         "url": "https://github.com/primefaces/primereact",
         "license": "https://github.com/primefaces/primereact/blob/master/LICENSE.md"
@@ -148,7 +148,7 @@
     },
     {
         "name": "semver",
-        "version": "7.6.3",
+        "version": "7.7.1",
         "spdx": "ISC",
         "url": "https://github.com/npm/node-semver",
         "license": "https://github.com/npm/node-semver/blob/main/LICENSE"
@@ -162,7 +162,7 @@
     },
     {
         "name": "vscode-messenger",
-        "version": "0.4.5",
+        "version": "0.5.1",
         "spdx": "MIT",
         "url": "https://github.com/TypeFox/vscode-messenger",
         "license": "https://github.com/TypeFox/vscode-messenger/blob/v0.4.5/LICENSE"

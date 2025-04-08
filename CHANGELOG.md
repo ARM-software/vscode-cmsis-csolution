@@ -2,6 +2,32 @@
 
 ## [Unreleased]
 
+## 1.52.0
+
+- New features:
+
+  - The quick picker from the "Select Active Solution from workspace" menu lists available solutions in alphabetical order.
+  - The Installation of a pack can be initiated via a URI `vscode://arm.cmsis-csolution/installpack?pack=<pack>` launching VS Code, using the installed CMSIS Solution extension to run `cpackget add -a <pack>`.
+
+  - **Solution outline** view improvements:
+    - A **Manage software components** button is now available to open the **Software Components** view also from **Components** item.
+    - **Copy header file** buttons are available for header files listed under **constructed-files** or **Components** adding `#include "<header file>"` to the clipboard.
+    - **Set Clangd Context** buttons are available at the project level to activate clangd for a given project context.
+    - Local files with extension ***.md** (Markdown format) are opened in the markdown preview mode.
+
+- Solved issues:
+
+  - Newly created solutions no longer fail due to missing configuration files from selected components because `update-rte` is now executed.
+  - Fixed `command:cmsis-csolution.getCbuildRunFile` to return the filename following the convention `<solution>+<target>.cbuild-run.yml` introduced in CMSIS-Toolbox 2.8.0.
+  - Arm Compiler 6 pre-defines are consistently exported into `.clangd` configuration files.
+  - Reduce likelihood of duplicated calls to `cbuild setup` after converting µVision projects within the active workspace.
+  - The YAML parser for the CMSIS solution input files ensures that all specified numbers retain their format. Double quotes are added on write back without causing any side effect.
+  
+- Known issues:
+
+  - A `*.project.yml` that has components with for-context attributes might loose settings. ([ARM-software/vscode-cmsis-csolution#211](https://github.com/ARM-software/vscode-cmsis-csolution/issues/211)).
+  - Missing source files in `*.cgen.yml` after generating code in CubeMX. ([ARM-software/vscode-cmsis-csolution#206](https://github.com/ARM-software/vscode-cmsis-csolution/issues/206), [Open-CMSIS-Pack/generator-bridge#129](https://github.com/Open-CMSIS-Pack/generator-bridge/issues/129)).
+
 ## 1.50.0
 
 - New features:
@@ -11,17 +37,16 @@
   - Pop-up notification added if a csolution file is detected in the workspace when launching a µVision to CMSIS Solution conversion. You can choose to overwrite the existing csolution file.
   - The extension includes the CMSIS Solution schema files from the latest published CMSIS-Toolbox version (2.8.0).
   - The extension includes the latest published µVision to CMSIS Solution converter (1.6.0).
- 
+
 - Solved issues:
 
   - When adding a local PDSC file using `cpackget` the <timestamp> tag in local_repository.pidx must not be empty.
   - The deprecated [**CMSIS Solution Extension API version 1.0**](https://www.npmjs.com/package/@arm-software/vscode-cmsis-csolution) was removed. You must now use Version 2.0.
   - [A full list of resolved issues is available on GitHub](https://github.com/orgs/ARM-software/projects/10/views/10).
- 
+
 - Known issues:
 
   - When installing a local software pack with `cpackget` the [pack index is updated unnecessarily](https://github.com/Open-CMSIS-Pack/cpackget/issues/404).
-   
 
 ## 1.48.0
 
@@ -35,14 +60,14 @@
 - Solved issues:
 
   - The **Create Solution** view now presents the correct templates from packs.
-  - [A full list of resolved issues is available on GitHub.](https://github.com/orgs/ARM-software/projects/10/views/8)
+  - [A full list of resolved issues is available on GitHub](https://github.com/orgs/ARM-software/projects/10/views/8).
 
 - Known issues:
 
   - The layers and templates displayed in the **Create Solution** view are only taken from installed CMSIS software packs.
   - Software components from layers of inactive target types incorrectly display in the **Software Components** view in addition to the ones from the active target type.
   - When installing a local software pack with `cpackget`, (a) an [incorrect empty \<timestamp\> is created](https://github.com/Open-CMSIS-Pack/cpackget/issues/421), and (b) the [pack index is downloaded](https://github.com/Open-CMSIS-Pack/cpackget/issues/404).
-   
+
 ## 1.46.0
 
 - New features:
@@ -110,7 +135,7 @@
 - API extension:
   - query boards and devices
   - create csolution
-- Sync with CMSIS-toolbox 2.5.0
+- Sync with CMSIS-toolbox 2.5.0:
   - use 2.5.0 schemas
   - call `cbuild setup`
 - Improvements to the μVision to csolution converter (uv2csolution 1.5.0):
@@ -130,20 +155,20 @@
 - Show `open solution` command on the folders containing csolution files.
 - Compilation command file loaded from inside the out folder instead of tmp folder.
 - Allow to override uv2csolution path using environment variables.
-- `Open solution` renamed to `Activate solution`
-- Create Solution Dialog: Replaced "Examples" dropdown with an TreeView including a search box
-- Fixed an issue where .clangd was not created
+- `Open solution` renamed to `Activate solution`.
+- Create Solution Dialog: Replaced "Examples" dropdown with an TreeView including a search box.
+- Fixed an issue where .clangd was not created.
 
 ## 1.35.0
 
 - Improvements to the μVision to csolution converter:
-    - Evaluation of new optimization value "-Omax".
-    - Performing error handling before generating scatter file.
-    - Fixing "Enable all warnings" for AC6 incorrectly specifies -Weverything.
-    - Replacement of colon ':' characters in group names with undersore.
-    - Adding support for new optimization level "debug".
-    - Improvement of error and warning messages by removing XML tags and rephrasing them to make them more readable.
-    - Adding 'instances' node in csolution to support multiple instances of a component.
+  - Evaluation of new optimization value "-Omax".
+  - Performing error handling before generating scatter file.
+  - Fixing "Enable all warnings" for AC6 incorrectly specifies -Weverything.
+  - Replacement of colon ':' characters in group names with undersore.
+  - Adding support for new optimization level "debug".
+  - Improvement of error and warning messages by removing XML tags and rephrasing them to make them more readable.
+  - Adding 'instances' node in csolution to support multiple instances of a component.
 - Improve intellisense within header files.
 
 ## 1.34.9
@@ -155,7 +180,8 @@
 - Minor improvements.
 
 ## 1.34.7
-- Component manager: Display solution name in packs filter dropdown
+
+- Component manager: Display solution name in packs filter dropdown.
 
 ## 1.34.6
 
@@ -163,7 +189,7 @@
 
 ## 1.34.5
 
-- Config Wizard: Option `<y>` added to change a symbol name
+- Config Wizard: Option `<y>` added to change a symbol name.
 
 ## 1.34.4
 
@@ -186,7 +212,7 @@
 
 - Update YAML schemas to Toolbox 2.3.0.
 - Fix template files copied from the pack cache readonly.
-- Disable telemetry by default for SSK and HSK licenses
+- Disable telemetry by default for SSK and HSK licenses.
 - Sort boards in the create solution form.
 - Show a help notification when the CMSIS Toolbox cannot be found.
 - Fix vendor filtering of devices in the create solution form.
@@ -232,7 +258,7 @@
 
 - Add a new custom editor for configuration files based on [CMSIS Configuration Wizard Annotations](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/configWizard.html). Open this with the "Open Preview" button at the top of the editor for a header file.
 - Update the getHardwareAndToolchainInfo extension API to return additional information of board id, board pack id and device id.
-- Do not set --schema flag when building solutions. This was causing problems due to this issue: https://github.com/Open-CMSIS-Pack/devtools/issues/1345.
+- Do not set --schema flag when building solutions. This was causing problems due to this issue: <https://github.com/Open-CMSIS-Pack/devtools/issues/1345>.
 - Fix updating the list of solutions in the workspace when the parent directory of a solution is deleted.
 
 ## 1.29.0
@@ -283,7 +309,7 @@
 
 - Fix parsing of component identifiers containing parentheses.
 - Create solution form: fixed loading preview data when selecting the same hardware twice.
-- Added run and debug configuration settings for solutions and projects
+- Added run and debug configuration settings for solutions and projects.
 
 ## 1.24.4
 
@@ -293,13 +319,13 @@
 ## 1.24.3
 
 - Improvements to the μVision to csolution converter:
-    - Consider CMSIS V6 by setting latest pack version prior to CMSIS v6 to fixed pack version "5.9.0" in CMSIS solution project
-    - Better handling of processor properties fpu, mve, trustzone, endianess and branch-protection
-    - Updating data in generated vcpkg-configuration.json file and avoid duplicating vcpkg entries
-    - Support multicore
-    - CMSIS csolution project is now generated if at least one target is faultless
-    - Improve warning and error messages
-    - Fixed: compile error when armmasm.exe is specified in uvprojx
+  - Consider CMSIS V6 by setting latest pack version prior to CMSIS v6 to fixed pack version "5.9.0" in CMSIS solution project.
+  - Better handling of processor properties fpu, mve, trustzone, endianess and branch-protection.
+  - Updating data in generated vcpkg-configuration.json file and avoid duplicating vcpkg entries.
+  - Support multicore.
+  - CMSIS csolution project is now generated if at least one target is faultless.
+  - Improve warning and error messages.
+  - Fixed: compile error when armmasm.exe is specified in uvprojx.
 - Add target and build type labels to the solution outline view.
 - Create solution: add option to clear the selected board.
 - Show an option to convert a µVision project in the context menu in the solution outline rather than display a toast notification to do this.
@@ -312,7 +338,7 @@
 - Add explorer context menu item for opening a solution.
 - Solution view: move create solution action to context menu and add open solution action.
 - Create solution: change the heading for the compiler selection.
-- Component manager: software components are filtered to solution by default
+- Component manager: software components are filtered to solution by default.
 
 ## 1.24.1
 
@@ -394,7 +420,7 @@
 
 - Improved styling of dropdowns in the create solution form.
 - Remove the ability to change component versions from the components table.
-- Create solution csolution and cproject files updated to use .yml file extension
+- Create solution csolution and cproject files updated to use .yml file extension.
 
 ## 1.14.2
 
@@ -416,10 +442,10 @@
 ## 1.13.0
 
 - Improvements to the μVision to csolution converter:
-    - Remove the linker option --list and --import-cmse-lib-out, replaced by $cmse-lib(<secure project>)$
-    - In the case user commands are specified in uvprojx converter displays warning to user to manually execute commands
-    - Consider the XML option `<CreateLib>` in uvprojx
-    - Add link to document for how to manually migrate AC5 to AC6 project
+  - Remove the linker option --list and --import-cmse-lib-out, replaced by $cmse-lib(<secure project>)$.
+  - In the case user commands are specified in uvprojx converter displays warning to user to manually execute commands.
+  - Consider the XML option `<CreateLib>` in uvprojx.
+  - Add link to document for how to manually migrate AC5 to AC6 project.
 
 ## 1.12.3
 
@@ -434,7 +460,8 @@
 - Move software components action to the Solution view.
 
 ## 1.12.0
-- Fixed alignment the buttons at the bottom of the create solution webview
+
+- Fixed alignment the buttons at the bottom of the create solution webview.
 - Add a new configuration setting to set the path of the CMSIS Toolbox. Deprecates the cmsis-csolution.cbuildPath and cmsis-csolution.csolutionPath settings.
 
 ## 1.11.8
@@ -471,7 +498,7 @@
 
 ## 1.11.0
 
-- Remove the Create Solutions Preview
+- Remove the Create Solutions Preview.
 
 ## 1.10.0
 
@@ -480,7 +507,7 @@
 - Add a new `cmsis-csolution.getProcessorName` command. This returns the processor name for the current context, and can be used
 to simplify tasks.json and launch.json files.
 - Add directory selector to the Create Solution flow.
-- Update document links to point to https://pack-content.cmsis.io/.
+- Update document links to point to <https://pack-content.cmsis.io/>.
 
 ## 1.9.0
 
@@ -489,8 +516,8 @@ to simplify tasks.json and launch.json files.
 
 ## 1.8.0
 
-- Clicking project and layer files in the solution view now expands the children instead of opening the file
-- Add a checkbox that installs required packs when a solution is created
+- Clicking project and layer files in the solution view now expands the children instead of opening the file.
+- Add a checkbox that installs required packs when a solution is created.
 - Add getExamplesForBoard extension API for retrieving the list of examples from CMSIS Packs for specified device or board.
 
 ## 1.7.0
@@ -509,12 +536,12 @@ to simplify tasks.json and launch.json files.
 
 ## 1.5.3
 
-- Add the error output to the popup that shows when a component fails to update
+- Add the error output to the popup that shows when a component fails to update.
 - Fix display of "misc" in the Csolution view to show a single entry for each compiler, and a single 'All' entry when the compiler is not specified.
 
 ## 1.5.1
 
-- Fix an issue where the CMSIS pack root preference is not respected
+- Fix an issue where the CMSIS pack root preference is not respected.
 
 ## 1.5.0
 
@@ -529,13 +556,13 @@ to simplify tasks.json and launch.json files.
 ## 1.4.2
 
 - Fix compilation for API types package.
-- Add the "misc" option to "Layers in the solution view
+- Add the "misc" option to "Layers in the solution view.
 - Add the "misc" options to the solution in the outline view.
 
 ## 1.4.1
 
-- Add the "misc" option to "Target types" in the solution view
-- Add the "misc" option to "Projects" in the solution view
+- Add the "misc" option to "Target types" in the solution view.
+- Add the "misc" option to "Projects" in the solution view.
 
 ## 1.4.0
 
@@ -607,10 +634,10 @@ to simplify tasks.json and launch.json files.
 
 - Rename convert command to "Convert μVision project to csolution".
 - Improvements to the μVision to csolution converter:
-    - Migrate to schema 2.0
-    - Do not generate backward slash in file paths. This fixes issues on non-Windows systems.
-    - Generate vcpkg-configuration.json in project folder where csolution file is located
-    - Return an error in case the μVision project uses AC5.
+  - Migrate to schema 2.0.
+  - Do not generate backward slash in file paths. This fixes issues on non-Windows systems.
+  - Generate vcpkg-configuration.json in project folder where csolution file is located.
+  - Return an error in case the μVision project uses AC5.
 - Add support for loading components from layer files.
 
 ## 0.28.0
@@ -657,7 +684,7 @@ to simplify tasks.json and launch.json files.
 ## 0.23.0
 
 - Add new csolution outline view to CMSIS panel that shows the structure, resources, and configuration of the solution. This is only shown when the "Experimental Features" setting is enabled.
-- Extension API types are now available on NPM: [@arm-software/vscode-cmsis-csolution](https://www.npmjs.com/package/@arm-software/vscode-cmsis-csolution)
+- Extension API types are now available on NPM: [@arm-software/vscode-cmsis-csolution](https://www.npmjs.com/package/@arm-software/vscode-cmsis-csolution).
 
 ## 0.22.0
 
@@ -759,7 +786,7 @@ compatible with all of the solution's target types.
 
 - Clarify use of build type and target type in the create solutions UI.
 - Manage components view no longer requires the experimental features flag.
-- Fix converting MDK projects outside of the workspace (https://github.com/ARM-software/vscode-cmsis-csolution/issues/4).
+- Fix converting MDK projects outside of the workspace (<https://github.com/ARM-software/vscode-cmsis-csolution/issues/4>).
 - Add refresh command to reload the active solution.
 - Reload the Manage Components view when the cproject file is changed.
 
@@ -820,7 +847,7 @@ compatible with all of the solution's target types.
 
 ### New Features
 
-- Added 'Experimental Features' setting
+- Added 'Experimental Features' setting.
 
 ### Fixed
 
