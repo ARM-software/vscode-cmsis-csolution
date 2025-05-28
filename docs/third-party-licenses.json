@@ -176,7 +176,7 @@
     },
     {
         "name": "vscode-messenger-webview",
-        "version": "0.4.5",
+        "version": "0.5.1",
         "spdx": "MIT",
         "url": "https://github.com/TypeFox/vscode-messenger",
         "license": "https://github.com/TypeFox/vscode-messenger/blob/v0.4.5/LICENSE"
@@ -194,5 +194,12 @@
         "spdx": "ISC",
         "url": "https://github.com/yargs/yargs-parser",
         "license": "https://github.com/yargs/yargs-parser/blob/main/LICENSE.txt"
+    },
+    {
+        "name": "eta",
+        "version": "3.5.0",
+        "spdx": "MIT",
+        "url": "https://github.com/eta-dev/eta",
+        "license": "https://github.com/eta-dev/eta/blob/main/LICENSE"
     }
 ]

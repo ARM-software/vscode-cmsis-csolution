@@ -4,8 +4,6 @@ The Arm® CMSIS Solution extension is a graphical user interface for csolution p
 
 This extension is [free to use](https://marketplace.visualstudio.com/items/Arm.cmsis-csolution/license) and you can install it individually or as part of the [Arm Keil® Studio Pack](https://marketplace.visualstudio.com/items?itemName=Arm.keil-studio-pack).
 
-The complete [documentation](https://developer.arm.com/documentation/108029/latest/Arm-CMSIS-Solution-extension) for Arm CMSIS Solution and the other Keil Studio extensions is available on the [Arm Developer website](https://developer.arm.com).
-
 Arm CMSIS Solution provides the following views:
 
 - [CMSIS view](#cmsis-view): Access your source code and actions such as build, run, and debug from the **Solution outline**.
@@ -14,53 +12,53 @@ Arm CMSIS Solution provides the following views:
 - [Manage Solution view](#manage-solution-view): Manage your solutions with multiple targets, projects, and build types to define the scope of your applications.
 - [Software Components view](#software-components-view): Access reusable building blocks that are provided in software packs.
 
-[Settings](https://code.visualstudio.com/docs/getstarted/settings#_extension-settings): Configure features like [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd). With the **Use Web Services** setting, Arm CMSIS Solution uses web services to retrieve information about devices, boards, and examples, and downloads missing **software packs**.
+[Settings](https://mdk-packs.github.io/vscode-cmsis-solution-docs/configuration.html#configure-the-extension): Configure features like pack download, [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd), or usage of web services. When **Use Web Services** is enabled, Arm CMSIS Solution gets from [keil.arm.com](https://www.keil.arm.com/packs/) information about devices, boards, and examples that are provided in software packs.
 
-Arm CMSIS Solution works as a standalone tool and can also interact with other Visual Studio Code extensions:
+Arm CMSIS Solution works as a standalone tool and can also interact with other VS Code extensions:
 
 - [Arm Tools Environment Manager](https://marketplace.visualstudio.com/items?itemName=Arm.environment-manager): Installs tools (compiler, debugger, simulation models, and utilities) for software development.
+- [Arm CMSIS Debugger](https://marketplace.visualstudio.com/items?itemName=Arm.vscode-cmsis-debugger): Installs a GDB-based debugger (for CMSIS-DAP, ULINK, JLink, ST-Link, an other adapters) along with [pyOCD](https://pyocd.io/).
 - [Red Hat YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml): Provides syntax support when editing csolution project files such as `*.csolution.yml` and `*.cproject.yml`.
-- [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd): Adds smart features to the Visual Studio Code editor, including code completion, compile errors, and go-to-definition.
-
-Arm CMSIS Solution interfaces with the following [debug](#run-and-debug) extensions:
-
-- [Arm Debugger](#arm-debugger): Supports connections to physical targets such as ULINK, CMSIS-DAP, and ST-LINK, and virtual targets (FVP simulation models).
-- [Cortex-Debug](#cortex-debug): Interfaces with physical targets using J-Link, OpenOCD, pyOCD, or ST-LINK. OpenOCD and pyOCD support debug with CMSIS-DAP.
+- [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd): Adds smart features to the VS Code editor, including code completion, compile errors, and go-to-definition.
 
 ## Feature overview
 
 ![CMSIS Solution Quick Tutorial](./docs/videos/MDK6_Productivity.gif)
 
+For detailed information refer to [User Interface](https://mdk-packs.github.io/vscode-cmsis-solution-docs/userinterface.html) in the CMSIS Solution documentation.
+
 ## CMSIS view
 
 The **CMSIS** view gives you access to the source code of your application. The **CMSIS** view shows the [multiple projects](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#project-setup-for-related-projects) that belong to the context set. The various elements available for a project are:
 
+- [Board](https://open-cmsis-pack.github.io/cmsis-toolbox/YML-Input-Format/#board): The name of the target board and documentation.
+- [Device](https://open-cmsis-pack.github.io/cmsis-toolbox/YML-Input-Format/#device): The name of the target device, documentation, and device-specific debug options (`*.dbgconf`).
 - [File groups](https://open-cmsis-pack.github.io/cmsis-toolbox/YML-Input-Format/#groups): Groups used to organize user source code.
 - [Constructed-files](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#rte_componentsh): Files generated for the CMSIS Run-Time Environment (RTE).
-- [Linker](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#linker-script-management): Script files used in the project context.
-- [Components](https://open-cmsis-pack.github.io/cmsis-toolbox/CreateApplications/#software-components): Reusable software modules that you select.
+- [Linker](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#linker-script-management): Script files used in the project context and access to linker map file.
+- [Components](https://open-cmsis-pack.github.io/cmsis-toolbox/CreateApplications/#software-components): Reusable software modules that you select in the [Software Components view](#software-components-view). You can also access documentation or a run configuration generator such as [STM32CubeMX](https://open-cmsis-pack.github.io/cmsis-toolbox/CubeMX/) or [MCUXpresso Config](https://open-cmsis-pack.github.io/cmsis-toolbox/MCUXpressoConfig/).
 - [Layers](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#software-layers): Sets of source files, software components, and configuration files that you can reuse in different projects.
 
-Action buttons allow you to build, run, and debug your application or open the views that are described in detail below. For components, you can access the documentation or run generators such as STM32CubeMX or the MCUXpresso Config Tools.
+Action buttons allow you to build, run, and debug your application, [edit *csolution project files*](#yml-editor-support) or [manage the solution configuration](#manage-solution-view). The [Configuration Wizard](#configuration-wizard) offers a graphical view to configuration file options.
 
 ## Create Solution view
 
 ![Create Solution](https://github.com/ARM-software/vscode-cmsis-csolution/raw/main/docs/images/CreateNewSolution.png)
 
-Create a new csolution project and choose the target type name, solution name, and location of the csolution project from this view.
-
-To start a new csolution project, select a [board](https://www.keil.arm.com/boards/) or [device](https://www.keil.arm.com/devices/). You can choose from the following project types:
+To start a new *csolution project*, select a [board](https://www.keil.arm.com/boards/) or [device](https://www.keil.arm.com/devices/) and choose from the following project types:
 
 - Templates: Templates are stub projects providing a minimal setup for the selected use case.
 - [Reference applications](https://open-cmsis-pack.github.io/cmsis-toolbox/ReferenceApplications/): Reference applications are hardware-agnostic and require additional software layers with API drivers for the target board selected.
 - CMSIS solution examples: These examples are created for a specific hardware or evaluation board and interface with board and device peripherals.
 - µVision examples: Example projects created for the µVision IDE. Arm CMSIS Solution automatically converts µVision projects to the csolution project format.
 
+Then create the *csolution project* on the selected folder on your Host computer.
+
 ## Configure Solution view
 
 ![Configure Solution](https://github.com/ARM-software/vscode-cmsis-csolution/raw/main/docs/images/ConfigureSolution.png)
 
-Select software layers and a compiler toolchain for your solution from this view.
+When using a [reference application](https://open-cmsis-pack.github.io/cmsis-toolbox/ReferenceApplications/) select compatible software layers for your solution from this view.
 
 ## Software Components view
 
@@ -72,142 +70,44 @@ Select reusable software components for your application from this view.
 
 ## Manage Solution view
 
-![ManageSolution](https://github.com/ARM-software/vscode-cmsis-csolution/raw/main/docs/images/ManageSolution.png)
+![Manage Solution](https://github.com/ARM-software/vscode-cmsis-csolution/raw/main/docs/images/ManageSolution.png)
 
 Select a [context set](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#working-with-context-set) from this view. For a given target type, a context set combines related projects which you can build for an application. You might need to use different build types for projects, for example in cases where not all parts of an application require extra debug overhead.
 
+## Configuration Wizard
+
+![Configuration Wizard](https://github.com/ARM-software/vscode-cmsis-csolution/raw/main/docs/images/ConfigWizard.png)
+
+Many configuration files have annotations for the [CMSIS Configuration Wizard](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/configWizard.html). Using the **Open Preview** button in the editor allows you to modify options in a graphical view.
+
+## YML Editor Support
+
+![YML Editor Support](https://github.com/ARM-software/vscode-cmsis-csolution/raw/main/docs/images/SyntaxYML.png)
+
+The YML syntax support in the editor detects errors, provides auto completion, and documentation links on hover over.
+
 ## Run and Debug
 
-Arm CMSIS Solution uses standard Visual Studio Code [task configurations](https://code.visualstudio.com/docs/editor/tasks) to configure the **Run** action (`tasks.json`) and [launch configurations](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations) to configure the **Debug** action (`launch.json`). The `tasks.json` and `launch.json` files are located in the `.vscode` folder of your workspace (the csolution project root folder). These files store settings that you can select from the **Run Configuration** and **Debug Configuration** editors or add manually in the `tasks.json` and `launch.json` files.
+Arm CMSIS Solution generates the [Run and Debug configuration](https://mdk-packs.github.io/vscode-cmsis-solution-docs/conf_debug.html) files (`launch.json` and `tasks.json`) for the [Arm CMSIS Debugger](https://marketplace.visualstudio.com/items?itemName=Arm.vscode-cmsis-debugger) and [pyOCD](https://pyocd.io/). It supports single-core and multi-core configurations for CMSIS-DAP, ULINK, JLink, and ST-Link debug adapters.
 
-![Run and Debug](https://github.com/ARM-software/vscode-cmsis-csolution/raw/main/docs/images/RunDebug.png)
+The [Run and Debug configuration](https://mdk-packs.github.io/vscode-cmsis-solution-docs/configuration.html#configure-run-and-debug) is enabled with the `target-set:` node and a `debugger:` setting as shown below:
 
-### Arm Debugger
-
-The [Arm Debugger](https://marketplace.visualstudio.com/items?itemName=Arm.arm-debugger) extension supports connections to physical targets such as ULINK, CMSIS-DAP, and ST-LINK, and virtual targets (FVP simulation models).
-
-Refer to the [Arm Debugger extension documentation](https://developer.arm.com/documentation/108029/latest/Arm-Debugger-extension) for more details.
-
-### Cortex-Debug
-
-The [Cortex-Debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug) extension interfaces with J-Link, OpenOCD, pyOCD, or ST-LINK. OpenOCD and pyOCD support debug units with CMSIS-DAP firmware. Cortex-Debug requires the [GCC Toolchain for ARM CPUs](https://www.keil.arm.com/artifacts/#compilers/arm/arm-none-eabi-gcc) and the executables must be registered in the PATH environment variable of the host PC. For more information, refer to the [Cortex-Debug documentation](https://github.com/Marus/cortex-debug/wiki).
-
-#### Interface with J-Link
-
-To install the [J-Link Software Pack](https://www.segger.com/downloads/jlink/#J-LinkSoftwareAndDocumentationPack) and configure Cortex-Debug, use the following steps:
-
-1. Use the `Debug: Add Configuration...` command from the Command Palette and select `Cortex Debug: JLink` to add the J-Link debug configuration to the `launch.json` file.
-
-2. Update the debug configuration in the `launch.json` file to reflect your setup. For example:
-
-    ```json
-        {
-            "cwd": "${workspaceFolder}",
-            "executable": "${command:cmsis-csolution.getBinaryFiles}",
-            "name": "Debug with JLink",
-            "request": "launch",
-            "type": "cortex-debug",
-            "device": "${command:cmsis-csolution.getDeviceName}",
-            "runToEntryPoint": "main",
-            "showDevDebugOutput": "none",
-            "servertype": "jlink",
-            "serverpath": "<path>/JLinkGDBServerCL.exe"
-        }
-    ```
-
-**Note:** `serverpath` is the path to the installed J-Link GDB server.
-
-For more information, refer to the [J-Link Visual Studio Code documentation](https://wiki.segger.com/J-Link_Visual_Studio_Code).
-
-#### Interface with OpenOCD
-
-Install [OpenOCD](https://openocd.org/) and check that it is registered in the PATH environment variable of the host PC.
-
-To configure Cortex-Debug for OpenOCD, use the following steps:
-
-1. Use the `Debug: Add Configuration...` command from the Command Palette and select `Cortex Debug: OpenOCD` to add the OpenOCD debug configuration to the `launch.json` file.
-
-2. Update the debug configuration in `launch.json` file to reflect your setup. For example:
-
-    ```json
-        {
-            "cwd": "${workspaceRoot}",
-            "executable": "${command:cmsis-csolution.getBinaryFiles}",
-            "name": "Debug with OpenOCD",
-            "request": "launch",
-            "type": "cortex-debug",
-            "servertype": "openocd",
-            "configFiles": [ "openocd.cfg" ],
-            "searchDir": [],
-            "runToEntryPoint": "main",
-            "showDevDebugOutput": "none"
-        }
-    ```
-
-3. Create a configuration file named `openocd.cfg` in your workspace (in the csolution project root folder) and specify either `interface` and `target`, or `board` (which typically imports the `interface` and `target`).
-
-**Examples:**
-
-```txt
-# interface: Debug Adapter CMSIS-DAP
-source [find interface/cmsis-dap.cfg]
-
-# target: Device STM32L4xx
-source [find target/stm32l4x.cfg]
+```yml
+  target-types:
+    - type: FRDM-K32L3A6
+      board: FRDM-K32L3A6
+      device: K32L3A60VPJ1A
+      target-set:
+        - set:
+          debugger:
+            name: CMSIS-DAP
+            interface: swd
 ```
 
-```txt
-# board: STM32L4R9I-DISCO with ST-LINK
-source [find board/stm32l4r9i-disco.cfg]
-```
+## Related
 
-#### Interface with pyOCD
-
-To install [pyOCD](https://pyocd.io/) and configure Cortex-Debug, use the following steps:
-
-1. Use the `Debug: Add Configuration...` command from the Command Palette and select `Cortex Debug: PyOCD` to add the pyOCD debug configuration to the `launch.json` file.
-
-2. Update the debug configuration in the `launch.json` file to reflect your setup. For example:
-
-    ```json
-        {
-            "cwd": "${workspaceRoot}",
-            "executable": "${command:cmsis-csolution.getBinaryFiles}",
-            "name": "Debug with PyOCD",
-            "request": "launch",
-            "type": "cortex-debug",
-            "targetId": "stm32l475xc",
-            "runToEntryPoint": "main",
-            "showDevDebugOutput": "none",
-            "servertype": "pyocd"
-        }
-    ```
-
-**Notes:**
-
-- `targetId` is the target identifier if the target is not detected automatically.
-- If there are multiple debug probes available, select the debug adapter you need when pyOCD is launched.
-
-#### Interface with ST-LINK
-
-Install [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html) that includes the ST-LINK GDB server, then configure Cortex-Debug with the following steps:
-
-1. Use the `Debug: Add Configuration...` command from the Command Palette and select `Cortex Debug: ST-LINK` to add the ST-LINK debug configuration to the `launch.json` file.
-
-2. Update the debug configuration in the `launch.json` file to reflect your setup. For example:
-
-    ```json
-        {
-            "cwd": "${workspaceRoot}",
-            "executable": "${command:cmsis-csolution.getBinaryFiles}",
-            "name": "Debug with ST-Link",
-            "request": "launch",
-            "type": "cortex-debug",
-            "runToEntryPoint": "main",
-            "showDevDebugOutput": "none",
-            "servertype": "stlink"
-        }
-    ```
+- [CMSIS Solution for VS Code Documentation](https://mdk-packs.github.io/vscode-cmsis-solution-docs/)
+- [Available Software Packs](https://www.keil.arm.com/packs/)
 
 ## Submit feedback or report issues
 

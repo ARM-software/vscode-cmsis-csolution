@@ -2,6 +2,27 @@
 
 ## [Unreleased]
 
+## 1.54.0
+
+- New features:
+
+  - New features require [CMSIS-Toolbox v2.9.0](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/releases/tag/2.9.0)
+    or later. Update your workspace's `vcpkg-configuration.json` file accordingly.
+  - The CMSIS Solution extension integrates with the [Arm CMSIS Debugger extension](https://marketplace.visualstudio.com/items?itemName=Arm.vscode-cmsis-debugger) adding action buttons and commands required for [debugging an application](https://mdk-packs.github.io/vscode-cmsis-solution-docs/debug.html#cmsis-view).
+    - If a target-type specifies the node [`target-set:`](https://open-cmsis-pack.github.io/cmsis-toolbox/YML-Input-Format/#target-set) `cbuild` is launched for the active target-set instead of the context-set specified in `*.cbuild-set.yml`. In addition the selected contexts from **Manage Solution** dialog are stored in the `target-set` of the active `target-type`.
+    - If a debug adapter is specified by the `*.cbuild-run.yml`, configurations are generated in `launch.json` and `tasks.json` based on the debug adapter templates specified in the [debug adapter registry](https://github.com/Open-CMSIS-Pack/debug-adapter-registry).
+  - **Manage Solution** no longer supports the configuration of context specific "Run" and "Debug" actions. Corresponding options are deprecated in the user settings of the workspace.
+  - [Device configuration files](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#device-configuration) (*.dbgconf) are moved and renamed. The files can be accessed from group "Device: ..." in **CMSIS-View**.
+  
+- Solved issues:
+
+  - The YAML parser for the CMSIS solution input files ensures that all specified numeric, hexadecimal and boolean
+    values retain their format in full, no quotes are added on write back.
+
+- Known issues:
+
+  - Updating `launch.json` and `tasks.json` files does not preserve comments.
+
 ## 1.52.0
 
 - New features:
@@ -22,7 +43,7 @@
   - Arm Compiler 6 pre-defines are consistently exported into `.clangd` configuration files.
   - Reduce likelihood of duplicated calls to `cbuild setup` after converting µVision projects within the active workspace.
   - The YAML parser for the CMSIS solution input files ensures that all specified numbers retain their format. Double quotes are added on write back without causing any side effect.
-  
+
 - Known issues:
 
   - A `*.project.yml` that has components with for-context attributes might loose settings. ([ARM-software/vscode-cmsis-csolution#211](https://github.com/ARM-software/vscode-cmsis-csolution/issues/211)).

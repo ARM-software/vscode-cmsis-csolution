@@ -1,6 +1,6 @@
 ## TPIP Report for vscode-cmsis-csolution
 
-Report prepared at : 2025-04-01 12:40:19
+Report prepared at : 2025-05-07 10:22:50
 
 | *Package* | *Version* | *Repository* | *License* |
 |---|---|---|---|
@@ -12,6 +12,7 @@ Report prepared at : 2025-04-01 12:40:19
 |@vscode/webview-ui-toolkit|1.4.0|https://github.com/microsoft/vscode-webview-ui-toolkit|[MIT](https://github.com/microsoft/vscode-webview-ui-toolkit/blob/main/LICENSE)|
 |async-mutex|0.5.0|https://https://github.com/DirtyHairy/async-mutex|[MIT](https://github.com/DirtyHairy/async-mutex/blob/master/LICENSE)|
 |buffer|6.0.3|https://github.com/feross/buffer|[MIT](https://github.com/feross/buffer/blob/master/LICENSE)|
+|eta|3.5.0|https://github.com/eta-dev/eta|[MIT](https://github.com/eta-dev/eta/blob/main/LICENSE)|
 |fetch-blob|4.0.0|https://github.com/node-fetch/fetch-blob|[MIT](https://github.com/node-fetch/fetch-blob/blob/main/LICENSE)|
 |formdata-polyfill|4.0.10|https://github.com/jimmywarting/FormData|[MIT](https://github.com/jimmywarting/FormData/blob/master/LICENSE)|
 |google-protobuf|3.21.4|https://github.com/protocolbuffers/protobuf|[(BSD-3-Clause AND Apache-2.0)](https://github.com/protocolbuffers/protobuf/blob/main/LICENSE)|
