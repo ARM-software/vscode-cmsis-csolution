@@ -41,6 +41,24 @@ The **CMSIS** view gives you access to the source code of your application. The 
 
 Action buttons allow you to build, run, and debug your application, [edit *csolution project files*](#yml-editor-support) or [manage the solution configuration](#manage-solution-view). The [Configuration Wizard](#configuration-wizard) offers a graphical view to configuration file options.
 
+## Action buttons
+
+The **CMSIS** view displays the name of the current *csolution project* and offers several action buttons.
+
+![Action buttons](https://github.com/ARM-software/vscode-cmsis-csolution/raw/main/docs/images/ActionButtons.png)
+
+| Action | Description |
+|--------|-------------|
+| Build / Stop | **Build**: Translate the source code into a application image.<br>**Stop**: Terminate the current build process. |
+| Load & Run / Stop | **Load & Run**: Download application image and start execution. Prepare GDB for target connection.<br>**Stop**: Terminate the current run or debug process. |
+| Load & Run / Attach | **Load & Run**: Download application image and start debugging.<br>**Attach**: Connect debugger to a running application. |
+| Open csolution.yml | Open the csolution.yml project file. |
+| [Manage Solution](#manage-solution-view) | Terminate the current program execution and start debugging again using the current run configuration. |
+| Menu | Offers more options such as [create new solution](#create-solution-view), rebuild, or get info about a connected target system. |
+| Clang active | Activates clang information for one `cproject.yml` part in a multi-project application. |
+| Open csolution.yml | Open the cproject.yml file. |
+| [Select components](#software-components-view) | View and modify the software components used for the application. |
+
 ## Create Solution view
 
 ![Create Solution](https://github.com/ARM-software/vscode-cmsis-csolution/raw/main/docs/images/CreateNewSolution.png)
@@ -72,7 +90,7 @@ Select reusable software components for your application from this view.
 
 ![Manage Solution](https://github.com/ARM-software/vscode-cmsis-csolution/raw/main/docs/images/ManageSolution.png)
 
-Select a [context set](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#working-with-context-set) from this view. For a given target type, a context set combines related projects which you can build for an application. You might need to use different build types for projects, for example in cases where not all parts of an application require extra debug overhead.
+Select a [target set](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#working-with-context-set) from this view. For a given target type, a target set combines related projects and chooses the debug adapter used for the application. You might need to use different build types for projects, for example in cases where not all parts of an application require extra debug overhead. Refer also to [Run and Debug](#run-and-debug) below.
 
 ## Configuration Wizard
 

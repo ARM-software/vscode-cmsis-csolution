@@ -1,6 +1,26 @@
 # Change Log
 
-## [Unreleased]
+## 1.55.1
+
+- New features:
+
+  - The [**Software Components**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/manage_components.html) view has been redesigned and uses the csolution tool
+    from the CMSIS-Toolbox included in the extension for consistency with the command line.
+  - The [**Manage Solution**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/manage_settings.html) view adds the selection of a debug adapter supported by the
+    [**Arm CMSIS Debugger**](https://marketplace.visualstudio.com/items?itemName=Arm.vscode-cmsis-debugger) extension.
+    - The selection is stored in the active `*.csolution.yml` as default [`target-set`](https://open-cmsis-pack.github.io/cmsis-toolbox/YML-Input-Format/#target-set) for the active `target-type`.
+    - If no `debugger:` is specified for the default `target-set` but the selected board specifies an [on-board debug adapter](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/pdsc_boards_pg.html#element_board_debugProbe),
+      this information is taken from `.cbuild-run.yml`. and a default `target-set` is used.
+  - The **Views and More Actions...** menu available from the [**CMSIS-View**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/debug.html#cmsis-view) has now a **Target information** entry.
+    Click [**Target information**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/create_app.html#check-target-information) to display information about the connected hardware.
+
+- Info:
+
+  - The location of `*.cbuild-run.yml` and `*.cbuild.yml` files is now consistently retrieved from the `*.cbuild-idx.yml` file for the commands `getCbuildRunFile` and `getBinaryFile(s)` which used hard-coded paths previously.
+
+- Known issues:
+
+  - Updating `launch.json` and `tasks.json` files does not preserve comments.
 
 ## 1.54.0
 
@@ -13,7 +33,7 @@
     - If a debug adapter is specified by the `*.cbuild-run.yml`, configurations are generated in `launch.json` and `tasks.json` based on the debug adapter templates specified in the [debug adapter registry](https://github.com/Open-CMSIS-Pack/debug-adapter-registry).
   - **Manage Solution** no longer supports the configuration of context specific "Run" and "Debug" actions. Corresponding options are deprecated in the user settings of the workspace.
   - [Device configuration files](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#device-configuration) (*.dbgconf) are moved and renamed. The files can be accessed from group "Device: ..." in **CMSIS-View**.
-  
+
 - Solved issues:
 
   - The YAML parser for the CMSIS solution input files ensures that all specified numeric, hexadecimal and boolean
