@@ -1,6 +1,8 @@
 # Change Log
 
-## 1.55.1
+## [Unreleased]
+
+## 1.56.0
 
 - New features:
 
@@ -13,6 +15,10 @@
       this information is taken from `.cbuild-run.yml`. and a default `target-set` is used.
   - The **Views and More Actions...** menu available from the [**CMSIS-View**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/debug.html#cmsis-view) has now a **Target information** entry.
     Click [**Target information**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/create_app.html#check-target-information) to display information about the connected hardware.
+
+- Solved issues:
+
+  - Drop down box search filter handle matches on categories and items
 
 - Info:
 
