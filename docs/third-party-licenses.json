@@ -147,6 +147,13 @@
         "license": "https://github.com/bvaughn/react-window/blob/master/LICENSE.md"
     },
     {
+        "name": "sax-ts",
+        "version": "1.2.13",
+        "spdx": "ISC",
+        "url": "https://github.com/Maxim-Mazurok/sax-ts",
+        "license": "https://github.com/Maxim-Mazurok/sax-ts/blob/master/LICENSE.md"
+    },
+    {
         "name": "semver",
         "version": "7.7.2",
         "spdx": "ISC",
@@ -155,7 +162,7 @@
     },
     {
         "name": "vscode-cpptools",
-        "version": "7.0.4",
+        "version": "7.1.1",
         "spdx": "MIT",
         "url": "https://github.com/Microsoft/vscode-cpptools-api",
         "license": "https://github.com/microsoft/vscode-cpptools-api/blob/main/LICENSE"
@@ -204,7 +211,7 @@
     },
     {
         "name": "antd",
-        "version": "5.26.2",
+        "version": "5.26.7",
         "spdx": "MIT",
         "url": "https://ant.design",
         "license": "https://github.com/ant-design/ant-design/blob/master/LICENSE"
