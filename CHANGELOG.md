@@ -2,12 +2,23 @@
 
 ## [Unreleased]
 
+## 1.58.1
+
+- Solved issues:
+
+  - The `CMSIS Context` status bar hangs at `Loading Solution...` during Solution load if a default `target-set` is not specified and no `cbuild-set.yml` with a context-set is present.
+    [#304](https://github.com/ARM-software/vscode-cmsis-csolution/issues/304)
+
+- Known issues:
+
+  - Updating `launch.json` and `tasks.json` files does not preserve comments.
+
 ## 1.58.0
 
 - New features:
 
   - [**CMSIS-View**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/debug.html#cmsis-view) adds [PLM](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#plm-of-configuration-files)
-    status indicators for component configuration files `(X)`= mandatory file update, `(!)` = recommended file update and `(?)` = suggested file update. These indicators are propagated upwards from 
+    status indicators for component configuration files `(X)`= mandatory file update, `(!)` = recommended file update and `(?)` = suggested file update. These indicators are propagated upwards from
     the configuration file to the project displaying the most severe status. The tooltips to the status indicators provide additional information. When hovering over or selecting a configuration file
     that needs updating, a merge icon is displayed that can be clicked to open the [VSCode 3-way merge editor](https://code.visualstudio.com/docs/sourcecontrol/overview#_3way-merge-editor). When closing
     the editor the merged file becomes the active configuration file.
@@ -15,13 +26,12 @@
 - Solved issues:
 
   - [**Configuration Wizard**] when editing a bitfield through the graphical view, no other bitfield values get incorrectly reset. [#296](https://github.com/ARM-software/vscode-cmsis-csolution/issues/296)
-  - Removed unintended duplicates of directories from some examples projects downloaded from the Web (https://Keil.arm.com). [#99](https://github.com/ARM-software/vscode-cmsis-csolution/issues/99)
+  - Removed unintended duplicates of directories from some examples projects downloaded from the Web (<https://Keil.arm.com>). [#99](https://github.com/ARM-software/vscode-cmsis-csolution/issues/99)
   - The generation of `launch.json` and `task.json` do not rewrite the files unless updates are required. This way comments are preserved when not making changes. [#295](https://github.com/ARM-software/vscode-cmsis-csolution/issues/295)
 
 - Known issues:
 
   - Updating `launch.json` and `tasks.json` files does not preserve comments.
-
 
 ## 1.56.0
 
