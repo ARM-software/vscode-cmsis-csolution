@@ -2,6 +2,20 @@
 
 ## [Unreleased]
 
+- Updates:
+
+  - CMSIS-Toolbox v2.12.0 is required by this update of the extension
+  - The [**Manage Solution**]() dialog now manages `target sets`, a selection of images and debug configurations for the selected `target-type`.
+  - Added support for [**West Projects**]() introduced in CMSIS-Toolbox v2.12.0
+ 
+- Solved issues:
+
+  - Updating `launch.json` and `tasks.json` files does preserve comments.
+ 
+- Known issues:
+
+  - Updating YAML Input files like `*.csolution.yml` through dialog views does not preserve indentation of trailing comments.
+
 ## 1.60.0
 
 - Updates:
