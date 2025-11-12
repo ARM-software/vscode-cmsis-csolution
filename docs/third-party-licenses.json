@@ -229,5 +229,12 @@
         "spdx": "MIT",
         "url": "https://github.com/eta-dev/eta",
         "license": "https://github.com/eta-dev/eta/blob/main/LICENSE"
+    },
+    {
+        "name": "which",
+        "version": "5.0.0",
+        "spdx": "ISC",
+        "url": "https://github.com/npm/node-which",
+        "license": "https://github.com/npm/node-which/blob/main/LICENSE"
     }
 ]

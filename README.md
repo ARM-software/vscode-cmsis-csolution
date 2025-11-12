@@ -53,7 +53,7 @@ The **CMSIS** view displays the name of the current *csolution project* and offe
 | Load & Run / Stop | **Load & Run**: Download application image and start execution. Prepare GDB for target connection.<br>**Stop**: Terminate the current run or debug process. |
 | Load & Run / Attach | **Load & Run**: Download application image and start debugging.<br>**Attach**: Connect debugger to a running application. |
 | Open csolution.yml | Open the csolution.yml project file. |
-| [Manage Solution](#manage-solution-view) | Terminate the current program execution and start debugging again using the current run configuration. |
+| [Manage Solution](#manage-solution-view) | Select target and configure projects, images, and debug adapter. |
 | Menu | Offers more options such as [create new solution](#create-solution-view), rebuild, or get info about a connected target system. |
 | Clang active | Activates clang information for one `cproject.yml` part in a multi-project application. |
 | Open csolution.yml | Open the cproject.yml file. |
@@ -90,7 +90,7 @@ Select reusable software components for your application from this view.
 
 ![Manage Solution](https://github.com/ARM-software/vscode-cmsis-csolution/raw/main/docs/images/ManageSolution.png)
 
-Select a [target set](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#working-with-context-set) from this view. For a given target type, a target set combines related projects and chooses the debug adapter used for the application. You might need to use different build types for projects, for example in cases where not all parts of an application require extra debug overhead. Refer also to [Run and Debug](#run-and-debug) below.
+Select the [target](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#target-production-hardware) and configure [related projects](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#configure-related-projects) for your application from this view. A Target Set stores settings for projects, images and debug adapter. You might need different build types or load settings, for example to reduce the debug overhead. Refer also to [Run and Debug](#run-and-debug) below.
 
 ## Configuration Wizard
 
@@ -106,9 +106,9 @@ The YML syntax support in the editor detects errors, provides auto completion, a
 
 ## Run and Debug
 
-Arm CMSIS Solution generates the [Run and Debug configuration](https://mdk-packs.github.io/vscode-cmsis-solution-docs/conf_debug.html) files (`launch.json` and `tasks.json`) for the [Arm CMSIS Debugger](https://marketplace.visualstudio.com/items?itemName=Arm.vscode-cmsis-debugger) and [pyOCD](https://pyocd.io/). It supports single-core and multi-core configurations for CMSIS-DAP, ULINK, JLink, and ST-Link debug adapters.
+Arm CMSIS Solution generates the [Run and Debug configuration](https://mdk-packs.github.io/vscode-cmsis-solution-docs/conf_debug.html) files including files `.vscode/launch.json` and `.vscode/tasks.json` for the [Arm CMSIS Debugger](https://marketplace.visualstudio.com/items?itemName=Arm.vscode-cmsis-debugger) and various debug adapters (such as CMSIS-DAP, ULINK, JLink, and ST-Link). The [Manage Solution view](#manage-solution-view) simplifies the setup and supports single-core and multi-core configurations.
 
-The [Run and Debug configuration](https://mdk-packs.github.io/vscode-cmsis-solution-docs/configuration.html#configure-run-and-debug) is enabled with the `target-set:` node and a `debugger:` setting as shown below:
+The [Run and Debug configuration](https://mdk-packs.github.io/vscode-cmsis-solution-docs/configuration.html#configure-run-and-debug) is stored in the `csolution.yml` file under `target-set:` as shown below:
 
 ```yml
   target-types:
@@ -119,13 +119,14 @@ The [Run and Debug configuration](https://mdk-packs.github.io/vscode-cmsis-solut
         - set:
           debugger:
             name: CMSIS-DAP
-            interface: swd
+            protocol: swd
 ```
 
 ## Related
 
 - [CMSIS Solution for VS Code Documentation](https://mdk-packs.github.io/vscode-cmsis-solution-docs/)
 - [Available Software Packs](https://www.keil.arm.com/packs/)
+- [Example projects](https://github.com/Arm-Examples)
 
 ## Submit feedback or report issues
 

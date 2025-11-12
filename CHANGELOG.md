@@ -2,19 +2,30 @@
 
 ## [Unreleased]
 
+## 1.62.0
+
+- Updates:
+
+  - CMSIS-Toolbox v2.12.0 or higher is required by this version of the extension.
+  - The [**Manage Solution**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/manage_settings.html) dialog now manages `target sets`, a selection of images and debug configurations for the selected `target-type`.
+
+- Solved issues:
+
+  - Updating `launch.json` and `tasks.json` files does preserve comments.
+
 ## 1.60.0
 
 - Updates:
 
   - The [**Create Solution**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/create_app.html) dialog is reading board, device and example information from installed packs using the `csolution rpc daemon`.
-    Now information is also read from CMSIS Packs that are registered via the `local_repository.pidx`. The `CMSIS-Core-Tools` have been fully replaced and are therefore no longer distributed as part of the extension. 
+    Now information is also read from CMSIS Packs that are registered via the `local_repository.pidx`. The `CMSIS-Core-Tools` have been fully replaced and are therefore no longer distributed as part of the extension.
   - Using the [**CMSIS View**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/userinterface.html#4-main-area-icons) [+] button quick pick `Add From Component Code Template` now shows component instance index
     specific code templates.
-    
+
 - Solved issues:
 
   - Loading a CMSIS solution specifying a `target-set` without a corresponding `*.cbuild-set.yml` file present, now displays [**Software Components**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/manage_components.html#software-components-view) and enables the action buttons for
-   `Load & Run appliction` and `Load & Debug application` in the [**CMSIS-View**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/userinterface.html#3-actions-available-through-the-cmsis-view) [#306 ](https://github.com/ARM-software/vscode-cmsis-csolution/issues/306).
+   `Load & Run appliction` and `Load & Debug application` in the [**CMSIS-View**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/userinterface.html#3-actions-available-through-the-cmsis-view) [#306](https://github.com/ARM-software/vscode-cmsis-csolution/issues/306).
 
 - Known issues:
 
