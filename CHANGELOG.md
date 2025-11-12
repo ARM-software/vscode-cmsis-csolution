@@ -1,7 +1,5 @@
 # Change Log
 
-## [Unreleased]
-
 ## 1.62.0
 
 - Updates:

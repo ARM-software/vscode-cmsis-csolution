@@ -1,8 +1,7 @@
-Copyright (C) 2022 Arm Limited, all rights reserved
+Copyright (C) 2022-2025 Arm Limited, all rights reserved
 
 Details of third party licenses can be viewed here:
-- https://arm-software.github.io/vscode-cmsis-csolution/third-party-licenses.html
-- https://downloads.core-tools.keil.arm.com/tpip.md
+- https://arm-software.github.io/vscode-cmsis-csolution/third-party-licenses.md
 
 Usage of this extension implies acceptance of the end user license agreement outlined here:
 
