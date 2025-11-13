@@ -1,5 +1,14 @@
 # Change Log
 
+## [Unreleased]
+
+## 1.62.1
+
+- Solved issues:
+
+  - Manage Solution dialog: Changing active `target-type` fails if `.vscode/cmsis.json` file is missing.
+  - A `project-context` of a `target-set` is still present in the `*.csolution.yml` after changing the project identifier and selecting the updated `project-context` in the Manage Solution dialog.
+
 ## 1.62.0
 
 - Updates:
