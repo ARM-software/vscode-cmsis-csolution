@@ -236,5 +236,19 @@
         "spdx": "ISC",
         "url": "https://github.com/npm/node-which",
         "license": "https://github.com/npm/node-which/blob/main/LICENSE"
+    },
+    {
+        "name": "@microsoft/vscode-serial-monitor-api",
+        "version": "0.1.7",
+        "spdx": "MIT",
+        "url": "https://github.com/microsoft/vscode-serial-monitor",
+        "license": "https://raw.githubusercontent.com/microsoft/vscode-serial-monitor/refs/heads/main/LICENSE"
+    },
+    {
+        "name": "tcp-port-used",
+        "version": "1.0.2",
+        "spdx": "MIT",
+        "url": "https://github.com/stdarg/tcp-port-used",
+        "license": "https://raw.githubusercontent.com/stdarg/tcp-port-used/refs/heads/master/LICENSE"
     }
 ]

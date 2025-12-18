@@ -2,6 +2,18 @@
 
 ## [Unreleased]
 
+## 1.64.0
+
+- Updates:
+
+  - The CMSIS-Toolbox version shipped with the extension is used exclusively also for terminals within VS Code for feature alignment between front- and backend.
+  - The **Views and More Actions...** menu available from the [**CMSIS-View**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/debug.html#cmsis-view) adds the `Close Solution` action. This allows modifications in the workspace without the CMSIS Solution extension being activated.
+  - Environment variables can be configured in the [extension settings](https://mdk-packs.github.io/vscode-cmsis-solution-docs/installation.html#configure-the-extension) and are applied to processes and newly opened terminals.
+  - A unique identifier of a debug probe (Probe-ID) can be configured in the [extension settings](https://mdk-packs.github.io/vscode-cmsis-solution-docs/installation.html#configure-the-extension) enforcing the debug adapter selection.
+  - Errors and warnings from `cbuild setup` tasks are now redirected to the VS Code `PROBLEMS` tab.
+  - Enhanced integration of the west build system allowing the build and debug of [Zephyr applications](https://mdk-packs.github.io/vscode-cmsis-solution-docs/zephyr.html).
+  - [**Manage Solution**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/manage_settings.html) dialog adds support for configuration of Telnet modes for pyOCD and J-Link.
+
 ## 1.62.1
 
 - Solved issues:
