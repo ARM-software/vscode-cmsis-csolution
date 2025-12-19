@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## 1.64.1
+
+- Solved issues:
+
+  - Fix `tasks.json` generation for Arm-FVP and Keil uVision.
+
 ## 1.64.0
 
 - Updates:
