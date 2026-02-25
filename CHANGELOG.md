@@ -2,16 +2,38 @@
 
 ## [Unreleased]
 
+## 1.66.0
+
+- Updates:
+  - [**Software Components**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/create_app.html#software-components-and-packs) adds a view for listing selected/installed [software packs](https://mdk-packs.github.io/vscode-cmsis-solution-docs/create_app.html#software-packs) and allows to [manage](https://mdk-packs.github.io/vscode-cmsis-solution-docs/create_app.html#manage-software-packs) the used versions as specified across csolution, cproject and clayer files.
+  - **Create Solution** adds a checkbox option to list examples from all installed pack versions, showing examples from previous versions that do not exist in the latest pack version.
+  - **Create Solution** displays the status of the extension setting for using web services to retrieve device, board and example information. If the web services are enabled but not accessible, the status `unreachable` is displayed and device, board and example data is only collected from installed packs.
+  - [Build Output](https://mdk-packs.github.io/vscode-cmsis-solution-docs/build_run.html#build-output) improvements:
+    - Build processes are now executed inside a pseudo-terminal (PTY), preserving ANSI escape sequences and terminal formatting (colors, cursor control, etc.) in the output. This ensures consistent behavior with native Ninja terminal execution.
+    - Per-context CMake build invocations previously managed by `cbuild` have been replaced with a single `cmake --build --target all` call. Dependency resolution and build ordering are now fully delegated to CMake.
+
+- Solved issues:
+  - **Configuration Wizard** removes the red marking for an invalid entry once a valid entry got selected [#462](https://github.com/ARM-software/vscode-cmsis-csolution/issues/462).
+  - **Configuration Wizard** corrected computation of pre defined values within bit ranges [#476](https://github.com/ARM-software/vscode-cmsis-csolution/issues/476).
+
+## 1.64.2
+
+- Solved issues:
+  - **Software Components** pack references are added automatically when selecting new components from yet unused packs [#456](https://github.com/ARM-software/vscode-cmsis-csolution/issues/456).
+  - **Software Components** components that are not found in packs included in context are displayed with error indicator and can be unselected [#456](https://github.com/ARM-software/vscode-cmsis-csolution/issues/456).
+  - **Software Components** solutions with their first project not selected by the current target set can now be successfully viewed and modified after saving [#460](https://github.com/ARM-software/vscode-cmsis-csolution/issues/460).
+  - Solutions without a `.vscode/settings.json` can be loaded and modified normally [#457](https://github.com/ARM-software/vscode-cmsis-csolution/issues/457).
+  - **Configuration Wizard** Edits now save immediately on Enter/Ctrl+S/Cmd+S and show a consistent dirty indicator [#417](https://github.com/ARM-software/vscode-cmsis-csolution/issues/417).
+  - **Configuration Wizard** Dropdown choices that include leading zeros reopen with the correct option [#443](https://github.com/ARM-software/vscode-cmsis-csolution/issues/443).
+
 ## 1.64.1
 
 - Solved issues:
-
   - Fix `tasks.json` generation for Arm-FVP and Keil uVision.
 
 ## 1.64.0
 
 - Updates:
-
   - The CMSIS-Toolbox version shipped with the extension is used exclusively also for terminals within VS Code for feature alignment between front- and backend.
   - The **Views and More Actions...** menu available from the [**CMSIS-View**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/debug.html#cmsis-view) adds the `Close Solution` action. This allows modifications in the workspace without the CMSIS Solution extension being activated.
   - Environment variables can be configured in the [extension settings](https://mdk-packs.github.io/vscode-cmsis-solution-docs/installation.html#configure-the-extension) and are applied to processes and newly opened terminals.
@@ -23,54 +45,45 @@
 ## 1.62.1
 
 - Solved issues:
-
   - Manage Solution dialog: Changing active `target-type` fails if `.vscode/cmsis.json` file is missing.
   - A `project-context` of a `target-set` is still present in the `*.csolution.yml` after changing the project identifier and selecting the updated `project-context` in the Manage Solution dialog.
 
 ## 1.62.0
 
 - Updates:
-
   - CMSIS-Toolbox v2.12.0 or higher is required by this version of the extension.
   - The [**Manage Solution**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/manage_settings.html) dialog now manages `target sets`, a selection of images and debug configurations for the selected `target-type`.
 
 - Solved issues:
-
   - Updating `launch.json` and `tasks.json` files does preserve comments.
 
 ## 1.60.0
 
 - Updates:
-
   - The [**Create Solution**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/create_app.html) dialog is reading board, device and example information from installed packs using the `csolution rpc daemon`.
     Now information is also read from CMSIS Packs that are registered via the `local_repository.pidx`. The `CMSIS-Core-Tools` have been fully replaced and are therefore no longer distributed as part of the extension.
   - Using the [**CMSIS View**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/userinterface.html#4-main-area-icons) [+] button quick pick `Add From Component Code Template` now shows component instance index
     specific code templates.
 
 - Solved issues:
-
   - Loading a CMSIS solution specifying a `target-set` without a corresponding `*.cbuild-set.yml` file present, now displays [**Software Components**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/manage_components.html#software-components-view) and enables the action buttons for
-   `Load & Run appliction` and `Load & Debug application` in the [**CMSIS-View**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/userinterface.html#3-actions-available-through-the-cmsis-view) [#306](https://github.com/ARM-software/vscode-cmsis-csolution/issues/306).
+    `Load & Run appliction` and `Load & Debug application` in the [**CMSIS-View**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/userinterface.html#3-actions-available-through-the-cmsis-view) [#306](https://github.com/ARM-software/vscode-cmsis-csolution/issues/306).
 
 - Known issues:
-
   - Updating `launch.json` and `tasks.json` files does not preserve comments.
 
 ## 1.58.1
 
 - Solved issues:
-
   - The `CMSIS Context` status bar hangs at `Loading Solution...` during Solution load if a default `target-set` is not specified and no `cbuild-set.yml` with a context-set is present.
     [#304](https://github.com/ARM-software/vscode-cmsis-csolution/issues/304)
 
 - Known issues:
-
   - Updating `launch.json` and `tasks.json` files does not preserve comments.
 
 ## 1.58.0
 
 - New features:
-
   - [**CMSIS-View**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/debug.html#cmsis-view) adds [PLM](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#plm-of-configuration-files)
     status indicators for component configuration files `(X)`= mandatory file update, `(!)` = recommended file update and `(?)` = suggested file update. These indicators are propagated upwards from
     the configuration file to the project displaying the most severe status. The tooltips to the status indicators provide additional information. When hovering over or selecting a configuration file
@@ -78,19 +91,16 @@
     the editor the merged file becomes the active configuration file.
 
 - Solved issues:
-
   - [**Configuration Wizard**] when editing a bitfield through the graphical view, no other bitfield values get incorrectly reset. [#296](https://github.com/ARM-software/vscode-cmsis-csolution/issues/296)
   - Removed unintended duplicates of directories from some examples projects downloaded from the Web (<https://Keil.arm.com>). [#99](https://github.com/ARM-software/vscode-cmsis-csolution/issues/99)
   - The generation of `launch.json` and `task.json` do not rewrite the files unless updates are required. This way comments are preserved when not making changes. [#295](https://github.com/ARM-software/vscode-cmsis-csolution/issues/295)
 
 - Known issues:
-
   - Updating `launch.json` and `tasks.json` files does not preserve comments.
 
 ## 1.56.0
 
 - New features:
-
   - The [**Software Components**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/manage_components.html) view has been redesigned and uses the csolution tool
     from the CMSIS-Toolbox included in the extension for consistency with the command line.
   - The [**Manage Solution**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/manage_settings.html) view adds the selection of a debug adapter supported by the
@@ -102,42 +112,35 @@
     Click [**Target information**](https://mdk-packs.github.io/vscode-cmsis-solution-docs/create_app.html#check-target-information) to display information about the connected hardware.
 
 - Solved issues:
-
   - Drop down box search filter handle matches on categories and items
 
 - Info:
-
   - The location of `*.cbuild-run.yml` and `*.cbuild.yml` files is now consistently retrieved from the `*.cbuild-idx.yml` file for the commands `getCbuildRunFile` and `getBinaryFile(s)` which used hard-coded paths previously.
 
 - Known issues:
-
   - Updating `launch.json` and `tasks.json` files does not preserve comments.
 
 ## 1.54.0
 
 - New features:
-
   - New features require [CMSIS-Toolbox v2.9.0](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/releases/tag/2.9.0)
     or later. Update your workspace's `vcpkg-configuration.json` file accordingly.
   - The CMSIS Solution extension integrates with the [Arm CMSIS Debugger extension](https://marketplace.visualstudio.com/items?itemName=Arm.vscode-cmsis-debugger) adding action buttons and commands required for [debugging an application](https://mdk-packs.github.io/vscode-cmsis-solution-docs/debug.html#cmsis-view).
     - If a target-type specifies the node [`target-set:`](https://open-cmsis-pack.github.io/cmsis-toolbox/YML-Input-Format/#target-set) `cbuild` is launched for the active target-set instead of the context-set specified in `*.cbuild-set.yml`. In addition the selected contexts from **Manage Solution** dialog are stored in the `target-set` of the active `target-type`.
     - If a debug adapter is specified by the `*.cbuild-run.yml`, configurations are generated in `launch.json` and `tasks.json` based on the debug adapter templates specified in the [debug adapter registry](https://github.com/Open-CMSIS-Pack/debug-adapter-registry).
   - **Manage Solution** no longer supports the configuration of context specific "Run" and "Debug" actions. Corresponding options are deprecated in the user settings of the workspace.
-  - [Device configuration files](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#device-configuration) (*.dbgconf) are moved and renamed. The files can be accessed from group "Device: ..." in **CMSIS-View**.
+  - [Device configuration files](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#device-configuration) (\*.dbgconf) are moved and renamed. The files can be accessed from group "Device: ..." in **CMSIS-View**.
 
 - Solved issues:
-
   - The YAML parser for the CMSIS solution input files ensures that all specified numeric, hexadecimal and boolean
     values retain their format in full, no quotes are added on write back.
 
 - Known issues:
-
   - Updating `launch.json` and `tasks.json` files does not preserve comments.
 
 ## 1.52.0
 
 - New features:
-
   - The quick picker from the "Select Active Solution from workspace" menu lists available solutions in alphabetical order.
   - The Installation of a pack can be initiated via a URI `vscode://arm.cmsis-csolution/installpack?pack=<pack>` launching VS Code, using the installed CMSIS Solution extension to run `cpackget add -a <pack>`.
 
@@ -145,10 +148,9 @@
     - A **Manage software components** button is now available to open the **Software Components** view also from **Components** item.
     - **Copy header file** buttons are available for header files listed under **constructed-files** or **Components** adding `#include "<header file>"` to the clipboard.
     - **Set Clangd Context** buttons are available at the project level to activate clangd for a given project context.
-    - Local files with extension ***.md** (Markdown format) are opened in the markdown preview mode.
+    - Local files with extension **\*.md** (Markdown format) are opened in the markdown preview mode.
 
 - Solved issues:
-
   - Newly created solutions no longer fail due to missing configuration files from selected components because `update-rte` is now executed.
   - Fixed `command:cmsis-csolution.getCbuildRunFile` to return the filename following the convention `<solution>+<target>.cbuild-run.yml` introduced in CMSIS-Toolbox 2.8.0.
   - Arm Compiler 6 pre-defines are consistently exported into `.clangd` configuration files.
@@ -156,46 +158,39 @@
   - The YAML parser for the CMSIS solution input files ensures that all specified numbers retain their format. Double quotes are added on write back without causing any side effect.
 
 - Known issues:
-
   - A `*.project.yml` that has components with for-context attributes might loose settings. ([ARM-software/vscode-cmsis-csolution#211](https://github.com/ARM-software/vscode-cmsis-csolution/issues/211)).
   - Missing source files in `*.cgen.yml` after generating code in CubeMX. ([ARM-software/vscode-cmsis-csolution#206](https://github.com/ARM-software/vscode-cmsis-csolution/issues/206), [Open-CMSIS-Pack/generator-bridge#129](https://github.com/Open-CMSIS-Pack/generator-bridge/issues/129)).
 
 ## 1.50.0
 
 - New features:
-
-  - The **Configuration Wizard** supports [Debug Configuration Files (*.dbgconf)](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/pdsc_family_pg.html#element_debugvars) which, starting with **CMSIS-Toolbox 2.8.0**, are treated like [component configuration files](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#plm-of-configuration-files) from a Cclass="Device" component.
+  - The **Configuration Wizard** supports [Debug Configuration Files (\*.dbgconf)](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/pdsc_family_pg.html#element_debugvars) which, starting with **CMSIS-Toolbox 2.8.0**, are treated like [component configuration files](https://open-cmsis-pack.github.io/cmsis-toolbox/build-overview/#plm-of-configuration-files) from a Cclass="Device" component.
   - Pop-up notification added when launching a generator failed. The **CMSIS Solution** output channel displays by default.
   - Pop-up notification added if a csolution file is detected in the workspace when launching a µVision to CMSIS Solution conversion. You can choose to overwrite the existing csolution file.
   - The extension includes the CMSIS Solution schema files from the latest published CMSIS-Toolbox version (2.8.0).
   - The extension includes the latest published µVision to CMSIS Solution converter (1.6.0).
 
 - Solved issues:
-
   - When adding a local PDSC file using `cpackget` the <timestamp> tag in local_repository.pidx must not be empty.
   - The deprecated [**CMSIS Solution Extension API version 1.0**](https://www.npmjs.com/package/@arm-software/vscode-cmsis-csolution) was removed. You must now use Version 2.0.
   - [A full list of resolved issues is available on GitHub](https://github.com/orgs/ARM-software/projects/10/views/10).
 
 - Known issues:
-
   - When installing a local software pack with `cpackget` the [pack index is updated unnecessarily](https://github.com/Open-CMSIS-Pack/cpackget/issues/404).
 
 ## 1.48.0
 
 - New features:
-
   - The **CMSIS View** shows the board and device for the active target.
   - The **CMSIS View** provides access to documentation for the board, device, and components.
   - The **Views and More Actions...** menu available from the **CMSIS View** has now a **Help** entry. Click **Help** to open the CMSIS Solution documentation.
-  - The context help in the editor has been enhanced for *csolution project files*. Documentation links are provided when you move your mouse over the different elements.
+  - The context help in the editor has been enhanced for _csolution project files_. Documentation links are provided when you move your mouse over the different elements.
 
 - Solved issues:
-
   - The **Create Solution** view now presents the correct templates from packs.
   - [A full list of resolved issues is available on GitHub](https://github.com/orgs/ARM-software/projects/10/views/8).
 
 - Known issues:
-
   - The layers and templates displayed in the **Create Solution** view are only taken from installed CMSIS software packs.
   - Software components from layers of inactive target types incorrectly display in the **Software Components** view in addition to the ones from the active target type.
   - When installing a local software pack with `cpackget`, (a) an [incorrect empty \<timestamp\> is created](https://github.com/Open-CMSIS-Pack/cpackget/issues/421), and (b) the [pack index is downloaded](https://github.com/Open-CMSIS-Pack/cpackget/issues/404).
@@ -203,20 +198,17 @@
 ## 1.46.0
 
 - New features:
-
   - This version of the extension is targeted for use with [**CMSIS-Toolbox 2.7**](https://open-cmsis-pack.github.io/cmsis-toolbox/#revision-history).
   - The [**CMSIS Solution Extension API version 2.0**](https://www.npmjs.com/package/@arm-software/vscode-cmsis-csolution) is available on npm and gives access to all available boards and devices, their associated examples, and the ability to copy and build a selected example for use by other Visual Studio Code extensions.
   - Improvements to the CMSIS **Solution outline** view include: book icons to open documentation for API header files, count badges on components, **Add New Group** buttons at the project level, and improved default collapse settings.
 
 - Solved issues:
-
   - CMSIS solution projects using a `yaml` file extension are loaded correctly again.
   - To access recently published pack versions, you must run `cpackget update-index --sparse`: Now the pack index is automatically updated by `cpackget` once a day.
   - If you are using CMSIS-Toolbox for the first time, you must manually initialize the CMSIS-Pack root directory with `cpackget init https://www.keil.com/pack/index.pidx`: Now the CMSIS-Pack root directory is initialized automatically if it does not exist yet.
   - After manually installing a CMSIS software pack, this version of the extension re-reads the package description files of the installed CMSIS software packs every time `cpackget` has added or removed a pack.
 
 - Known issues:
-
   - The layers and templates displayed in the **Create Solution** view are only taken from installed CMSIS software packs.
   - Software components from layers of inactive target types incorrectly display in the **Software Components** view in addition to the ones from the active target type.
   - The pack installer updates the pack index even when installing a local CMSIS software pack file.
@@ -224,25 +216,21 @@
 ## 1.44.0
 
 - New features:
-
   - The CMSIS status bar has been enhanced with a busy indicator and shows error and warning messages from CMSIS-Toolbox.
   - When the **Use Web Services** setting is enabled, the **Create new solution** view uses the internet database in addition to installed packs to display devices, boards, and examples.
   - For components, the **CMSIS** view now supports access to documentation from packs.
 
 - Solved issues:
-
   - Software components from layers or generators display in the **Software Components** view.
   - In the **Manage Solution** view, the issues occurring when changing the context set configuration have now been solved.
   - [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) now supports code completion, compile errors, and go-to-definition for all active contexts.
 
 - Known issues:
-
   - When using this extension for the first time in combination with the [Arm Environment Manager](https://marketplace.visualstudio.com/items?itemName=Arm.environment-manager), development tools are pre-installed. While this is happening, "Loading..." displays, which is misleading. You can check how the download process is progressing in **View** > **Output** > **Arm Tools** category.
 
 ## 1.40.0
 
 - New features:
-
   - This version of the extension integrates [CMSIS-Toolbox 2.6](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/README.md#revision-history) with [CMake backend](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-operation.md).
   - The CMSIS Solution view has been improved based on [Build Information Files](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/YML-CBuild-Format.md).
     - Interfaces with [STM32CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html) and [MCUXpresso Config Tools](https://www.nxp.com/design/design-center/software/development-software/mcuxpresso-software-and-tools-/mcuxpresso-config-tools-pins-clocks-and-peripherals:MCUXpresso-Config-Tools) added.
@@ -254,7 +242,6 @@
   - Option that enables the `--pack` option to download missing software packs using [cpackget](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-tools.md#cpackget-invocation) added.
 
 - Known issues:
-
   - The [Arm Environment Manager](https://marketplace.visualstudio.com/items?itemName=Arm.environment-manager) takes a long time to load the first time you use it because all the default tool versions are downloaded and installed. You can check the installation progress in **View** > **Output** (Ctrl+Shift+U or Cmd+Shift+U). Select **Arm Tools** in the drop-down list.
   - The **Create new solution** view only accesses web-based examples from public packs or published repositories. Examples from local packs do not display yet.
   - You must manually download [Device Family Packs](https://www.keil.arm.com/devices/) and [Board Support Packs](https://www.keil.arm.com/boards/) using [cpackget](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/build-tools.md#cpackget-invocation) to start projects.
@@ -637,7 +624,7 @@
 - Add compiler radio button selection options to the create solution panel.
 - The solution view now correctly updates when the context is changed.
 - Add a new `cmsis-csolution.getProcessorName` command. This returns the processor name for the current context, and can be used
-to simplify tasks.json and launch.json files.
+  to simplify tasks.json and launch.json files.
 - Add directory selector to the Create Solution flow.
 - Update document links to point to <https://pack-content.cmsis.io/>.
 
@@ -838,7 +825,7 @@ to simplify tasks.json and launch.json files.
 
 - Do not close Software Components UI when the csolution file is invalid.
 - Add new default "All Targets" filter to the Software Components UI, showing components that are
-compatible with all of the solution's target types.
+  compatible with all of the solution's target types.
 
 ## 0.18.0
 
@@ -851,7 +838,7 @@ compatible with all of the solution's target types.
 
 ## 0.16.2
 
-- Fix getBinaryFile command not honoring the output-dirs configuration in the *.csolution.yml file.
+- Fix getBinaryFile command not honoring the output-dirs configuration in the \*.csolution.yml file.
 
 ## 0.16.1
 

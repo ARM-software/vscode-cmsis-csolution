@@ -1,24 +1,10 @@
 [
     {
-        "name": "@grpc/grpc-js",
-        "version": "1.13.4",
-        "spdx": "Apache-2.0",
-        "url": "https://github.com/grpc/grpc-node",
-        "license": "https://github.com/grpc/grpc-node/blob/master/LICENSE"
-    },
-    {
         "name": "google-protobuf",
         "version": "3.21.4",
         "spdx": "(BSD-3-Clause AND Apache-2.0)",
         "url": "https://github.com/protocolbuffers/protobuf",
         "license": "https://github.com/protocolbuffers/protobuf/blob/main/LICENSE"
-    },
-    {
-        "name": "@vscode/extension-telemetry",
-        "version": "0.9.7",
-        "spdx": "MIT",
-        "url": "https://github.com/microsoft/vscode-extension-telemetry",
-        "license": "https://github.com/microsoft/vscode-extension-telemetry/blob/main/LICENSE"
     },
     {
         "name": "@eclipse-cdt-cloud/clangd-contexts",
@@ -54,13 +40,6 @@
         "spdx": "MIT",
         "url": "https://https://github.com/DirtyHairy/async-mutex",
         "license": "https://github.com/DirtyHairy/async-mutex/blob/master/LICENSE"
-    },
-    {
-        "name": "buffer",
-        "version": "6.0.3",
-        "spdx": "MIT",
-        "url": "https://github.com/feross/buffer",
-        "license": "https://github.com/feross/buffer/blob/master/LICENSE"
     },
     {
         "name": "fetch-blob",
@@ -112,13 +91,6 @@
         "license": "https://github.com/node-fetch/node-fetch/blob/master/LICENSE.md"
     },
     {
-        "name": "path-browserify",
-        "version": "1.0.1",
-        "spdx": "MIT",
-        "url": "https://github.com/browserify/path-browserify",
-        "license": "https://github.com/browserify/path-browserify/blob/master/LICENSE"
-    },
-    {
         "name": "primereact",
         "version": "10.9.6",
         "spdx": "MIT",
@@ -159,13 +131,6 @@
         "spdx": "ISC",
         "url": "https://github.com/npm/node-semver",
         "license": "https://github.com/npm/node-semver/blob/main/LICENSE"
-    },
-    {
-        "name": "vscode-cpptools",
-        "version": "7.1.1",
-        "spdx": "MIT",
-        "url": "https://github.com/Microsoft/vscode-cpptools-api",
-        "license": "https://github.com/microsoft/vscode-cpptools-api/blob/main/LICENSE"
     },
     {
         "name": "vscode-messenger",
@@ -250,5 +215,19 @@
         "spdx": "MIT",
         "url": "https://github.com/stdarg/tcp-port-used",
         "license": "https://raw.githubusercontent.com/stdarg/tcp-port-used/refs/heads/master/LICENSE"
+    },
+    {
+        "name": "@lydell/node-pty",
+        "version": "1.1.0",
+        "spdx": "MIT",
+        "url": "https://github.com/lydell/node-pty",
+        "license": "https://github.com/lydell/node-pty/blob/split-package/LICENSE"
+    },
+    {
+        "name": "@arm-software/vscode-environment-manager",
+        "version": "1.24.4",
+        "spdx": "LicenseRef-EULA-ARM",
+        "url": "https://github.com/ARM-software/vscode-environment-manager/",
+        "license": "https://github.com/ARM-software/vscode-environment-manager/blob/main/LICENSE"
     }
 ]
