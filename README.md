@@ -1,5 +1,8 @@
 # Arm CMSIS Solution
 
+## Repository got moved and is maintained in the [Open-CMSIS-Pack github organization](https://github.com/Open-CMSIS-Pack/vscode-cmsis-solution)
+
+
 The Arm® CMSIS Solution extension is a graphical user interface for csolution projects that use the [CMSIS-Toolbox](https://open-cmsis-pack.github.io/cmsis-toolbox/). The extension supports microcontroller devices that incorporate Arm Cortex®-M processors and Arm Ethos®-U Neural Processing Units (NPUs), and works with various C/C++ compilers and debuggers.
 
 This extension is [free to use](https://marketplace.visualstudio.com/items/Arm.cmsis-csolution/license) and you can install it individually or as part of the [Arm Keil® Studio Pack](https://marketplace.visualstudio.com/items?itemName=Arm.keil-studio-pack).
